@@ -306,13 +306,14 @@
             box-shadow: 0 0 15px rgba(0, 240, 96, 0.6);
         }
         .hero-underline {
-            display: block;
-            width: fit-content;
-            margin: 0 auto;
+            display: inline-block;
             padding-bottom: 5px;
             border-bottom: 2px dashed #00F060;
             box-shadow: 0 4px 8px rgba(0, 240, 96, 0.4);
             transition: all 0.3s ease-in-out;
+        }
+        #hero h1, #hero p {
+            text-align: center;
         }
     </style>
 </head>
@@ -342,8 +343,8 @@
 
         <div class="container mx-auto px-4 relative z-10">
             <img src="https://i.imgur.com/2Zpyrep.png" alt="Foto de perfil de Fernando Augusto" class="rounded-full mx-auto mb-6 w-32 h-32 object-cover border-4 border-00F060 shadow-lg shadow-00F060/30">
-            <h1 id="hero-name" class="text-5xl md:text-7xl font-extrabold mb-4 text-white font-['Space_Mono'] hero-underline" data-lang-pt="FERNANDO AUGUSTO" data-lang-en="FERNANDO AUGUSTO" data-lang-es="FERNANDO AUGUSTO">FERNANDO AUGUSTO</h1>
-            <p id="hero-title" class="text-xl md:text-3xl font-light mb-10 text-gray-400 hero-underline" data-lang-pt="Desenvolvedor de Sistemas com Foco em <span class='font-bold text-00F060'>DADOS</span>" data-lang-en="Systems Developer with a Focus on <span class='font-bold text-00F060'>DATA</span>" data-lang-es="Desarrollador de Sistemas con Enfoque en <span class='font-bold text-00F060'>DATOS</span>">Desenvolvedor de Sistemas com Foco em <span class="font-bold text-00F060">DADOS</span></p>
+            <h1 id="hero-name" class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 text-white font-['Space_Mono'] hero-underline" data-lang-pt="FERNANDO AUGUSTO" data-lang-en="FERNANDO AUGUSTO" data-lang-es="FERNANDO AUGUSTO">FERNANDO AUGUSTO</h1>
+            <p id="hero-title" class="text-lg sm:text-xl md:text-3xl font-light mb-10 text-gray-400 hero-underline" data-lang-pt="Desenvolvedor de Sistemas com Foco em <span class='font-bold text-00F060'>DADOS</span>" data-lang-en="Systems Developer with a Focus on <span class='font-bold text-00F060'>DATA</span>" data-lang-es="Desarrollador de Sistemas con Enfoque en <span class='font-bold text-00F060'>DATOS</span>">Desenvolvedor de Sistemas com Foco em <span class="font-bold text-00F060">DADOS</span></p>
             <a href="https://wa.me/5579999159885" target="_blank" class="btn-primary inline-block text-lg font-semibold shadow-00F060/40" data-lang-pt="Conecte-se" data-lang-en="Connect" data-lang-es="Conectar">Conecte-se</a>
         </div>
     </section>
@@ -380,30 +381,22 @@
             <h2 class="section-title text-3xl md:text-4xl font-bold mb-10 mx-auto text-center" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do" data-lang-es="Lo Que Hago">O Que Eu Faço</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                 <div class="what-i-do-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M10.5 18H13.5M10.5 6H13.5M6 6H18M6 18H18M3 12h18M18 12h3M3 12h3M12 3L12 21M12 3V1M12 21V23M12 12h9M12 12H3" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="M12 3v18"/><path d="m18.75 6.75-3.75 3.75m0 0 3.75 3.75m-3.75-3.75H3m18 0h-3m-12 0h-3m15 0h3m-18 0h3"/></svg>
                     <h3 class="text-xl mb-2" data-lang-pt="Engenharia de Dados & ETL" data-lang-en="Data Engineering & ETL" data-lang-es="Ingeniería de Datos y ETL">Engenharia de Dados & ETL</h3>
                     <p data-lang-pt="Desenvolvo e implemento <strong class='text-00F060'>pipelines de ETL robustos e escaláveis</strong> para coleta, transformação e carregamento de dados, assegurando a <strong class='text-00F060'>qualidade e a disponibilidade</strong> das informações para análises estratégicas." data-lang-en="I develop and implement <strong class='text-00F060'>robust and scalable ETL pipelines</strong> for data collection, transformation, and loading, ensuring the <strong='text-00F060'>quality and availability</strong> of information for strategic analysis." data-lang-es="Desarrollo e implemento <strong class='text-00F060'>pipelines ETL robustos y escalables</strong> para la recopilación, transformación y carga de datos, asegurando la <strong class='text-00F060'>calidad y disponibilidad</strong> de la información para análisis estratégicos.">Construção de pipelines robustos para coleta, transformação e carregamento de dados, garantindo a integridade e disponibilidade para análise.</p>
                 </div>
                 <div class="what-i-do-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 12V7a9 3 0 0 1 18 0v5"/><path d="M3 12a9 3 0 0 0 18 0"/><path d="M3 19v-5a9 3 0 0 1 18 0v5"/><path d="M3 19a9 3 0 0 0 18 0"/></svg>
                     <h3 class="text-xl mb-2" data-lang-pt="Otimização e Administração de Banco de Dados" data-lang-en="Database Optimization & Administration" data-lang-es="Optimización y Administración de Bases de Datos">Otimização e Administração de Banco de Dados</h3>
                     <p data-lang-pt="Especialista em <strong class='text-00F060'>manutenção, otimização e migração de bancos de dados</strong> (SQL Server, Oracle, MongoDB), com foco em <strong class='text-00F060'>melhorar a performance de queries, garantir a segurança e a consistência</strong> dos dados." data-lang-en="I'm an expert in <strong class='text-00F060'>database maintenance, optimization, and migration</strong> (SQL Server, Oracle, MongoDB). My focus is on <strong class='text-00F060'>improving query performance, ensuring data security and consistency</strong>." data-lang-es="Soy especialista en <strong class='text-00F060'>mantenimiento, optimización y migración de bases de datos</strong> (SQL Server, Oracle, MongoDB). Mi enfoque es <strong class='text-00F060'>mejorar el rendimiento de las consultas, garantizar la seguridad y la consistencia</strong> de los datos.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
                 </div>
                 <div class="what-i-do-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L21 10.5m0 0L17.25 14.25M21 10.5H3M6.75 17.25L3 13.5m0 0L6.75 9.75M3 13.5h18" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap"><path d="M13 2v8l8-4-8-4Z"/><path d="M10 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6v-2.5"/><path d="M10 9.5V14h12V9.5z"/></svg>
                     <h3 class="text-xl mb-2" data-lang-pt="Desenvolvimento de Web Services & APIs" data-lang-en="Web Services & API Development" data-lang-es="Desarrollo de Web Services y APIs">Desenvolvimento de Web Services & APIs</h3>
                     <p data-lang-pt="Crio <strong class='text-00F060'>serviços web e APIs eficientes e seguros</strong> utilizando C#, ASP.NET e Python. Isso ajuda a <strong class='text-00F060'>integrar sistemas e facilitar a comunicação de dados</strong> para várias aplicações." data-lang-en="I create <strong class='text-00F060'>efficient and secure web services and APIs</strong> using C#, ASP.NET, and Python. This helps to <strong class='text-00F060'>integrate systems and facilitate data communication</strong> for various applications." data-lang-es="Creo <strong class='text-00F060'>servicios web y APIs eficientes y seguros</strong> utilizando C#, ASP.NET y Python, facilitando la <strong class='text-00F060'>integración de sistemas y la comunicación de datos</strong> para diversas aplicaciones.">Criação de soluções backend escaláveis e eficientes usando C#, ASP.NET e Python, para integração de sistemas e serviços web.</p>
                 </div>
                 <div class="what-i-do-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125l6.75-6.75L17.25 17.25M6.75 17.25L17.25 6.75M12 6.75h.008v.008H12V6.75zm.008 3.75H12v.008h.008V10.5zm.008 3.75H12v.008h.008V14.25zm.008 3.75H12v.008h.008V18zm.008 3.75H12v.008h.008V21.75z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
                     <h3 class="text-xl mb-2" data-lang-pt="Análise e Visualização de Dados" data-lang-en="Data Analysis & Visualization" data-lang-es="Análisis y Visualización de Datos">Análise e Visualização de Dados</h3>
                     <p data-lang-pt="Transformo <strong class='text-00F060'>dados brutos em narrativas visuais claras e insights acionáveis</strong>. Desenvolvo dashboards e relatórios que <strong class='text-00F060'>realmente ajudam a tomar decisões estratégicas</strong>." data-lang-en="I transform <strong class='text-00F060'>raw data into clear visual narratives and actionable insights</strong>. I develop dashboards and reports that <strong class='text-00F060'>truly help in strategic decision-making</strong>." data-lang-es="Transformo <strong class='text-00F060'>datos brutos en narrativas visuales claras e insights accionables</strong>. Desarrollo paneles y reportes que <strong class='text-00F060'>realmente ayudan a tomar decisiones estratégicas</strong>.">Transformação de dados brutos em insights acionáveis através de análises detalhadas e dashboards interativos para tomada de decisão.</p>
                 </div>
@@ -694,6 +687,17 @@
         function handleIntersection(entries, observer) {
             entries.forEach(entry => {
                 const element = entry.target;
+                // Ensure dataset properties exist before accessing them
+                if (!element.dataset.langPt) {
+                    element.dataset.langPt = element.innerHTML;
+                }
+                if (!element.dataset.langEn) {
+                    element.dataset.langEn = element.innerHTML;
+                }
+                if (!element.dataset.langEs) {
+                    element.dataset.langEs = element.innerHTML;
+                }
+
                 const originalTextData = {
                     pt: element.dataset.langPt,
                     en: element.dataset.langEn,
@@ -742,6 +746,7 @@
             );
 
             textElements.forEach(element => {
+                // Ensure dataset properties exist before accessing them
                 if (!element.dataset.langPt) element.dataset.langPt = element.innerHTML;
                 if (!element.dataset.langEn) element.dataset.langEn = element.innerHTML;
                 if (!element.dataset.langEs) element.dataset.langEs = element.innerHTML;
@@ -823,7 +828,7 @@
                         }
                     } else if (targetElement) {
                         if (targetElement.dataset.langPt) {
-                            targetElement.innerHTML = targetElement.dataset.langPt;
+                            targetElement.innerHTML = element.dataset.langPt;
                         }
                     }
                 });
