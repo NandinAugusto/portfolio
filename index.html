@@ -526,6 +526,13 @@
             from, to { background-color: transparent; }
             50% { background-color: var(--accent-green); }
         }
+
+        /* Nova classe para garantir clicabilidade dos links de contato */
+        .contact-section-link {
+            position: relative; /* Necessário para z-index funcionar */
+            z-index: 1000; /* Valor muito alto para garantir que esteja acima */
+            pointer-events: auto; /* Garante que os eventos do mouse não sejam ignorados */
+        }
     </style>
 </head>
 <body>
@@ -566,11 +573,11 @@
 
     <section id="about-and-experience" class="py-16 md:py-24 bg-0A0A0A border-t border-b border-gray-800">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-['Space_Mono'] font-bold mb-10 mx-auto text-center" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia">Sobre Mim e Experiência</h2>
+            <h2 class="section-title text-3xl md:text-4xl font-['Space_Mono'] font-bold mb-10 mx-auto text-center" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia">Sobre Mim e Experiencia</h2>
             <div class="panel-container max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="panel-card text-lg leading-relaxed text-gray-300">
                     <h3 class="text-2xl mb-4 text-white text-center font-['Space_Mono']" data-lang-pt="Quem Sou" data-lang-en="Who I Am" data-lang-es="Quién Soy">Quem Sou</h3>
-                    <p class="mb-4" data-lang-pt="Com mais de três anos de experiência, sou um <strong class='text-00F060'>Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes. Minha expertise abrange linguagens, frameworks e tecnologias como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>, permitindo-me atuar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos." data-lang-en="With over three years of experience, I am a <strong class='text-00F060'>Systems Developer with a passion for Data</strong>, specialized in transforming complex challenges into efficient solutions. My expertise spans languages, frameworks, and technologies such as <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C#, and ASP.NET</strong>, allowing me to confidently work on projects of various scales, from web applications to robust enterprise systems." data-lang-es="Con más de tres años de experiencia, soy un <strong='text-00F060'>Desarrollador de Sistemas con pasión por los Datos</strong>, especializado en transformar desafíos complejos en soluciones eficientes. Mi experiencia abarca lenguajes, frameworks y tecnologías como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# y ASP.NET</strong>, lo que me permite trabajar con confianza en proyectos de diversas escalas, desde aplicaciones web hasta sistemas empresariales robustos.">Com mais de três anos de experiência, sou um <strong class="text-00F060">Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes.</p>
+                    <p class="mb-4" data-lang-pt="Com mais de três anos de experiência, sou um <strong class='text-00F060'>Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes. Minha expertise abrange linguagens, frameworks e tecnologias como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>, permitindo-me atuar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos." data-lang-en="With over three years of experience, I am a <strong class='text-00F060'>Systems Developer with a passion for Data</strong>, specialized in transforming complex challenges into efficient solutions. My expertise spans languages, frameworks, and technologies such as <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C#, and ASP.NET</strong>, allowing me to confidently work on projects of various scales, from web applications to robust enterprise systems." data-lang-es="Con más de tres años de experiencia, soy un <strong='text-00F060'>Desarrollador de Sistemas con pasión por los Datos</strong>, especializado en transformar desafíos complejos en soluciones eficientes. Mi experiencia abarca lenguajes, frameworks y tecnologías como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# y ASP.NET</strong>, lo que me permite trabajar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos.">Com mais de três anos de experiência, sou um <strong class="text-00F060">Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes.</p>
                     <p data-lang-pt="Sou impulsionado pela <strong class='text-00F060'>análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong class='text-00F060'>garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>." data-lang-en="I am driven by <strong class='text-00F060'>data analysis, management, and algorithm optimization</strong>, always seeking to <strong class='text-00F060'>ensure data integrity and consistency to generate strategic and actionable insights</strong>." data-lang-es="Me impulsa el <strong class='text-00F060'>análisis de datos, la gestión y la optimización de algoritmos</strong>, siempre buscando <strong class='text-00F060'>garantizar la integridad y consistencia de la información para generar insights estratégicos y accionables</strong>.">Sou impulsionado pela <strong class="text-00F060">análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong class="text-00F060">garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>.</p>
                 </div>
 
@@ -603,7 +610,7 @@
                 <div class="what-i-do-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 12V7a9 3 0 0 1 18 0v5"/><path d="M3 12a9 3 0 0 0 18 0"/><path d="M3 19v-5a9 3 0 0 1 18 0v5"/><path d="M3 19a9 3 0 0 0 18 0"/></svg>
                     <h3 class="text-xl mb-2 font-['Space_Mono']" data-lang-pt="Otimização e Administração de Banco de Dados" data-lang-en="Database Optimization & Administration" data-lang-es="Optimización y Administración de Bases de Datos">Otimização e Administração de Banco de Dados</h3>
-                    <p data-lang-pt="Especialista em <strong class='text-00F060'>manutenção, otimização e migração de bancos de dados</strong> (SQL Server, Oracle, MongoDB), com foco em <strong class='text-00F060'>melhorar a performance de queries, garantir a segurança e a consistência</strong> dos dados." data-lang-en="I'm an expert in <strong class='text-00F060'>database maintenance, optimization, and migration</strong> (SQL Server, Oracle, MongoDB). My focus is on <strong class='text-00F060'>improving query performance, ensuring data security and consistency</strong>." data-lang-es="Soy especialista en <strong class='text-00F060'>mantenimiento, otimización y migración de bases de datos</strong> (SQL Server, Oracle, MongoDB). Mi enfoque es <strong class='text-00F060'>mejorar el rendimiento de las consultas, garantizar la seguridad y la consistencia</strong> de los datos.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
+                    <p data-lang-pt="Especialista em <strong class='text-00F060'>manutenção, otimização e migração de bancos de dados</strong> (SQL Server, Oracle, MongoDB), com foco em <strong class='text-00F060'>melhorar a performance de queries, garantir a segurança e a consistência</strong> dos dados." data-lang-en="I'm an expert in <strong class='text-00F060'>database maintenance, optimization, and migration</strong> (SQL Server, Oracle, MongoDB). My focus is on <strong class='text-00F060'>improving query performance, ensuring data security and consistency</strong>." data-lang-es="Soy especialista en <strong class='text-00F060'>manutenção, otimización y migración de bases de datos</strong> (SQL Server, Oracle, MongoDB). Mi enfoque es <strong class='text-00F060'>mejorar el rendimiento de las consultas, garantizar la seguridad y la consistencia</strong> de los datos.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
                 </div>
                 <div class="what-i-do-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap"><path d="M13 2v8l8-4-8-4Z"/><path d="M10 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6v-2.5"/><path d="M10 9.5V14h12V9.5z"/></svg>
@@ -652,7 +659,7 @@
                             <p class="text-gray-400 text-xs" data-lang-pt="2019 – 2020" data-lang-en="2019 – 2020" data-lang-es="2019 – 2020">2019 – 2020</p>
                         </div>
                         <div class="text-gray-300">
-                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico Automação Industrial" data-lang-en="Technical Course in Industrial Automation" data-lang-es="Curso Técnico en Automatización Industrial">Curso Técnico Automação Industrial</p>
+                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico Automação Industrial" data-lang-en="Technical Course in Industrial Automation" data-lang-es="Curso Técnico em Automatização Industrial">Curso Técnico Automação Industrial</p>
                             <p class="text-00F060 text-sm">SENAI Sergipe</p>
                             <p class="text-gray-400 text-xs" data-lang-pt="2016 – 2018" data-lang-en="2016 – 2018" data-lang-es="2016 – 2018">2016 – 2018</p>
                         </div>
@@ -663,7 +670,7 @@
                     <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Cursos Relevantes" data-lang-en="Relevant Courses" data-lang-es="Cursos Relevantes">Cursos Relevantes</h3>
                     <ul class="text-gray-300 space-y-2">
                         <li data-lang-pt="<strong class='text-00F060'>Modelagem de Dados</strong> - Alura" data-lang-en="<strong class='text-00F060'>Data Modeling</strong> - Alura" data-lang-es="<strong class='text-00F060'>Modelado de Datos</strong> - Alura"><strong class="text-00F060">Modelagem de Dados</strong> - Alura</li>
-                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong class='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
+                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
                         <li data-lang-pt="<strong class='text-00F060'>SQL para Análise de Dados</strong> - Udemy" data-lang-en="<strong class='text-00F060'>SQL for Data Analysis</strong> - Udemy" data-lang-es="<strong class='text-00F060'>SQL para Análisis de Datos</strong> - Udemy"><strong class="text-00F060">SQL para Análise de Dados</strong> - Udemy</li>
                         <li data-lang-pt="Microsoft SQL Server 2022 - Alura" data-lang-en="Microsoft SQL Server 222 - Alura" data-lang-es="Microsoft SQL Server 2022 - Alura">Microsoft SQL Server 2022 - Alura</li>
                         <li data-lang-pt="SQL com MySQL Server da Oracle - Alura" data-lang-en="SQL with MySQL Server from Oracle - Alura" data-lang-es="SQL con MySQL Server de Oracle - Alura">SQL com MySQL Server da Oracle - Alura</li>
@@ -709,7 +716,7 @@
                 <div class="panel-card mt-8 md:col-span-2"> <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Formação Complementar" data-lang-en="Complementary Training" data-lang-es="Formación Complementaria">Formação Complementar</h3>
                     <ul class="text-gray-300 space-y-2">
                         <li data-lang-pt="<strong class='text-00F060'>Modelagem de Dados</strong> - Alura" data-lang-en="<strong class='text-00F060'>Data Modeling</strong> - Alura" data-lang-es="<strong class='text-00F060'>Modelado de Datos</strong> - Alura"><strong class="text-00F060">Modelagem de Dados</strong> - Alura</li>
-                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong class='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
+                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
                         <li data-lang-pt="<strong class='text-00F060'>SQL para Análise de Dados</strong> - Udemy" data-lang-en="<strong class='text-00F060'>SQL for Data Analysis</strong> - Udemy" data-lang-es="<strong class='text-00F060'>SQL para Análisis de Datos</strong> - Udemy"><strong class="text-00F060">SQL para Análise de Dados</strong> - Udemy</li>
                         <li data-lang-pt="Microsoft SQL Server 2022 - Alura" data-lang-en="Microsoft SQL Server 222 - Alura" data-lang-es="Microsoft SQL Server 2022 - Alura">Microsoft SQL Server 2022 - Alura</li>
                         <li data-lang-pt="SQL com MySQL Server da Oracle - Alura" data-lang-en="SQL with MySQL Server from Oracle - Alura" data-lang-es="SQL con MySQL Server de Oracle - Alura">SQL com MySQL Server da Oracle - Alura</li>
@@ -726,20 +733,20 @@
             <div class="panel-container max-w-xl mx-auto text-center">
                 <p class="text-gray-300 mb-6" data-lang-pt="Bora trocar uma ideia? Fico feliz em conectar! Me acha por aqui:" data-lang-en="Want to chat? I'd love to connect! Find me here:" data-lang-es="¿Quieres charlar? ¡Me encantaría conectar! Encuéntrame aquí:"></p>
                 <div class="flex justify-center items-center space-x-6 flex-wrap gap-4">
-                    <a href="mailto:nando.dev.08.21@gmail.com" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2">
+                    <a href="mailto:nando.dev.08.21@gmail.com" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2 cursor-pointer contact-section-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail contact-icon">
                             <rect width="20" height="16" x="2" y="4" rx="2"/>
                             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                         </svg>
                         <span class="text-lg" data-lang-pt="E-mail" data-lang-en="E-mail" data-lang-es="Correo Electrónico">E-mail</span>
                     </a>
-                    <a href="https://wa.me/5579999159885" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2">
+                    <a href="https://wa.me/5579999159885" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2 cursor-pointer contact-section-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle contact-icon">
                             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
                         </svg>
                         <span data-lang-pt="WhatsApp" data-lang-en="WhatsApp" data-lang-es="WhatsApp">WhatsApp</span>
                     </a>
-                    <a href="https://br.linkedin.com/in/fernando-augusto-8aa4271a7" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2">
+                    <a href="https://br.linkedin.com/in/fernando-augusto-8aa4271a7" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2 cursor-pointer contact-section-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin contact-icon">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                             <rect width="4" height="12" x="2" y="9"/>
@@ -772,6 +779,47 @@
 
         // Variável characters movida para o escopo global
         const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Definindo os seletores de elementos traduzíveis
+        const translatableElementSelectors = [
+            'h2.section-title', // Títulos das secções
+            '#about-and-experience .panel-card p',
+            '#about-and-experience .panel-card h3',
+            '#what-i-do .what-i-do-card p',
+            '#what-i-do .what-i-do-card h3',
+            '#education-and-courses .panel-card ul li',
+            '#education-and-courses .panel-card p',
+            '#education-and-courses .panel-card h3',
+            '#skills-and-knowledge .panel-card ul li',
+            '#skills-and-knowledge .panel-card h3',
+            '#contact .panel-container p',
+            '#contact .panel-container .flex a span', // Textos dentro dos links de contato
+            '#fullscreen-menu-overlay .nav-link', // Links de navegação do menu fullscreen
+            'footer p', // Texto do rodapé
+            '#hero-name', // Título principal do hero
+            '#hero-title', // Subtítulo do hero
+            '#hero .btn-primary', // Botão "Conecte-se" no hero
+            '#loading-indicator', // Indicador de carregamento
+            '#header-terminal-name' // Nome do terminal no cabeçalho
+        ];
+
+        // Elementos que devem ter o efeito de digitação (subconjunto dos traduzíveis)
+        const typewriterElementSelectors = [
+            'h2.section-title', // Títulos das secções
+            '#about-and-experience .panel-card p',
+            '#about-and-experience .panel-card h3',
+            '#what-i-do .what-i-do-card p',
+            '#what-i-do .what-i-do-card h3',
+            '#education-and-courses .panel-card ul li',
+            '#education-and-courses .panel-card p',
+            '#education-and-courses .panel-card h3',
+            '#skills-and-knowledge .panel-card ul li',
+            '#skills-and-knowledge .panel-card h3',
+            '#contact .panel-container p',
+            '#hero-name',
+            '#hero-title',
+            '#header-terminal-name'
+        ];
 
         function createCharacterTexture(character, isGlitching = false) {
             const canvas = document.createElement('canvas');
@@ -925,6 +973,15 @@
         }
 
         function typeWriter(element, text, i, speed, callback, keepCursor = false) {
+            if (text === null || text === undefined) {
+                console.warn("typeWriter: 'text' é nulo ou indefinido para o elemento:", element);
+                element.innerHTML = ''; // Limpa o conteúdo se o texto for inválido
+                if (callback) {
+                    callback();
+                }
+                return;
+            }
+
             if (i < text.length) {
                 element.innerHTML = text.substring(0, i + 1) + (keepCursor ? '<span class="typing-cursor">_</span>' : '');
                 element.typedInterval = setTimeout(() => typeWriter(element, text, i + 1, speed, callback, keepCursor), speed);
@@ -939,14 +996,9 @@
         function handleIntersection(entries, observer) {
             entries.forEach(entry => {
                 const element = entry.target;
+                // Apenas armazena o innerHTML inicial como data-lang-pt se não existir
                 if (!element.dataset.langPt) {
                     element.dataset.langPt = element.innerHTML;
-                }
-                if (!element.dataset.langEn) {
-                    element.dataset.langEn = element.innerHTML;
-                }
-                if (!element.dataset.langEs) {
-                    element.dataset.langEs = element.innerHTML;
                 }
 
                 const originalTextData = {
@@ -954,7 +1006,7 @@
                     en: element.dataset.langEn,
                     es: element.dataset.langEs
                 };
-                const currentText = originalTextData[currentLanguage];
+                const currentText = originalTextData[currentLanguage] || '';
 
                 let state = elementTypingStates.get(element);
                 if (!state) {
@@ -986,28 +1038,18 @@
         const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
         function initializeTypingEffects() {
+            // Seleciona APENAS os elementos que DEVEM ter o efeito de digitação
             const textElements = document.querySelectorAll(
-                '#about-and-experience .panel-card p, ' +
-                '#what-i-do .what-i-do-card p, ' +
-                '#education-and-courses .panel-card ul li, ' +
-                '#education-and-courses .panel-card p, ' +
-                '#skills-and-knowledge .panel-card ul li, ' +
-                '#contact .panel-container p, ' +
-                '#contact .panel-container .flex a span'
+                typewriterElementSelectors.join(', ')
             );
 
             textElements.forEach(element => {
                 if (!element.hasAttribute('data-lang-pt')) {
                     element.setAttribute('data-lang-pt', element.innerHTML);
                 }
-                if (!element.hasAttribute('data-lang-en')) {
-                    element.setAttribute('data-lang-en', element.innerHTML);
-                }
-                if (!element.hasAttribute('data-lang-es')) {
-                    element.setAttribute('data-lang-es', element.innerHTML);
-                }
-
-                element.innerHTML = '';
+                // No carregamento inicial, não limpa o innerHTML para evitar o flicker
+                // O IntersectionObserver cuidará do efeito de digitação quando o elemento for visível
+                // element.innerHTML = '';
                 observer.observe(element);
             });
         }
@@ -1015,7 +1057,7 @@
         function animateHeaderTerminalText() {
             const headerTerminalElement = document.getElementById('header-terminal-name');
             if (headerTerminalElement) {
-                const text = headerTerminalElement.getAttribute(`data-lang-${currentLanguage}`);
+                const text = headerTerminalElement.getAttribute(`data-lang-${currentLanguage}`) || '';
                 clearTimeout(headerTerminalElement.typedInterval);
                 headerTerminalElement.innerHTML = '';
                 typeWriter(headerTerminalElement, text, 0, 80, null, true);
@@ -1031,62 +1073,84 @@
             const langBtn = document.getElementById('language-toggle-btn');
             langBtn.textContent = currentLanguage.toUpperCase();
 
-            elementTypingStates.clear();
+            elementTypingStates.clear(); // Limpa os estados de digitação para forçar re-digitação se necessário
 
-            const elementsToTranslate = document.querySelectorAll('[data-lang-pt], [data-lang-en], [data-lang-es]');
+            // Seleciona TODOS os elementos que têm atributos de idioma para tradução
+            const allTranslatableElements = document.querySelectorAll(
+                translatableElementSelectors.join(', ')
+            );
 
-            // Clear all text immediately to give a "reset" feel
-            elementsToTranslate.forEach(element => {
-                clearTimeout(element.typedInterval);
+            // Atualiza o texto de TODOS os elementos traduzíveis IMEDIATAMENTE
+            allTranslatableElements.forEach(element => {
+                clearTimeout(element.typedInterval); // Para qualquer digitação em andamento
+
                 let targetElement = element;
+                // Determina o elemento alvo para a tradução
                 if (element.tagName === 'A' && element.closest('#contact')) {
                     targetElement = element.querySelector('span');
+                } else if (element.tagName === 'A' && element.closest('#fullscreen-menu-overlay')) {
+                    targetElement = element;
+                } else if (element.tagName === 'P' && element.closest('footer')) {
+                    targetElement = element;
+                } else if (element.id === 'hero-name' || element.id === 'hero-title' || element.id === 'loading-indicator' || (element.tagName === 'A' && element.classList.contains('btn-primary'))) {
+                    // Para os elementos do hero e o botão principal, o targetElement é o próprio elemento
+                    // Se o elemento tem um span .hero-underline, o texto está dentro dele
+                    if (element.querySelector('.hero-underline')) {
+                        targetElement = element.querySelector('.hero-underline');
+                    } else {
+                        targetElement = element;
+                    }
                 }
+                
                 if (targetElement) {
-                    targetElement.innerHTML = ''; // Clear content
+                    // Obtém o texto traduzido correto do atributo data-lang
+                    const textToDisplay = targetElement.getAttribute(`data-lang-${currentLanguage}`) || '';
+                    targetElement.innerHTML = textToDisplay; // Atualiza o texto imediatamente
                 }
             });
 
-            // Clear hero text immediately
-            const heroNameContainer = document.querySelector('#hero h1');
-            const heroTitleContainer = document.querySelector('#hero p');
-            heroNameContainer.innerHTML = '';
-            heroTitleContainer.innerHTML = '';
+            // Reativa o efeito de máquina de escrever para os elementos observados que estão visíveis
+            const observedTextElements = document.querySelectorAll(
+                typewriterElementSelectors.join(', ')
+            );
 
+            observedTextElements.forEach(element => {
+                // Se o elemento estiver visível, reativa o efeito de digitação
+                const rect = element.getBoundingClientRect();
+                const isVisible = (rect.top < window.innerHeight && rect.bottom > 0);
+                
+                if (isVisible) {
+                    const textToType = element.getAttribute(`data-lang-${currentLanguage}`) || '';
+                    element.innerHTML = ''; // Limpa para re-digitar
+                    typeWriter(element, textToType, 0, 30, () => {
+                        let state = elementTypingStates.get(element);
+                        if (!state) {
+                            state = { pt: false, en: false, es: false };
+                            elementTypingStates.set(element, state);
+                        }
+                        state[currentLanguage] = true;
+                    });
+                }
+            });
 
-            // Add a small delay before starting the typing effect for all elements
-            setTimeout(() => {
-                elementsToTranslate.forEach(element => {
-                    let targetElement = element;
-                    if (element.tagName === 'A' && element.closest('#contact')) {
-                        targetElement = element.querySelector('span');
-                    }
+            // Aplica o efeito de máquina de escrever ao texto da seção hero e ao cabeçalho (que estão sempre visíveis)
+            const heroNameElement = document.getElementById('hero-name');
+            const heroTitleElement = document.getElementById('hero-title');
+            const heroNameSpan = heroNameElement ? heroNameElement.querySelector('.hero-underline') : null;
+            const heroTitleSpan = heroTitleElement ? heroTitleElement.querySelector('.hero-underline') : null;
+            
+            if (heroNameSpan) {
+                const heroNameText = heroNameElement.getAttribute(`data-lang-${currentLanguage}`) || '';
+                heroNameSpan.innerHTML = ''; // Limpa para re-digitar
+                typeWriter(heroNameSpan, heroNameText, 0, 80, null, false);
+            }
+            if (heroTitleSpan) {
+                const heroTitleText = heroTitleElement.getAttribute(`data-lang-${currentLanguage}`) || '';
+                heroTitleSpan.innerHTML = ''; // Limpa para re-digitar
+                typeWriter(heroTitleSpan, heroTitleText, 0, 50, null, false);
+            }
 
-                    if (targetElement) {
-                        if (!targetElement.hasAttribute('data-lang-pt')) targetElement.setAttribute('data-lang-pt', targetElement.innerHTML);
-                        if (!targetElement.hasAttribute('data-lang-en')) targetElement.setAttribute('data-lang-en', targetElement.getAttribute('data-lang-pt'));
-                        if (!targetElement.hasAttribute('data-lang-es')) targetElement.setAttribute('data-lang-es', targetElement.getAttribute('data-lang-pt'));
-
-                        const textToType = targetElement.getAttribute(`data-lang-${currentLanguage}`);
-
-                        typeWriter(targetElement, textToType, 0, 30, () => {
-                            let state = elementTypingStates.get(targetElement);
-                            if (!state) {
-                                state = { pt: false, en: false, es: false };
-                                elementTypingStates.set(targetElement, state);
-                            }
-                            state[currentLanguage] = true;
-                        });
-                    }
-                });
-
-                // Apply typewriter effect to hero section text after the delay
-                typeWriter(heroNameContainer, heroNameContainer.getAttribute(`data-lang-${currentLanguage}`), 0, 80, null, false);
-                typeWriter(heroTitleContainer, heroTitleContainer.getAttribute(`data-lang-${currentLanguage}`), 0, 50, null, false);
-
-                animateHeaderTerminalText();
-
-            }, 200); // Small delay (e.g., 200ms) to simulate postback
+            animateHeaderTerminalText();
         }
 
         window.onload = function() {
@@ -1118,40 +1182,53 @@
 
             if (langBtn) {
                 langBtn.addEventListener('click', toggleLanguage);
-                currentLanguage = 'pt';
-                langBtn.textContent = 'PT';
+                currentLanguage = 'pt'; // Define o idioma inicial como português
+                langBtn.textContent = 'PT'; // Garante que o botão mostre "PT" inicialmente
 
-                const elementsToTranslate = document.querySelectorAll('[data-lang-pt], [data-lang-en], [data-lang-es]');
-                elementsToTranslate.forEach(element => {
+                // No carregamento inicial, atualiza todos os elementos traduzíveis para o idioma padrão (PT)
+                const allTranslatableElements = document.querySelectorAll(translatableElementSelectors.join(', '));
+                allTranslatableElements.forEach(element => {
                     let targetElement = element;
                     if (element.tagName === 'A' && element.closest('#contact')) {
                         targetElement = element.querySelector('span');
+                    } else if (element.tagName === 'A' && element.closest('#fullscreen-menu-overlay')) {
+                        targetElement = element;
+                    } else if (element.tagName === 'P' && element.closest('footer')) {
+                        targetElement = element;
+                    } else if (element.id === 'hero-name' || element.id === 'hero-title' || element.id === 'loading-indicator' || (element.tagName === 'A' && element.classList.contains('btn-primary'))) {
+                        if (element.querySelector('.hero-underline')) {
+                            targetElement = element.querySelector('.hero-underline');
+                        } else {
+                            targetElement = element;
+                        }
                     }
 
                     if (targetElement) {
-                        if (!targetElement.hasAttribute('data-lang-pt')) targetElement.setAttribute('data-lang-pt', targetElement.innerHTML);
-                        if (!targetElement.hasAttribute('data-lang-en')) targetElement.setAttribute('data-lang-en', targetElement.getAttribute('data-lang-pt'));
-                        if (!targetElement.hasAttribute('data-lang-es')) targetElement.setAttribute('data-lang-es', targetElement.getAttribute('data-lang-pt'));
-
-                        if (targetElement && (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
-                            if (targetElement.dataset.langPtPlaceholder) {
-                                targetElement.placeholder = targetElement.dataset.langPtPlaceholder;
-                            }
-                        } else if (targetElement) {
-                            if (targetElement.dataset.langPt) {
-                                targetElement.innerHTML = element.dataset.langPt;
-                            }
+                        // Garante que o data-lang-pt seja o conteúdo inicial do HTML
+                        if (!targetElement.hasAttribute('data-lang-pt')) {
+                            targetElement.setAttribute('data-lang-pt', targetElement.innerHTML);
                         }
+                        // Define o conteúdo inicial com base no idioma atual (pt)
+                        targetElement.innerHTML = targetElement.getAttribute(`data-lang-${currentLanguage}`) || '';
                     }
                 });
-                initializeTypingEffects();
 
-                const heroNameElement = document.querySelector('#hero h1 .hero-underline');
-                const heroTitleElement = document.querySelector('#hero p .hero-underline');
-                if (heroNameElement) heroNameElement.innerHTML = heroNameElement.parentElement.getAttribute('data-lang-pt');
-                if (heroTitleElement) heroTitleElement.innerHTML = heroTitleElement.parentElement.getAttribute('data-lang-pt');
+                initializeTypingEffects(); // Inicializa os efeitos de digitação para os elementos observados
 
-                animateHeaderTerminalText();
+                // Atualiza o texto da seção Hero diretamente com o idioma inicial
+                const heroNameElement = document.querySelector('#hero h1');
+                const heroTitleElement = document.querySelector('#hero p');
+                const heroNameSpan = heroNameElement ? heroNameElement.querySelector('.hero-underline') : null;
+                const heroTitleSpan = heroTitleElement ? heroTitleElement.querySelector('.hero-underline') : null;
+
+                if (heroNameSpan) {
+                    heroNameSpan.innerHTML = heroNameElement.getAttribute('data-lang-pt') || '';
+                }
+                if (heroTitleSpan) {
+                    heroTitleSpan.innerHTML = heroTitleElement.getAttribute('data-lang-pt') || '';
+                }
+
+                animateHeaderTerminalText(); // Anima o texto do terminal do cabeçalho
             }
         };
     </script>
