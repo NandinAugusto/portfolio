@@ -528,7 +528,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
     <header>
         <div class="header-content container mx-auto">
             <div class="flex items-center gap-x-2">
@@ -647,7 +647,7 @@
                             <p class="text-gray-400 text-xs" data-lang-pt="2019 – 2021" data-lang-en="2019 – 2021" data-lang-es="2019 – 2021">2019 – 2021</p>
                         </div>
                         <div class="text-gray-300">
-                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico em Informática" data-lang-en="Technical Course in Informatics" data-lang-es="Curso Técnico en Informática">Curso Técnico em Informática</p>
+                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico em Informática" data-lang-en="Technical Course in Informatics" data-lang-es="Curso Técnico em Informática">Curso Técnico em Informática</p>
                             <p class="text-00F060 text-sm">IFS (Instituto Federal de Sergipe)</p>
                             <p class="text-gray-400 text-xs" data-lang-pt="2019 – 2020" data-lang-en="2019 – 2020" data-lang-es="2019 – 2020">2019 – 2020</p>
                         </div>
@@ -699,9 +699,9 @@
                     <div class="panel-card">
                         <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Idiomas" data-lang-en="Languages" data-lang-es="Idiomas">Idiomas</h3>
                         <ul class="text-gray-300 space-y-2">
-                            <li data-lang-pt="<strong class='text-00F060'>Português:</strong> Nativo" data-lang-en="<strong class='text-00F060'>Portuguese:</strong> Native" data-lang-es="<strong class='text-00F060'>Portugués:</strong> Nativo"><strong class="text-00F060">Português:</strong> Nativo</li>
+                            <li data-lang-pt="<strong class='text-00F060'>Português:</strong> Nativo" data-lang-en="<strong class='text-00F060'>Portuguese:</strong> Native" data-lang-es="<strong class='text-00F060'>Español:</strong> Básico"><strong class="text-00F060">Português:</strong> Nativo</li>
                             <li data-lang-pt="<strong class='text-00F060'>Inglês:</strong> Avançado" data-lang-en="<strong class='text-00F060'>English:</strong> Advanced" data-lang-es="<strong class='text-00F060'>Inglés:</strong> Avanzado"><strong class="text-00F060">Inglês:</strong> Avançado</li>
-                            <li data-lang-pt="<strong class='text-00F060'>Espanhol:</strong> Básico" data-lang-en="<strong class='text-00F060'>Spanish:</strong> Basic" data-lang-es="<strong class='text-00F060'>Espanhol:</strong> Básico"><strong class="text-00F060">Espanhol:</strong> Básico</li>
+                            <li data-lang-pt="<strong class='text-00F060'>Espanhol:</strong> Básico" data-lang-en="<strong class='text-00F060'>Spanish:</strong> Basic" data-lang-es="<strong class='text-00F060'>Español:</strong> Básico"><strong class="text-00F060">Espanhol:</strong> Básico</li>
                         </ul>
                     </div>
                 </div>
@@ -817,7 +817,6 @@
             canvas.width = heroWidth;
             canvas.height = heroHeight;
 
-            // Removido 'const characters' daqui, agora é global
             for (let i = 0; i < particleCount; i++) {
                 const randomChar = characters[Math.floor(Math.random() * characters.length)];
                 const texture = createCharacterTexture(randomChar);
@@ -835,7 +834,6 @@
                 charMesh.position.y = (Math.random() * 2 - 1) * 20;
                 charMesh.position.z = (Math.random() * 2 - 1) * 20;
 
-                // Adiciona propriedades para o efeito de glitch
                 charMesh.isGlitching = false;
                 charMesh.glitchTimeout = null;
 
@@ -843,7 +841,6 @@
                 particles.push(charMesh);
             }
 
-            // Event listeners para interação do mouse
             window.addEventListener('mousemove', onMouseMove, false);
             window.addEventListener('resize', onWindowResize);
             animate();
@@ -851,7 +848,6 @@
         }
 
         function onMouseMove(event) {
-            // Normaliza a posição do mouse para -1 a +1
             mouseX = (event.clientX / window.innerWidth) * 2 - 1;
             mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
         }
@@ -859,22 +855,19 @@
         function animate() {
             requestAnimationFrame(animate);
 
-            // Rotação sutil da câmera
             camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
             camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.05;
             camera.lookAt(scene.position);
 
             particles.forEach(mesh => {
-                // Movimento padrão das partículas
                 mesh.position.y -= 0.05;
 
-                // Efeito de repulsão do mouse
-                const distance = mesh.position.distanceTo(camera.position); // Distância da partícula à câmera
-                const mouseVector = new THREE.Vector3(mouseX * 10, mouseY * 10, 0); // Posição do mouse no espaço 3D
+                const distance = mesh.position.distanceTo(camera.position);
+                const mouseVector = new THREE.Vector3(mouseX * 10, mouseY * 10, 0);
                 const distanceToMouse = mesh.position.distanceTo(mouseVector);
 
-                if (distanceToMouse < 5) { // Se a partícula estiver perto do mouse
-                    const repelForce = (5 - distanceToMouse) * 0.05; // Força de repulsão
+                if (distanceToMouse < 5) {
+                    const repelForce = (5 - distanceToMouse) * 0.05;
                     mesh.position.x += (mesh.position.x - mouseVector.x) * repelForce;
                     mesh.position.y += (mesh.position.y - mouseVector.y) * repelForce;
                 }
@@ -884,7 +877,6 @@
                     mesh.position.x = (Math.random() * 2 - 1) * 20;
                     mesh.position.z = (Math.random() * 2 - 1) * 20;
 
-                    // A variável characters agora está acessível aqui
                     const newChar = characters[Math.floor(Math.random() * characters.length)];
                     const newTexture = createCharacterTexture(newChar);
                     if (mesh.material.map) mesh.material.map.dispose();
@@ -892,21 +884,20 @@
                     mesh.material.needsUpdate = true;
                 }
 
-                // Efeito de glitch aleatório
-                if (Math.random() < 0.001 && !mesh.isGlitching) { // Pequena chance de glitch
+                if (Math.random() < 0.001 && !mesh.isGlitching) {
                     mesh.isGlitching = true;
                     const originalTexture = mesh.material.map;
                     const glitchChar = characters[Math.floor(Math.random() * characters.length)];
-                    mesh.material.map = createCharacterTexture(glitchChar, true); // Textura de glitch
-                    mesh.material.opacity = 0.2; // Diminui opacidade durante o glitch
+                    mesh.material.map = createCharacterTexture(glitchChar, true);
+                    mesh.material.opacity = 0.2;
                     mesh.material.needsUpdate = true;
 
                     mesh.glitchTimeout = setTimeout(() => {
-                        mesh.material.map = originalTexture; // Volta à textura original
-                        mesh.material.opacity = 0.8; // Volta à opacidade normal
+                        mesh.material.map = originalTexture;
+                        mesh.material.opacity = 0.8;
                         mesh.material.needsUpdate = true;
                         mesh.isGlitching = false;
-                    }, 100 + Math.random() * 200); // Duração do glitch (100-300ms)
+                    }, 100 + Math.random() * 200);
                 }
             });
 
@@ -935,11 +926,9 @@
 
         function typeWriter(element, text, i, speed, callback, keepCursor = false) {
             if (i < text.length) {
-                // Adiciona o caractere e o cursor
                 element.innerHTML = text.substring(0, i + 1) + (keepCursor ? '<span class="typing-cursor">_</span>' : '');
                 element.typedInterval = setTimeout(() => typeWriter(element, text, i + 1, speed, callback, keepCursor), speed);
             } else {
-                // Remove o cursor se não for para manter
                 element.innerHTML = text + (keepCursor ? '<span class="typing-cursor">_</span>' : '');
                 if (callback) {
                     callback();
@@ -950,7 +939,6 @@
         function handleIntersection(entries, observer) {
             entries.forEach(entry => {
                 const element = entry.target;
-                // Garante que as propriedades dataset existam antes de acessá-las
                 if (!element.dataset.langPt) {
                     element.dataset.langPt = element.innerHTML;
                 }
@@ -968,7 +956,6 @@
                 };
                 const currentText = originalTextData[currentLanguage];
 
-                // Obtém ou inicializa o estado de digitação para este elemento
                 let state = elementTypingStates.get(element);
                 if (!state) {
                     state = { pt: false, en: false, es: false };
@@ -976,18 +963,17 @@
                 }
 
                 if (entry.isIntersecting) {
-                    clearTimeout(element.typedInterval); // Limpa qualquer intervalo de digitação pendente
-                    if (!state[currentLanguage]) { // Apenas digita se ainda não foi digitado neste idioma
-                        element.innerHTML = ''; // Limpa o conteúdo antes de digitar
-                        typeWriter(element, currentText, 0, 30, () => { // Velocidade ajustada para 30ms
-                            state[currentLanguage] = true; // Marca como digitado neste idioma
+                    clearTimeout(element.typedInterval);
+                    if (!state[currentLanguage]) {
+                        element.innerHTML = '';
+                        typeWriter(element, currentText, 0, 30, () => {
+                            state[currentLanguage] = true;
                         });
                     } else {
-                        element.innerHTML = currentText; // Se já digitado, apenas mostra o texto completo
+                        element.innerHTML = currentText;
                     }
                 } else {
-                    clearTimeout(element.typedInterval); // Para a digitação se o elemento sair da visualização
-                    // Não apaga o conteúdo ao rolar para fora. Deve permanecer visível.
+                    clearTimeout(element.typedInterval);
                 }
             });
         }
@@ -1011,7 +997,6 @@
             );
 
             textElements.forEach(element => {
-                // Armazena o conteúdo HTML inicial em atributos de dados se ainda não estiverem presentes
                 if (!element.hasAttribute('data-lang-pt')) {
                     element.setAttribute('data-lang-pt', element.innerHTML);
                 }
@@ -1022,7 +1007,7 @@
                     element.setAttribute('data-lang-es', element.innerHTML);
                 }
 
-                element.innerHTML = ''; // Limpa o conteúdo inicialmente para o efeito de máquina de escrever
+                element.innerHTML = '';
                 observer.observe(element);
             });
         }
@@ -1031,9 +1016,9 @@
             const headerTerminalElement = document.getElementById('header-terminal-name');
             if (headerTerminalElement) {
                 const text = headerTerminalElement.getAttribute(`data-lang-${currentLanguage}`);
-                clearTimeout(headerTerminalElement.typedInterval); // Limpa qualquer digitação existente
-                headerTerminalElement.innerHTML = ''; // Limpa o texto atual
-                typeWriter(headerTerminalElement, text, 0, 80, null, true); // Digita com cursor contínuo
+                clearTimeout(headerTerminalElement.typedInterval);
+                headerTerminalElement.innerHTML = '';
+                typeWriter(headerTerminalElement, text, 0, 80, null, true);
             }
         }
 
@@ -1046,44 +1031,62 @@
             const langBtn = document.getElementById('language-toggle-btn');
             langBtn.textContent = currentLanguage.toUpperCase();
 
-            // Reinicia os estados de digitação para todos os elementos quando o idioma muda
             elementTypingStates.clear();
 
             const elementsToTranslate = document.querySelectorAll('[data-lang-pt], [data-lang-en], [data-lang-es]');
 
+            // Clear all text immediately to give a "reset" feel
             elementsToTranslate.forEach(element => {
                 clearTimeout(element.typedInterval);
-
                 let targetElement = element;
                 if (element.tagName === 'A' && element.closest('#contact')) {
                     targetElement = element.querySelector('span');
                 }
-
                 if (targetElement) {
-                    if (!targetElement.hasAttribute('data-lang-pt')) targetElement.setAttribute('data-lang-pt', targetElement.innerHTML);
-                    if (!targetElement.hasAttribute('data-lang-en')) targetElement.setAttribute('data-lang-en', targetElement.getAttribute('data-lang-pt'));
-                    if (!targetElement.hasAttribute('data-lang-es')) targetElement.setAttribute('data-lang-es', targetElement.getAttribute('data-lang-pt'));
-
-                    if (targetElement && (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
-                        if (targetElement.dataset.langPtPlaceholder) {
-                            targetElement.placeholder = targetElement.dataset.langPtPlaceholder;
-                        }
-                    } else if (targetElement) {
-                        if (targetElement.dataset.langPt) {
-                            targetElement.innerHTML = element.dataset.langPt;
-                        }
-                    }
+                    targetElement.innerHTML = ''; // Clear content
                 }
             });
 
-            // Atualiza o texto da seção Hero diretamente, pois não usa IntersectionObserver para digitação
-            const heroNameElement = document.querySelector('#hero h1 .hero-underline');
-            const heroTitleElement = document.querySelector('#hero p .hero-underline');
-            if (heroNameElement) heroNameElement.innerHTML = heroNameElement.parentElement.getAttribute(`data-lang-${currentLanguage}`);
-            if (heroTitleElement) heroTitleElement.innerHTML = heroTitleElement.parentElement.getAttribute(`data-lang-${currentLanguage}`);
+            // Clear hero text immediately
+            const heroNameContainer = document.querySelector('#hero h1');
+            const heroTitleContainer = document.querySelector('#hero p');
+            heroNameContainer.innerHTML = '';
+            heroTitleContainer.innerHTML = '';
 
 
-            animateHeaderTerminalText(); // Reanima o texto do terminal do cabeçalho na mudança de idioma
+            // Add a small delay before starting the typing effect for all elements
+            setTimeout(() => {
+                elementsToTranslate.forEach(element => {
+                    let targetElement = element;
+                    if (element.tagName === 'A' && element.closest('#contact')) {
+                        targetElement = element.querySelector('span');
+                    }
+
+                    if (targetElement) {
+                        if (!targetElement.hasAttribute('data-lang-pt')) targetElement.setAttribute('data-lang-pt', targetElement.innerHTML);
+                        if (!targetElement.hasAttribute('data-lang-en')) targetElement.setAttribute('data-lang-en', targetElement.getAttribute('data-lang-pt'));
+                        if (!targetElement.hasAttribute('data-lang-es')) targetElement.setAttribute('data-lang-es', targetElement.getAttribute('data-lang-pt'));
+
+                        const textToType = targetElement.getAttribute(`data-lang-${currentLanguage}`);
+
+                        typeWriter(targetElement, textToType, 0, 30, () => {
+                            let state = elementTypingStates.get(targetElement);
+                            if (!state) {
+                                state = { pt: false, en: false, es: false };
+                                elementTypingStates.set(targetElement, state);
+                            }
+                            state[currentLanguage] = true;
+                        });
+                    }
+                });
+
+                // Apply typewriter effect to hero section text after the delay
+                typeWriter(heroNameContainer, heroNameContainer.getAttribute(`data-lang-${currentLanguage}`), 0, 80, null, false);
+                typeWriter(heroTitleContainer, heroTitleContainer.getAttribute(`data-lang-${currentLanguage}`), 0, 50, null, false);
+
+                animateHeaderTerminalText();
+
+            }, 200); // Small delay (e.g., 200ms) to simulate postback
         }
 
         window.onload = function() {
