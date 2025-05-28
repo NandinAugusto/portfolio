@@ -7,11 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Variáveis CSS para cores */
+        :root {
+            --bg-dark: #0A0A0A;
+            --text-light: #E6EDF3;
+            --accent-green: #00F060;
+            --accent-green-dark: #00CC50;
+            --accent-green-light: #33FF88;
+            --border-color: #282828;
+            --card-bg: #1A1A1A;
+            --card-border: #3A3A3A;
+            --gray-text-strong: #8B949E;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0A0A0A;
-            color: #E6EDF3;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             overflow-x: hidden;
+            /* Adiciona uma textura sutil de fundo */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a1a1a' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM2 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
         }
         html {
             scroll-behavior: smooth;
@@ -20,13 +36,22 @@
             background-color: rgba(10, 10, 10, 0.9);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border-bottom: 1px solid #282828;
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
         }
         .nav-link {
             transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
         .nav-link:hover {
-            color: #00F060;
+            color: var(--accent-green);
             transform: translateY(-2px);
         }
         .section-title {
@@ -34,7 +59,7 @@
             position: relative;
             display: inline-block;
             padding-bottom: 12px;
-            color: #ffffff;
+            color: var(--text-light);
             font-weight: 700;
             text-shadow: 0 0 10px rgba(0, 240, 96, 0.5);
         }
@@ -45,36 +70,81 @@
             bottom: 0;
             width: 70%;
             height: 4px;
-            background-color: #00F060;
+            background-color: var(--accent-green);
             border-radius: 9999px;
         }
         .btn-primary {
-            background-color: #00F060;
-            color: #0A0A0A;
+            background-color: var(--accent-green);
+            color: var(--bg-dark);
             padding: 0.85rem 2rem;
             border-radius: 0.5rem;
-            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             font-weight: 700;
             box-shadow: 0 0 20px rgba(0, 240, 96, 0.5);
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(45deg, var(--accent-green), var(--accent-green-dark));
         }
         .btn-primary:hover {
-            background-color: #00CC50;
-            color: #ffffff;
+            background-color: var(--accent-green-dark);
+            color: var(--text-light);
             transform: translateY(-2px);
             box-shadow: 0 0 30px rgba(0, 240, 96, 0.8);
+            background-image: linear-gradient(45deg, var(--accent-green-dark), var(--accent-green));
         }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+        }
+        .btn-primary:hover::after {
+            width: 200%;
+            height: 200%;
+            opacity: 1;
+        }
+
         .card {
-            background-color: #1A1A1A;
+            background-color: var(--card-bg);
             border-radius: 0.75rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 1px 8px rgba(0, 0, 0, 0.3);
             padding: 2rem;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            border: 1px solid #3A3A3A;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, var(--accent-green-light), transparent, transparent) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 8px 25px rgba(0, 240, 96, 0.2), 0 3px 12px rgba(0, 240, 96, 0.15);
         }
+        .card:hover::before {
+            opacity: 1;
+        }
+
         #three-canvas {
             display: block;
             position: absolute;
@@ -93,60 +163,62 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #00F060;
+            color: var(--accent-green);
             font-size: 1.5rem;
             z-index: 2;
             font-family: 'Space Mono', monospace;
         }
         #hero {
             min-height: 700px;
-            background-color: #0A0A0A;
+            background-color: var(--bg-dark);
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding-top: 6rem;
         }
         strong {
-            color: #00F060;
+            color: var(--accent-green);
+            text-shadow: 0 0 3px rgba(0, 240, 96, 0.7); /* Adicionado text-shadow */
         }
         .skill-badge {
-            background-color: #00F060;
-            color: #0A0A0A;
+            background-color: var(--accent-green);
+            color: var(--bg-dark);
             font-weight: 600;
             text-shadow: 0 0 2px rgba(0,0,0,0.3);
             transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
             box-shadow: 0 0 12px rgba(0, 240, 96, 0.4);
         }
         .skill-badge:hover {
-            background-color: #00CC50;
+            background-color: var(--accent-green-dark);
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 240, 96, 0.6);
+            box-shadow: 0 0 20px rgba(0, 240, 96, 0.6), 0 0 30px rgba(0, 240, 96, 0.8); /* Box-shadow mais intenso */
         }
         a {
-            color: #00F060;
+            color: var(--accent-green);
             text-decoration: none;
             transition: color 0.2s ease-in-out;
         }
         a:hover {
-            color: #00CC50;
+            color: var(--accent-green-dark);
             text-decoration: underline;
         }
         .border-t, .border-b {
-            border-color: #282828;
+            border-color: var(--border-color);
         }
         .text-gray-300 {
-            color: #E6EDF3;
+            color: var(--text-light);
         }
         .text-gray-400 {
-            color: #8B949E;
+            color: var(--gray-text-strong);
         }
         .text-gray-500 {
-            color: #8B949E;
+            color: var(--gray-text-strong);
         }
         .form-input {
-            background-color: #1A1A1A;
-            border: 1px solid #3A3A3A;
-            color: #E6EDF3;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-light);
             border-radius: 0.375rem;
             padding: 0.75rem 1rem;
             width: 100%;
@@ -154,7 +226,7 @@
         }
         .form-input:focus {
             outline: none;
-            border-color: #00F060;
+            border-color: var(--accent-green);
             box-shadow: 0 0 0 3px rgba(0, 240, 96, 0.3);
         }
         .form-textarea {
@@ -163,8 +235,8 @@
         }
         #language-toggle-btn {
             background-color: transparent;
-            border: 1px solid #00F060;
-            color: #00F060;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
             padding: 0.5rem 1rem;
             border-radius: 0.375rem;
             font-weight: 600;
@@ -173,28 +245,49 @@
             box-shadow: 0 0 8px rgba(0, 240, 96, 0.3);
         }
         #language-toggle-btn:hover {
-            background-color: #00F060;
-            color: #0A0A0A;
+            background-color: var(--accent-green);
+            color: var(--bg-dark);
             box-shadow: 0 0 15px rgba(0, 240, 96, 0.6);
         }
         .what-i-do-card {
-            background-color: #1A1A1A;
+            background-color: var(--card-bg);
             border-radius: 0.75rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 1px 8px rgba(0, 0, 0, 0.3);
             padding: 2rem;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            border: 1px solid #3A3A3A;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            border: 1px solid var(--card-border);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .what-i-do-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, var(--accent-green-light), transparent, transparent) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
         .what-i-do-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 8px 25px rgba(0, 240, 96, 0.2), 0 3px 12px rgba(0, 240, 96, 0.15);
         }
+        .what-i-do-card:hover::before {
+            opacity: 1;
+        }
         .what-i-do-card svg {
-            color: #00F060;
+            color: var(--accent-green);
             margin-bottom: 1rem;
             width: 64px;
             height: 64px;
@@ -204,33 +297,59 @@
             transform: scale(1.1);
         }
         .what-i-do-card h3 {
-            color: #ffffff;
-            font-family: 'Space Mono', monospace;
+            color: var(--text-light);
+            font-family: 'Space Mono', monospace; /* Aplicado Space Mono */
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
         .what-i-do-card p {
-            color: #8B949E;
+            color: var(--gray-text-strong);
             font-size: 0.95rem;
             line-height: 1.5;
         }
         .panel-container {
-            background-color: #1A1A1A;
+            background-color: var(--card-bg);
             border-radius: 0.75rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 1px 8px rgba(0, 0, 0, 0.3);
-            border: 1px solid #3A3A3A;
             padding: 2rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+        }
+        .panel-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, var(--accent-green-light), transparent, transparent) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .panel-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 240, 96, 0.2), 0 3px 12px rgba(0, 240, 96, 0.15);
+        }
+        .panel-container:hover::before {
+            opacity: 1;
         }
         .panel-card {
-            background-color: #0A0A0A;
+            background-color: var(--bg-dark);
             border-radius: 0.5rem;
             padding: 1.5rem;
-            border: 1px solid #282828;
+            border: 1px solid var(--border-color);
             box-shadow: inset 0 0 5px rgba(0, 240, 96, 0.1);
         }
         .panel-card h3 {
-            font-family: 'Space Mono', monospace;
-            color: #00F060;
+            font-family: 'Space Mono', monospace; /* Aplicado Space Mono */
+            color: var(--accent-green);
             font-weight: 700;
             margin-bottom: 0.75rem;
         }
@@ -242,7 +361,7 @@
             position: relative;
             padding-left: 1.5rem;
             margin-bottom: 0.5rem;
-            color: #E6EDF3;
+            color: var(--text-light);
         }
         .panel-card ul li::before {
             content: '\2022';
@@ -251,123 +370,225 @@
             left: 0;
             top: 0;
         }
-        .education-panel-container {
-        }
-        .education-panel-card {
-        }
-        .skills-panel-container {
-        }
-        .whatsapp-badge {
-            display: inline-flex;
-            align-items: center;
-            background-color: #25D366;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
-        }
-        .whatsapp-badge:hover {
-            background-color: #1DA851;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
-            text-decoration: none;
-        }
-        .whatsapp-badge svg {
+        .contact-icon {
+            width: 32px;
+            height: 32px;
             margin-right: 0.5rem;
-            width: 1.5rem;
-            height: 1.5rem;
+            color: var(--text-light); /* Cor padrão dos ícones */
+            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
+        .contact-icon:hover {
+            color: var(--accent-green); /* Cor verde no hover */
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-divider {
+            0% { box-shadow: 0 0 15px rgba(0, 240, 96, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(0, 240, 96, 0.8); }
+            100% { box-shadow: 0 0 15px rgba(0, 240, 96, 0.3); }
+        }
+
         .panel-divider {
             height: 4px;
-            background-color: #00F060;
+            background-color: var(--accent-green);
             border-radius: 9999px;
             margin: 3rem auto;
             width: 80%;
             box-shadow: 0 0 15px rgba(0, 240, 96, 0.3);
-            transition: box-shadow 0.3s ease-in-out;
+            animation: pulse-divider 2s infinite alternate ease-in-out; /* Animação adicionada */
         }
         .panel-divider:hover {
             box-shadow: 0 0 25px rgba(0, 240, 96, 0.6);
         }
-        .panel-divider-vertical {
-            width: 4px;
-            height: auto;
-            min-height: 100px;
-            background-color: #00F060;
-            border-radius: 9999px;
-            margin: 0 2rem;
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-            transition: box-shadow 0.3s ease-in-out;
+
+        @keyframes draw-underline {
+            0% { width: 0; }
+            100% { width: 100%; }
         }
-        .panel-divider-vertical:hover {
-            box-shadow: 0 0 15px rgba(0, 240, 96, 0.6);
-        }
+
         .hero-underline {
             display: inline-block;
             padding-bottom: 5px;
-            border-bottom: 2px dashed #00F060;
+            border-bottom: 2px dashed var(--accent-green);
             box-shadow: 0 4px 8px rgba(0, 240, 96, 0.4);
             transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+        .hero-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: var(--accent-green);
+            animation: draw-underline 1.5s ease-out forwards; /* Animação de desenho */
         }
         #hero h1, #hero p {
             text-align: center;
         }
+
+        /* Fullscreen menu overlay */
+        #fullscreen-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+        }
+        #fullscreen-menu-overlay.open {
+            transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
+        }
+        #fullscreen-menu-overlay ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        #fullscreen-menu-overlay ul li {
+            margin-bottom: 1.5rem;
+        }
+        #fullscreen-menu-overlay ul li a {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            transition: color 0.2s ease-in-out;
+        }
+        #fullscreen-menu-overlay ul li a:hover {
+            color: var(--accent-green);
+        }
+        #menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--accent-green);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+        header .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        header nav ul,
+        header nav .contact-buttons {
+            display: none;
+        }
+
+        /* Efeito de brilho na imagem de perfil */
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            padding: 4px; /* Espaçamento para o brilho */
+            background: linear-gradient(45deg, var(--accent-green-light), var(--accent-green-dark));
+            animation: profile-glow 3s infinite alternate ease-in-out;
+        }
+
+        .profile-image-container img {
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes profile-glow {
+            0% { box-shadow: 0 0 10px rgba(0, 240, 96, 0.3), 0 0 20px rgba(0, 240, 96, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(0, 240, 96, 0.6), 0 0 40px rgba(0, 240, 96, 0.4); }
+            100% { box-shadow: 0 0 10px rgba(0, 240, 96, 0.3), 0 0 20px rgba(0, 240, 96, 0.2); }
+        }
+
+        /* Cursor do efeito de digitação */
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: var(--accent-green);
+            vertical-align: middle;
+            margin-left: 2px;
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { background-color: transparent; }
+            50% { background-color: var(--accent-green); }
+        }
+
+        /* Nova classe para garantir clicabilidade dos links de contato */
+        .contact-section-link {
+            position: relative; /* Necessário para z-index funcionar */
+            z-index: 1000; /* Valor muito alto para garantir que esteja acima */
+            pointer-events: auto; /* Garante que os eventos do mouse não sejam ignorados */
+        }
     </style>
 </head>
-<body class="antialiased">
-    <header class="shadow-lg p-4 sticky top-0 z-50">
-        <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-white mb-2 md:mb-0 hover:text-00F060 transition-colors">Fernando Augusto</a>
-            <ul class="flex flex-wrap justify-center gap-6 text-lg font-semibold">
-                <li><a href="#about-and-experience" class="nav-link text-gray-400 hover:text-00F060" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia">Sobre Mim e Experiência</a></li>
-                <li><a href="#what-i-do" class="nav-link text-gray-400 hover:text-00F060" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do" data-lang-es="Lo Que Hago">O Que Eu Faço</a></li>
-                <li><a href="#education-and-courses" class="nav-link text-gray-400 hover:text-00F060" data-lang-pt="Educação e Formação" data-lang-en="Education & Training" data-lang-es="Educación y Formación">Educação e Formação</a></li>
-                <li><a href="#skills-and-knowledge" class="nav-link text-gray-400 hover:text-00F060" data-lang-pt="Habilidades e Conhecimentos" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Habilidades e Conhecimentos</a></li>
-                <li><a href="#contact" class="nav-link text-gray-400 hover:text-00F060" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</a></li>
-            </ul>
-            <button id="language-toggle-btn" class="mt-4 md:mt-0 ml-0 md:ml-6">EN</button>
-            <a href="https://wa.me/5579999159885" target="_blank" class="whatsapp-badge mt-4 md:mt-0 ml-0 md:ml-6" data-lang-pt="Para contato" data-lang-en="For contact" data-lang-es="Para contacto">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339.4 55.6 283.8 32 223.9 32c-122.4 0-221.7 99.3-221.7 221.7 0 39.2 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 221.6-99.3-221.6-221.7 0-59.3-23.4-114.9-64-156.4zm-89.4 316.4c-14.7 15.2-42 14.2-56.8 9.3-28.3-9.6-58.2-22.5-86.3-37.4-38.4-20.7-72.4-50.2-96.6-84.6-7.1-10.3-12.7-21.3-17.7-32.5-5.1-11.2-8.1-22.8-9.9-34.7-1.9-11.9-.7-23.6 3.1-35.3 3.8-11.7 10.4-22.7 19.3-32.3 8.9-9.6 19.6-17.5 31.4-23.8 11.8-6.3 24.5-10.8 37.9-13.4 13.4-2.6 27.2-3.2 41.2-1.9 14 1.3 27.8 4.7 41.2 10.2 13.4 5.5 26.5 12.8 38.6 21.9 12.1 9.1 23.3 19.7 33.4 31.8 10.1 12.1 19.1 25.4 26.9 39.8 7.8 14.4 14.4 29.8 19.8 45.9 5.4 16.1 9.1 32.9 10.9 50.1 1.8 17.2 1.3 34.6-.9 51.9-2.2 17.3-6.1 34.2-11.7 50.4-5.6 16.2-12.6 31.8-20.8 46.5z"/>
-                </svg>
-                <span data-lang-pt="Para contato" data-lang-en="For contact" data-lang-es="Para contacto">Para contato</span>
-            </a>
-        </nav>
+<body>
+    <header>
+        <div class="header-content container mx-auto">
+            <div class="flex items-center gap-x-2">
+                <button id="language-toggle-btn" class="flex-shrink-0 text-base py-1 px-3 md:text-lg md:py-2 md:px-4">PT</button>
+                <span id="header-terminal-name" class="text-xl md:text-2xl font-bold text-white font-['Space_Mono']" data-lang-pt="nando@debian:~$" data-lang-en="nando@debian:~$" data-lang-es="nando@debian:~$"></span>
+            </div>
+            <button id="menu-toggle">
+                &#9776; </button>
+        </div>
     </header>
+
+    <div id="fullscreen-menu-overlay">
+        <ul class="flex flex-col items-center text-2xl font-semibold">
+            <li><a href="#about-and-experience" class="mobile-nav-link nav-link text-gray-400 hover:text-00F060" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia">Sobre Mim e Experiência</a></li>
+            <li><a href="#what-i-do" class="mobile-nav-link nav-link text-gray-400 hover:text-00F060" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do" data-lang-es="Lo Que Hago">O Que Eu Faço</a></li>
+            <li><a href="#education-and-courses" class="mobile-nav-link nav-link text-gray-400 hover:text-00F060" data-lang-pt="Educação e Formação" data-lang-en="Education & Training" data-lang-es="Educación y Formación">Educação e Formação</a></li>
+            <li><a href="#skills-and-knowledge" class="mobile-nav-link nav-link text-gray-400 hover:text-00F060" data-lang-pt="Habilidades e Conhecimentos" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Habilidades e Conhecimentos</a></li>
+            <li><a href="#contact" class="mobile-nav-link nav-link text-gray-400 hover:text-00F060" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</a></li>
+        </ul>
+    </div>
 
     <section id="hero" class="text-white py-20 md:py-32 text-center relative overflow-hidden flex items-center justify-center">
         <canvas id="three-canvas"></canvas>
         <div id="loading-indicator" data-lang-pt="Carregando Dados..." data-lang-en="Loading Data..." data-lang-es="Cargando Datos...">Carregando Dados...</div>
 
         <div class="container mx-auto px-4 relative z-10">
-            <img src="https://i.imgur.com/2Zpyrep.png" alt="Foto de perfil de Fernando Augusto" class="rounded-full mx-auto mb-6 w-32 h-32 object-cover border-4 border-00F060 shadow-lg shadow-00F060/30">
-            <h1 id="hero-name" class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 text-white font-['Space_Mono'] hero-underline" data-lang-pt="FERNANDO AUGUSTO" data-lang-en="FERNANDO AUGUSTO" data-lang-es="FERNANDO AUGUSTO">FERNANDO AUGUSTO</h1>
-            <p id="hero-title" class="text-lg sm:text-xl md:text-3xl font-light mb-10 text-gray-400 hero-underline" data-lang-pt="Desenvolvedor de Sistemas com Foco em <span class='font-bold text-00F060'>DADOS</span>" data-lang-en="Systems Developer with a Focus on <span class='font-bold text-00F060'>DATA</span>" data-lang-es="Desarrollador de Sistemas con Enfoque en <span class='font-bold text-00F060'>DATOS</span>">Desenvolvedor de Sistemas com Foco em <span class="font-bold text-00F060">DADOS</span></p>
+            <div class="profile-image-container mx-auto mb-6">
+                <img src="https://i.imgur.com/2Zpyrep.png" alt="Foto de perfil de Fernando Augusto" class="rounded-full w-32 h-32 object-cover">
+            </div>
+            <h1 id="hero-name" class="text-3xl sm:text-4xl md:text-7xl font-extrabold mb-4 text-white font-['Space_Mono']" data-lang-pt="FERNANDO AUGUSTO" data-lang-en="FERNANDO AUGUSTO" data-lang-es="FERNANDO AUGUSTO"><span class="hero-underline">FERNANDO AUGUSTO</span></h1>
+            <p id="hero-title" class="text-base sm:text-lg md:text-3xl font-light mb-10 text-gray-400" data-lang-pt="Desenvolvedor de Sistemas com Foco em <span class='font-bold text-00F060'>DADOS</span>" data-lang-en="Systems Developer with a Focus on <span class='font-bold text-00F060'>DATA</span>" data-lang-es="Desarrollador de Sistemas con Enfoque en <span class='font-bold text-00F060'>DATOS</span>"><span class="hero-underline">Desenvolvedor de Sistemas com Foco em <span class="font-bold text-00F060">DADOS</span></span></p>
             <a href="https://wa.me/5579999159885" target="_blank" class="btn-primary inline-block text-lg font-semibold shadow-00F060/40" data-lang-pt="Conecte-se" data-lang-en="Connect" data-lang-es="Conectar">Conecte-se</a>
         </div>
     </section>
 
     <section id="about-and-experience" class="py-16 md:py-24 bg-0A0A0A border-t border-b border-gray-800">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-10 mx-auto text-center" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia">Sobre Mim e Experiência</h2>
+            <h2 class="section-title text-3xl md:text-4xl font-['Space_Mono'] font-bold mb-10 mx-auto text-center" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia">Sobre Mim e Experiencia</h2>
             <div class="panel-container max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="panel-card text-lg leading-relaxed text-gray-300">
-                    <h3 class="text-2xl mb-4 text-white text-center" data-lang-pt="Quem Sou" data-lang-en="Who I Am" data-lang-es="Quién Soy">Quem Sou</h3>
-                    <p class="mb-4" data-lang-pt="Com mais de três anos de experiência, sou um <strong class='text-00F060'>Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes. Minha expertise abrange linguagens, frameworks e tecnologias como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>, permitindo-me atuar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos." data-lang-en="With over three years of experience, I am a <strong class='text-00F060'>Systems Developer with a passion for Data</strong>, specialized in transforming complex challenges into efficient solutions. My expertise spans languages, frameworks, and technologies such as <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C#, and ASP.NET</strong>, allowing me to confidently work on projects of various scales, from web applications to robust enterprise systems." data-lang-es="Con más de tres años de experiencia, soy un <strong='text-00F060'>Desarrollador de Sistemas con pasión por los Datos</strong>, especializado en transformar desafíos complejos en soluciones eficientes. Mi experiencia abarca lenguajes, frameworks y tecnologías como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# y ASP.NET</strong>, lo que me permite trabajar con confianza en proyectos de diversas escalas, desde aplicaciones web hasta sistemas empresariales robustos.">Com mais de três anos de experiência, sou um <strong class="text-00F060">Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes.</p>
+                    <h3 class="text-2xl mb-4 text-white text-center font-['Space_Mono']" data-lang-pt="Quem Sou" data-lang-en="Who I Am" data-lang-es="Quién Soy">Quem Sou</h3>
+                    <p class="mb-4" data-lang-pt="Com mais de três anos de experiência, sou um <strong class='text-00F060'>Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes. Minha expertise abrange linguagens, frameworks e tecnologias como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>, permitindo-me atuar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos." data-lang-en="With over three years of experience, I am a <strong class='text-00F060'>Systems Developer with a passion for Data</strong>, specialized in transforming complex challenges into efficient solutions. My expertise spans languages, frameworks, and technologies such as <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C#, and ASP.NET</strong>, allowing me to confidently work on projects of various scales, from web applications to robust enterprise systems." data-lang-es="Con más de tres años de experiencia, soy un <strong='text-00F060'>Desarrollador de Sistemas con pasión por los Datos</strong>, especializado en transformar desafíos complejos en soluciones eficientes. Mi experiencia abarca lenguajes, frameworks y tecnologías como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# y ASP.NET</strong>, lo que me permite trabalhar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos.">Com mais de três anos de experiência, sou um <strong class="text-00F060">Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes.</p>
                     <p data-lang-pt="Sou impulsionado pela <strong class='text-00F060'>análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong class='text-00F060'>garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>." data-lang-en="I am driven by <strong class='text-00F060'>data analysis, management, and algorithm optimization</strong>, always seeking to <strong class='text-00F060'>ensure data integrity and consistency to generate strategic and actionable insights</strong>." data-lang-es="Me impulsa el <strong class='text-00F060'>análisis de datos, la gestión y la optimización de algoritmos</strong>, siempre buscando <strong class='text-00F060'>garantizar la integridad y consistencia de la información para generar insights estratégicos y accionables</strong>.">Sou impulsionado pela <strong class="text-00F060">análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong class="text-00F060">garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>.</p>
                 </div>
 
                 <div class="panel-card">
-                    <h3 class="text-2xl mb-6 text-white text-center" data-lang-pt="Experiência Profissional" data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional">Experiência Profissional</h3>
+                    <h3 class="text-2xl mb-6 text-white text-center font-['Space_Mono']" data-lang-pt="Experiência Profissional" data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional">Experiência Profissional</h3>
                     <div class="text-gray-300">
                         <p class="font-semibold text-white mb-1" data-lang-pt="Desenvolvedor" data-lang-en="Developer" data-lang-es="Desarrollador">Desenvolvedor</p>
-                        <p class="text-00F060 font-medium mb-1">DP Sistemas</p>
-                        <p class="text-gray-400 text-sm mb-4" data-lang-pt="2022 – Atualmente" data-lang-en="2022 – Present" data-lang-es="2022 – Actualidad">2022 – Atualmente</p>
+                        <p class="text-00F060 font-medium mb-1" data-lang-pt="DP Sistemas" data-lang-en="DP Systems" data-lang-es="DP Sistemas">DP Sistemas</p> <p class="text-gray-400 text-sm mb-4" data-lang-pt="2022 – Atualmente" data-lang-en="2022 – Present" data-lang-es="2022 – Actualidad">2022 – Atualmente</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-2">
                             <li data-lang-pt="Na DP Sistemas, sou <strong class='text-00F060'>responsável pelo ciclo completo de desenvolvimento de soluções em Web Service</strong>, desde a concepção até a implementação." data-lang-en="At DP Sistemas, I'm <strong class='text-00F060'>responsible for the complete development cycle of Web Service solutions</strong>, from conception to implementation." data-lang-es="En DP Sistemas, soy <strong class='text-00F060'>responsable del ciclo completo de desarrollo de soluciones en Web Service</strong>, desde la concepción hasta la implementación.">Responsável pelo <strong class="text-00F060">ciclo completo de desenvolvimento de soluções em Web Service</strong>, desde a concepção até a implementação.</li>
-                            <li data-lang-pt="Atuo ativamente na <strong class='text-00F060'>manutenção e otimização de rotinas críticas de banco de dados do ERP</strong>." data-lang-en="Actively involved in the <strong class='text-00F060'>maintenance and optimization of critical ERP database routines</strong>." data-lang-es="Participación activa en el <strong class='text-00F060'>mantenimiento y optimización de rutinas críticas de bases de datos del ERP</strong>.">Atuo ativamente na <strong class="text-00F060">manutenção e otimização de rotinas críticas de banco de dados do ERP</strong>.</li>
+                            <li data-lang-pt="Atuo ativamente na <strong class='text-00F060'>manutenção e otimização de rotinas críticas de banco de dados do ERP</strong>." data-lang-en="Actively involved in the <strong class='text-00F060'>maintenance and optimization of critical ERP database routines</strong>." data-lang-es="Participación activa en el <strong class='text-00F060'>mantenimiento y otimización de rutinas críticas de bases de datos del ERP</strong>.">Atuo ativamente na <strong class="text-00F060">manutenção e otimização de rotinas críticas de banco de dados do ERP</strong>.</li>
                             <li data-lang-pt="Incluindo <strong class='text-00F060'>migrações e importações complexas</strong> entre diferentes sistemas, <strong class='text-00F060'>garantindo a integridade, consistência e alta performance dos dados</strong>." data-lang-en="Including <strong class='text-00F060'>complex migrations and imports</strong> between diverse systems, <strong class='text-00F060'>ensuring data integrity, consistency, and high performance</strong>." data-lang-es="Incluyendo <strong class='text-00F060'>migraciones e importaciones complejas</strong> entre diversos sistemas, <strong class='text-00F060'>garantizando la integridad, consistencia y alto rendimiento de los datos</strong>.">Incluindo <strong class="text-00F060">migrações e importações complexas</strong> entre diferentes sistemas, assegurando a integridade e consistência dos dados.</li>
                         </ul>
                     </div>
@@ -378,26 +599,26 @@
 
     <section id="what-i-do" class="py-16 md:py-24 bg-0A0A0A border-t border-b border-gray-800">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-10 mx-auto text-center" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do" data-lang-es="Lo Que Hago">O Que Eu Faço</h2>
+            <h2 class="section-title text-3xl md:text-4xl font-['Space_Mono'] font-bold mb-10 mx-auto text-center" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do" data-lang-es="Lo Que Hago">O Que Eu Faço</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                 <div class="what-i-do-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="M12 3v18"/><path d="m18.75 6.75-3.75 3.75m0 0 3.75 3.75m-3.75-3.75H3m18 0h-3m-12 0h-3m15 0h3m-18 0h3"/></svg>
-                    <h3 class="text-xl mb-2" data-lang-pt="Engenharia de Dados & ETL" data-lang-en="Data Engineering & ETL" data-lang-es="Ingeniería de Datos y ETL">Engenharia de Dados & ETL</h3>
+                    <h3 class="text-xl mb-2 font-['Space_Mono']" data-lang-pt="Engenharia de Dados & ETL" data-lang-en="Data Engineering & ETL" data-lang-es="Ingeniería de Datos y ETL">Engenharia de Dados & ETL</h3>
                     <p data-lang-pt="Desenvolvo e implemento <strong class='text-00F060'>pipelines de ETL robustos e escaláveis</strong> para coleta, transformação e carregamento de dados, assegurando a <strong class='text-00F060'>qualidade e a disponibilidade</strong> das informações para análises estratégicas." data-lang-en="I develop and implement <strong class='text-00F060'>robust and scalable ETL pipelines</strong> for data collection, transformation, and loading, ensuring the <strong='text-00F060'>quality and availability</strong> of information for strategic analysis." data-lang-es="Desarrollo e implemento <strong class='text-00F060'>pipelines ETL robustos y escalables</strong> para la recopilación, transformación y carga de datos, asegurando la <strong class='text-00F060'>calidad y disponibilidad</strong> de la información para análisis estratégicos.">Construção de pipelines robustos para coleta, transformação e carregamento de dados, garantindo a integridade e disponibilidade para análise.</p>
                 </div>
                 <div class="what-i-do-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 12V7a9 3 0 0 1 18 0v5"/><path d="M3 12a9 3 0 0 0 18 0"/><path d="M3 19v-5a9 3 0 0 1 18 0v5"/><path d="M3 19a9 3 0 0 0 18 0"/></svg>
-                    <h3 class="text-xl mb-2" data-lang-pt="Otimização e Administração de Banco de Dados" data-lang-en="Database Optimization & Administration" data-lang-es="Optimización y Administración de Bases de Datos">Otimização e Administração de Banco de Dados</h3>
-                    <p data-lang-pt="Especialista em <strong class='text-00F060'>manutenção, otimização e migração de bancos de dados</strong> (SQL Server, Oracle, MongoDB), com foco em <strong class='text-00F060'>melhorar a performance de queries, garantir a segurança e a consistência</strong> dos dados." data-lang-en="I'm an expert in <strong class='text-00F060'>database maintenance, optimization, and migration</strong> (SQL Server, Oracle, MongoDB). My focus is on <strong class='text-00F060'>improving query performance, ensuring data security and consistency</strong>." data-lang-es="Soy especialista en <strong class='text-00F060'>mantenimiento, optimización y migración de bases de datos</strong> (SQL Server, Oracle, MongoDB). Mi enfoque es <strong class='text-00F060'>mejorar el rendimiento de las consultas, garantizar la seguridad y la consistencia</strong> de los datos.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
+                    <h3 class="text-xl mb-2 font-['Space_Mono']" data-lang-pt="Otimização e Administração de Banco de Dados" data-lang-en="Database Optimization & Administration" data-lang-es="Optimización y Administración de Bases de Datos">Otimização e Administração de Banco de Dados</h3>
+                    <p data-lang-pt="Especialista em <strong class='text-00F060'>manutenção, otimização e migração de bancos de dados</strong> (SQL Server, Oracle, MongoDB), com foco em <strong class='text-00F060'>melhorar a performance de queries, garantir a segurança e a consistência</strong> dos dados." data-lang-en="I'm an expert in <strong class='text-00F060'>database maintenance, optimization, and migration</strong> (SQL Server, Oracle, MongoDB). My focus is on <strong class='text-00F060'>improving query performance, ensuring data security and consistency</strong>." data-lang-es="Soy especialista en <strong class='text-00F060'>mantenimiento, otimización y migración de bases de datos</strong> (SQL Server, Oracle, MongoDB). Mi enfoque es <strong class='text-00F060'>mejorar el rendimiento de las consultas, garantizar la seguridad y la consistencia</strong> de los datos.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
                 </div>
                 <div class="what-i-do-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap"><path d="M13 2v8l8-4-8-4Z"/><path d="M10 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6v-2.5"/><path d="M10 9.5V14h12V9.5z"/></svg>
-                    <h3 class="text-xl mb-2" data-lang-pt="Desenvolvimento de Web Services & APIs" data-lang-en="Web Services & API Development" data-lang-es="Desarrollo de Web Services y APIs">Desenvolvimento de Web Services & APIs</h3>
-                    <p data-lang-pt="Crio <strong class='text-00F060'>serviços web e APIs eficientes e seguros</strong> utilizando C#, ASP.NET e Python. Isso ajuda a <strong class='text-00F060'>integrar sistemas e facilitar a comunicação de dados</strong> para várias aplicações." data-lang-en="I create <strong class='text-00F060'>efficient and secure web services and APIs</strong> using C#, ASP.NET, and Python. This helps to <strong class='text-00F060'>integrate systems and facilitate data communication</strong> for various applications." data-lang-es="Creo <strong class='text-00F060'>servicios web y APIs eficientes y seguros</strong> utilizando C#, ASP.NET y Python, facilitando la <strong class='text-00F060'>integración de sistemas y la comunicación de datos</strong> para diversas aplicaciones.">Criação de soluções backend escaláveis e eficientes usando C#, ASP.NET e Python, para integração de sistemas e serviços web.</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+                    <h3 class="text-xl mb-2 font-['Space_Mono']" data-lang-pt="Desenvolvimento de Web Services & APIs" data-lang-en="Web Services & API Development" data-lang-es="Desarrollo de Web Services y APIs">Desenvolvimento de Web Services & APIs</h3>
+                    <p data-lang-pt="Crio <strong class='text-00F060'>serviços web e APIs eficientes e seguros</strong> utilizando C#, ASP.NET e Python. Isso ajuda a <strong class='text-00F060'>integrar sistemas e facilitar a comunicação de dados</strong> para várias aplicações." data-lang-en="I create <strong class='text-00F060'>efficient and secure web services and APIs</strong> using C#, ASP.NET, and Python. This helps to <strong class='text-00F060'>integrate systems and facilitate data communication</strong> for various applications." data-lang-es="Creo <strong class='text-00F060'>servicios web y APIs eficientes y seguros</strong> utilizando C#, ASP.NET y Python, facilitando la <strong='text-00F060'>integración de sistemas y la comunicación de datos</strong> para diversas aplicaciones.">Criação de soluções backend escaláveis e eficientes usando C#, ASP.NET e Python, para integração de sistemas e serviços web.</p>
                 </div>
                 <div class="what-i-do-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-                    <h3 class="text-xl mb-2" data-lang-pt="Análise e Visualização de Dados" data-lang-en="Data Analysis & Visualization" data-lang-es="Análisis y Visualización de Datos">Análise e Visualização de Dados</h3>
+                    <h3 class="text-xl mb-2 font-['Space_Mono']" data-lang-pt="Análise e Visualização de Dados" data-lang-en="Data Analysis & Visualization" data-lang-es="Análisis y Visualización de Datos">Análise e Visualização de Dados</h3>
                     <p data-lang-pt="Transformo <strong class='text-00F060'>dados brutos em narrativas visuais claras e insights acionáveis</strong>. Desenvolvo dashboards e relatórios que <strong class='text-00F060'>realmente ajudam a tomar decisões estratégicas</strong>." data-lang-en="I transform <strong class='text-00F060'>raw data into clear visual narratives and actionable insights</strong>. I develop dashboards and reports that <strong class='text-00F060'>truly help in strategic decision-making</strong>." data-lang-es="Transformo <strong class='text-00F060'>datos brutos en narrativas visuales claras e insights accionables</strong>. Desarrollo paneles y reportes que <strong class='text-00F060'>realmente ayudan a tomar decisiones estratégicas</strong>.">Transformação de dados brutos em insights acionáveis através de análises detalhadas e dashboards interativos para tomada de decisão.</p>
                 </div>
             </div>
@@ -406,10 +627,10 @@
 
     <section id="education-and-courses" class="py-16 md:py-24 bg-0A0A0A border-t border-b border-gray-800">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-10 mx-auto text-center" data-lang-pt="Educação e Formação" data-lang-en="Education & Training" data-lang-es="Educación y Formación">Educação e Formação</h2>
+            <h2 class="section-title text-3xl md:text-4xl font-['Space_Mono'] font-bold mb-10 mx-auto text-center" data-lang-pt="Educação e Formação" data-lang-en="Education & Training" data-lang-es="Educación y Formación">Educação e Formação</h2>
             <div class="panel-container max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="panel-card">
-                    <h3 class="text-2xl mb-6" data-lang-pt="Educação Formal" data-lang-en="Formal Education" data-lang-es="Educación Formal">Educação Formal</h3>
+                    <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Educação Formal" data-lang-en="Formal Education" data-lang-es="Educación Formal">Educação Formal</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="text-gray-300">
                             <p class="font-semibold text-white mb-1" data-lang-pt="Pós-Graduação em Algoritmos e Estruturas de Dados" data-lang-en="Postgraduate Degree in Algorithms and Data Structures" data-lang-es="Posgrado en Algoritmos y Estructuras de Datos">Pós-Graduação em Algoritmos e Estruturas de Dados</p>
@@ -432,12 +653,12 @@
                             <p class="text-gray-400 text-xs" data-lang-pt="2019 – 2021" data-lang-en="2019 – 2021" data-lang-es="2019 – 2021">2019 – 2021</p>
                         </div>
                         <div class="text-gray-300">
-                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico em Informática" data-lang-en="Technical Course in Informatics" data-lang-es="Curso Técnico en Informática">Curso Técnico em Informática</p>
+                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico em Informática" data-lang-en="Technical Course in Informatics" data-lang-es="Curso Técnico em Informática">Curso Técnico em Informática</p>
                             <p class="text-00F060 text-sm">IFS (Instituto Federal de Sergipe)</p>
                             <p class="text-gray-400 text-xs" data-lang-pt="2019 – 2020" data-lang-en="2019 – 2020" data-lang-es="2019 – 2020">2019 – 2020</p>
                         </div>
                         <div class="text-gray-300">
-                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico Automação Industrial" data-lang-en="Technical Course in Industrial Automation" data-lang-es="Curso Técnico en Automatización Industrial">Curso Técnico Automação Industrial</p>
+                            <p class="font-semibold text-white mb-1" data-lang-pt="Curso Técnico Automação Industrial" data-lang-en="Technical Course in Industrial Automation" data-lang-es="Curso Técnico em Automatização Industrial">Curso Técnico Automação Industrial</p>
                             <p class="text-00F060 text-sm">SENAI Sergipe</p>
                             <p class="text-gray-400 text-xs" data-lang-pt="2016 – 2018" data-lang-en="2016 – 2018" data-lang-es="2016 – 2018">2016 – 2018</p>
                         </div>
@@ -445,12 +666,12 @@
                 </div>
 
                 <div class="panel-card">
-                    <h3 class="text-2xl mb-6" data-lang-pt="Cursos Relevantes" data-lang-en="Relevant Courses" data-lang-es="Cursos Relevantes">Cursos Relevantes</h3>
+                    <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Cursos Relevantes" data-lang-en="Relevant Courses" data-lang-es="Cursos Relevantes">Cursos Relevantes</h3>
                     <ul class="text-gray-300 space-y-2">
                         <li data-lang-pt="<strong class='text-00F060'>Modelagem de Dados</strong> - Alura" data-lang-en="<strong class='text-00F060'>Data Modeling</strong> - Alura" data-lang-es="<strong class='text-00F060'>Modelado de Datos</strong> - Alura"><strong class="text-00F060">Modelagem de Dados</strong> - Alura</li>
-                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong class='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
+                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
                         <li data-lang-pt="<strong class='text-00F060'>SQL para Análise de Dados</strong> - Udemy" data-lang-en="<strong class='text-00F060'>SQL for Data Analysis</strong> - Udemy" data-lang-es="<strong class='text-00F060'>SQL para Análisis de Datos</strong> - Udemy"><strong class="text-00F060">SQL para Análise de Dados</strong> - Udemy</li>
-                        <li data-lang-pt="Microsoft SQL Server 2022 - Alura" data-lang-en="Microsoft SQL Server 2022 - Alura" data-lang-es="Microsoft SQL Server 2022 - Alura">Microsoft SQL Server 2022 - Alura</li>
+                        <li data-lang-pt="Microsoft SQL Server 2022 - Alura" data-lang-en="Microsoft SQL Server 222 - Alura" data-lang-es="Microsoft SQL Server 2022 - Alura">Microsoft SQL Server 2022 - Alura</li>
                         <li data-lang-pt="SQL com MySQL Server da Oracle - Alura" data-lang-en="SQL with MySQL Server from Oracle - Alura" data-lang-es="SQL con MySQL Server de Oracle - Alura">SQL com MySQL Server da Oracle - Alura</li>
                         <li data-lang-pt="SQL do Básico ao Avançado - Udemy" data-lang-en="SQL from Basic to Advanced - Udemy" data-lang-es="SQL de Básico a Avanzado - Udemy">SQL do Básico ao Avançado - Udemy</li>
                     </ul>
@@ -461,11 +682,11 @@
 
     <section id="skills-and-knowledge" class="py-16 md:py-24 bg-0A0A0A">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-10 mx-auto text-center" data-lang-pt="Habilidades e Conhecimentos" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Habilidades e Conhecimentos</h2>
+            <h2 class="section-title text-3xl md:text-4xl font-['Space_Mono'] font-bold mb-10 mx-auto text-center" data-lang-pt="Habilidades e Conhecimentos" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Habilidades e Conhecimentos</h2>
             <div class="panel-container max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     <div class="panel-card">
-                        <h3 class="text-2xl mb-6 text-white text-center" data-lang-pt="Habilidades Técnicas" data-lang-en="Technical Skills" data-lang-es="Habilidades Técnicas">Habilidades Técnicas</h3>
+                        <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Habilidades Técnicas" data-lang-en="Technical Skills" data-lang-es="Habilidades Técnicas">Habilidades Técnicas</h3>
                         <div class="flex flex-wrap justify-center gap-4">
                             <span class="skill-badge text-sm font-semibold px-4 py-2 rounded-full shadow-sm">C#</span>
                             <span class="skill-badge text-sm font-semibold px-4 py-2 rounded-full shadow-sm">Python</span>
@@ -477,26 +698,26 @@
                             <span class="skill-badge text-sm font-semibold px-4 py-2 rounded-full shadow-sm">ASP.NET</span>
                             <span class="skill-badge text-sm font-semibold px-4 py-2 rounded-full shadow-sm" data-lang-pt="Modelagem de Dados" data-lang-en="Data Modeling" data-lang-es="Modelado de Datos">Modelagem de Dados</span>
                             <span class="skill-badge text-sm font-semibold px-4 py-2 rounded-full shadow-sm" data-lang-pt="ETL" data-lang-en="ETL" data-lang-es="ETL">ETL</span>
-                            <span class="skill-badge text-sm font-semibold px-4 py-2 rounded-full shadow-sm" data-lang-pt="Análise de Dados" data-lang-en="Data Analysis" data-lang-es="Análisis de Datos">Análise de Dados</span>
+                            <span class="skill-badge text-sm font-semibold px-4 py-2 rounded-full shadow-sm" data-lang-pt="Análise de Dados" data-lang-en="Data Analysis" data-lang-es="Análise de Dados">Análise de Dados</span>
                         </div>
                     </div>
 
                     <div class="panel-card">
-                        <h3 class="text-2xl mb-6" data-lang-pt="Idiomas" data-lang-en="Languages" data-lang-es="Idiomas">Idiomas</h3>
+                        <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Idiomas" data-lang-en="Languages" data-lang-es="Idiomas">Idiomas</h3>
                         <ul class="text-gray-300 space-y-2">
-                            <li data-lang-pt="<strong class='text-00F060'>Português:</strong> Nativo" data-lang-en="<strong class='text-00F060'>Portuguese:</strong> Native" data-lang-es="<strong class='text-00F060'>Portugués:</strong> Nativo"><strong class="text-00F060">Português:</strong> Nativo</li>
+                            <li data-lang-pt="<strong class='text-00F060'>Português:</strong> Nativo" data-lang-en="<strong class='text-00F060'>Portuguese:</strong> Native" data-lang-es="<strong class='text-00F060'>Español:</strong> Básico"><strong class="text-00F060">Português:</strong> Nativo</li>
                             <li data-lang-pt="<strong class='text-00F060'>Inglês:</strong> Avançado" data-lang-en="<strong class='text-00F060'>English:</strong> Advanced" data-lang-es="<strong class='text-00F060'>Inglés:</strong> Avanzado"><strong class="text-00F060">Inglês:</strong> Avançado</li>
                             <li data-lang-pt="<strong class='text-00F060'>Espanhol:</strong> Básico" data-lang-en="<strong class='text-00F060'>Spanish:</strong> Basic" data-lang-es="<strong class='text-00F060'>Español:</strong> Básico"><strong class="text-00F060">Espanhol:</strong> Básico</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="panel-card mt-8 md:col-span-2"> <h3 class="text-2xl mb-6" data-lang-pt="Formação Complementar" data-lang-en="Complementary Training" data-lang-es="Formación Complementaria">Formação Complementar</h3>
+                <div class="panel-card mt-8 md:col-span-2"> <h3 class="text-2xl mb-6 font-['Space_Mono']" data-lang-pt="Formação Complementar" data-lang-en="Complementary Training" data-lang-es="Formación Complementaria">Formação Complementar</h3>
                     <ul class="text-gray-300 space-y-2">
                         <li data-lang-pt="<strong class='text-00F060'>Modelagem de Dados</strong> - Alura" data-lang-en="<strong class='text-00F060'>Data Modeling</strong> - Alura" data-lang-es="<strong class='text-00F060'>Modelado de Datos</strong> - Alura"><strong class="text-00F060">Modelagem de Dados</strong> - Alura</li>
-                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong class='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
+                        <li data-lang-pt="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-en="<strong class='text-00F060'>Python para DataScience</strong> - Alura" data-lang-es="<strong='text-00F060'>Python para DataScience</strong> - Alura"><strong class="text-00F060">Python para DataScience</strong> - Alura</li>
                         <li data-lang-pt="<strong class='text-00F060'>SQL para Análise de Dados</strong> - Udemy" data-lang-en="<strong class='text-00F060'>SQL for Data Analysis</strong> - Udemy" data-lang-es="<strong class='text-00F060'>SQL para Análisis de Datos</strong> - Udemy"><strong class="text-00F060">SQL para Análise de Dados</strong> - Udemy</li>
-                        <li data-lang-pt="Microsoft SQL Server 2022 - Alura" data-lang-en="Microsoft SQL Server 2022 - Alura" data-lang-es="Microsoft SQL Server 2022 - Alura">Microsoft SQL Server 2022 - Alura</li>
+                        <li data-lang-pt="Microsoft SQL Server 2022 - Alura" data-lang-en="Microsoft SQL Server 222 - Alura" data-lang-es="Microsoft SQL Server 2022 - Alura">Microsoft SQL Server 2022 - Alura</li>
                         <li data-lang-pt="SQL com MySQL Server da Oracle - Alura" data-lang-en="SQL with MySQL Server from Oracle - Alura" data-lang-es="SQL con MySQL Server de Oracle - Alura">SQL com MySQL Server da Oracle - Alura</li>
                         <li data-lang-pt="SQL do Básico ao Avançado - Udemy" data-lang-en="SQL from Basic to Advanced - Udemy" data-lang-es="SQL de Básico a Avanzado - Udemy">SQL do Básico ao Avançado - Udemy</li>
                     </ul>
@@ -507,20 +728,29 @@
 
     <section id="contact" class="py-16 md:py-24 bg-0A0A0A border-t border-b border-gray-800">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl md:text-4xl font-bold mb-10 mx-auto text-center" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</h2>
+            <h2 class="section-title text-3xl md:text-4xl font-['Space_Mono'] font-bold mb-10 mx-auto text-center" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</h2>
             <div class="panel-container max-w-xl mx-auto text-center">
                 <p class="text-gray-300 mb-6" data-lang-pt="Bora trocar uma ideia? Fico feliz em conectar! Me acha por aqui:" data-lang-en="Want to chat? I'd love to connect! Find me here:" data-lang-es="¿Quieres charlar? ¡Me encantaría conectar! Encuéntrame aquí:"></p>
                 <div class="flex justify-center items-center space-x-6 flex-wrap gap-4">
-                    <a href="mailto:nando.dev.08.21@gmail.com" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <a href="mailto:nando.dev.08.21@gmail.com" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2 cursor-pointer contact-section-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail contact-icon">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
                         <span class="text-lg" data-lang-pt="E-mail" data-lang-en="E-mail" data-lang-es="Correo Electrónico">E-mail</span>
                     </a>
-                    <a href="https://wa.me/5579999159885" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339.4 55.6 283.8 32 223.9 32c-122.4 0-221.7 99.3-221.7 221.7 0 39.2 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 221.6-99.3-221.6-221.7 0-59.3-23.4-114.9-64-156.4zm-89.4 316.4c-14.7 15.2-42 14.2-56.8 9.3-28.3-9.6-58.2-22.5-86.3-37.4-38.4-20.7-72.4-50.2-96.6-84.6-7.1-10.3-12.7-21.3-17.7-32.5-5.1-11.2-8.1-22.8-9.9-34.7-1.9-11.9-.7-23.6 3.1-35.3 3.8-11.7 10.4-22.7 19.3-32.3 8.9-9.6 19.6-17.5 31.4-23.8 11.8-6.3 24.5-10.8 37.9-13.4 13.4-2.6 27.2-3.2 41.2-1.9 14 1.3 27.8 4.7 41.2 10.2 13.4 5.5 26.5 12.8 38.6 21.9 12.1 9.1 23.3 19.7 33.4 31.8 10.1 12.1 19.1 25.4 26.9 39.8 7.8 14.4 14.4 29.8 19.8 45.9 5.4 16.1 9.1 32.9 10.9 50.1 1.8 17.2 1.3 34.6-.9 51.9-2.2 17.3-6.1 34.2-11.7 50.4-5.6 16.2-12.6 31.8-20.8 46.5z"/></svg>
-                        <span class="text-lg" data-lang-pt="WhatsApp" data-lang-en="WhatsApp" data-lang-es="WhatsApp">WhatsApp</span>
+                    <a href="https://wa.me/5579999159885" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2 cursor-pointer contact-section-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle contact-icon">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                        </svg>
+                        <span data-lang-pt="WhatsApp" data-lang-en="WhatsApp" data-lang-es="WhatsApp">WhatsApp</span>
                     </a>
-                    <a href="https://br.linkedin.com/in/fernando-augusto-8aa4271a7" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    <a href="https://br.linkedin.com/in/fernando-augusto-8aa4271a7" target="_blank" class="text-gray-400 hover:text-00F060 transition-colors flex items-center space-x-2 cursor-pointer contact-section-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin contact-icon">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect width="4" height="12" x="2" y="9"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
                         <span class="text-lg" data-lang-pt="LinkedIn" data-lang-en="LinkedIn" data-lang-es="LinkedIn">LinkedIn</span>
                     </a>
                 </div>
@@ -541,8 +771,58 @@
         const particleCount = 600;
         const loadingIndicator = document.getElementById('loading-indicator');
         let currentLanguage = 'pt';
+        let mouseX = 0, mouseY = 0; // Variáveis para a posição do mouse
 
-        function createCharacterTexture(character) {
+        // Objeto para armazenar o estado de digitação para cada elemento e cada idioma
+        const elementTypingStates = new Map();
+
+        // Variável characters movida para o escopo global
+        const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Definindo os seletores de elementos traduzíveis
+        const translatableElementSelectors = [
+            'h2.section-title', // Títulos das secções
+            '#about-and-experience .panel-card p',
+            '#about-and-experience .panel-card h3',
+            '#about-and-experience .panel-card ul li', // Adicionado: itens da lista de experiência
+            '#what-i-do .what-i-do-card p',
+            '#what-i-do .what-i-do-card h3',
+            '#education-and-courses .panel-card ul li',
+            '#education-and-courses .panel-card p',
+            '#education-and-courses .panel-card h3',
+            '#skills-and-knowledge .panel-card ul li',
+            '#skills-and-knowledge .panel-card h3',
+            '#contact .panel-container p',
+            '#contact .panel-container .flex a span', // Textos dentro dos links de contato
+            '#fullscreen-menu-overlay .nav-link', // Links de navegação do menu fullscreen
+            'footer p', // Texto do rodapé
+            '#hero-name', // Título principal do hero
+            '#hero-title', // Subtítulo do hero
+            '#hero .btn-primary', // Botão "Conecte-se" no hero
+            '#loading-indicator', // Indicador de carregamento
+            '#header-terminal-name' // Nome do terminal no cabeçalho
+        ];
+
+        // Elementos que devem ter o efeito de digitação (subconjunto dos traduzíveis)
+        const typewriterElementSelectors = [
+            'h2.section-title', // Títulos das secções
+            '#about-and-experience .panel-card p',
+            '#about-and-experience .panel-card h3',
+            '#about-and-experience .panel-card ul li', // Adicionado: itens da lista de experiência
+            '#what-i-do .what-i-do-card p',
+            '#what-i-do .what-i-do-card h3',
+            '#education-and-courses .panel-card ul li',
+            '#education-and-courses .panel-card p',
+            '#education-and-courses .panel-card h3',
+            '#skills-and-knowledge .panel-card ul li',
+            '#skills-and-knowledge .panel-card h3',
+            '#contact .panel-container p',
+            '#hero-name',
+            '#hero-title',
+            '#header-terminal-name'
+        ];
+
+        function createCharacterTexture(character, isGlitching = false) {
             const canvas = document.createElement('canvas');
             const size = 64;
             canvas.width = size;
@@ -553,7 +833,7 @@
             context.font = 'Bold ' + (size * 0.8) + 'px "Space Mono"';
             context.textAlign = 'center';
             context.textBaseline = 'middle';
-            context.fillStyle = '#00F060';
+            context.fillStyle = isGlitching ? '#FF0000' : '#00F060'; // Vermelho para glitch, verde normal
             context.fillText(character.toString(), size / 2, size / 2);
             return new THREE.CanvasTexture(canvas);
         }
@@ -586,7 +866,6 @@
             canvas.width = heroWidth;
             canvas.height = heroHeight;
 
-            const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             for (let i = 0; i < particleCount; i++) {
                 const randomChar = characters[Math.floor(Math.random() * characters.length)];
                 const texture = createCharacterTexture(randomChar);
@@ -604,32 +883,70 @@
                 charMesh.position.y = (Math.random() * 2 - 1) * 20;
                 charMesh.position.z = (Math.random() * 2 - 1) * 20;
 
+                charMesh.isGlitching = false;
+                charMesh.glitchTimeout = null;
+
                 scene.add(charMesh);
                 particles.push(charMesh);
             }
 
+            window.addEventListener('mousemove', onMouseMove, false);
             window.addEventListener('resize', onWindowResize);
             animate();
             console.log('initThreeJS: Cena 3D inicializada com sucesso.');
         }
 
+        function onMouseMove(event) {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        }
+
         function animate() {
             requestAnimationFrame(animate);
 
+            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
+            camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
             particles.forEach(mesh => {
                 mesh.position.y -= 0.05;
+
+                const distance = mesh.position.distanceTo(camera.position);
+                const mouseVector = new THREE.Vector3(mouseX * 10, mouseY * 10, 0);
+                const distanceToMouse = mesh.position.distanceTo(mouseVector);
+
+                if (distanceToMouse < 5) {
+                    const repelForce = (5 - distanceToMouse) * 0.05;
+                    mesh.position.x += (mesh.position.x - mouseVector.x) * repelForce;
+                    mesh.position.y += (mesh.position.y - mouseVector.y) * repelForce;
+                }
 
                 if (mesh.position.y < -10) {
                     mesh.position.y = (Math.random() * 2 - 1) * 20 + 10;
                     mesh.position.x = (Math.random() * 2 - 1) * 20;
                     mesh.position.z = (Math.random() * 2 - 1) * 20;
 
-                    const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
                     const newChar = characters[Math.floor(Math.random() * characters.length)];
                     const newTexture = createCharacterTexture(newChar);
                     if (mesh.material.map) mesh.material.map.dispose();
                     mesh.material.map = newTexture;
                     mesh.material.needsUpdate = true;
+                }
+
+                if (Math.random() < 0.001 && !mesh.isGlitching) {
+                    mesh.isGlitching = true;
+                    const originalTexture = mesh.material.map;
+                    const glitchChar = characters[Math.floor(Math.random() * characters.length)];
+                    mesh.material.map = createCharacterTexture(glitchChar, true);
+                    mesh.material.opacity = 0.2;
+                    mesh.material.needsUpdate = true;
+
+                    mesh.glitchTimeout = setTimeout(() => {
+                        mesh.material.map = originalTexture;
+                        mesh.material.opacity = 0.8;
+                        mesh.material.needsUpdate = true;
+                        mesh.isGlitching = false;
+                    }, 100 + Math.random() * 200);
                 }
             });
 
@@ -656,28 +973,21 @@
             console.log(`onWindowResize: Largura: ${heroWidth}, Altura: ${heroHeight}`);
         }
 
-        const typingElements = [];
-
-        function typeWriter(element, text, i, speed, callback) {
-            if (i < text.length) {
-                element.innerHTML = text.substring(0, i + 1) + '<span class="typing-cursor">_</span>';
-                element.typedInterval = setTimeout(() => typeWriter(element, text, i + 1, speed, callback), speed);
-            } else {
-                element.innerHTML = text;
+        function typeWriter(element, text, i, speed, callback, keepCursor = false) {
+            if (text === null || text === undefined) {
+                console.warn("typeWriter: 'text' é nulo ou indefinido para o elemento:", element);
+                element.innerHTML = ''; // Limpa o conteúdo se o texto for inválido
                 if (callback) {
                     callback();
                 }
+                return;
             }
-        }
 
-        function eraseWriter(element, i, speed, callback) {
-            const currentText = element.innerHTML;
-            const textWithoutCursor = currentText.replace(/<span class="typing-cursor">_<\/span>/, '');
-            if (i >= 0) {
-                element.innerHTML = textWithoutCursor.substring(0, i) + '<span class="typing-cursor">_</span>';
-                element.erasedInterval = setTimeout(() => eraseWriter(element, i - 1, speed, callback), speed / 2);
+            if (i < text.length) {
+                element.innerHTML = text.substring(0, i + 1) + (keepCursor ? '<span class="typing-cursor">_</span>' : '');
+                element.typedInterval = setTimeout(() => typeWriter(element, text, i + 1, speed, callback, keepCursor), speed);
             } else {
-                element.innerHTML = '';
+                element.innerHTML = text + (keepCursor ? '<span class="typing-cursor">_</span>' : '');
                 if (callback) {
                     callback();
                 }
@@ -687,15 +997,9 @@
         function handleIntersection(entries, observer) {
             entries.forEach(entry => {
                 const element = entry.target;
-                // Ensure dataset properties exist before accessing them
+                // Apenas armazena o innerHTML inicial como data-lang-pt se não existir
                 if (!element.dataset.langPt) {
                     element.dataset.langPt = element.innerHTML;
-                }
-                if (!element.dataset.langEn) {
-                    element.dataset.langEn = element.innerHTML;
-                }
-                if (!element.dataset.langEs) {
-                    element.dataset.langEs = element.innerHTML;
                 }
 
                 const originalTextData = {
@@ -703,26 +1007,26 @@
                     en: element.dataset.langEn,
                     es: element.dataset.langEs
                 };
-                const currentText = originalTextData[currentLanguage];
+                const currentText = originalTextData[currentLanguage] || '';
+
+                let state = elementTypingStates.get(element);
+                if (!state) {
+                    state = { pt: false, en: false, es: false };
+                    elementTypingStates.set(element, state);
+                }
 
                 if (entry.isIntersecting) {
-                    clearTimeout(element.erasedInterval);
-                    if (!element.isTyping) {
-                        element.isTyping = true;
-                        element.isErasing = false;
-                        typeWriter(element, currentText, 0, 50, () => {
-                            element.isTyping = false;
+                    clearTimeout(element.typedInterval);
+                    if (!state[currentLanguage]) {
+                        element.innerHTML = '';
+                        typeWriter(element, currentText, 0, 30, () => {
+                            state[currentLanguage] = true;
                         });
+                    } else {
+                        element.innerHTML = currentText;
                     }
                 } else {
                     clearTimeout(element.typedInterval);
-                    if (!element.isErasing) {
-                        element.isErasing = true;
-                        element.isTyping = false;
-                        eraseWriter(element, element.innerHTML.length, 25, () => {
-                            element.isErasing = false;
-                        });
-                    }
                 }
             });
         }
@@ -735,26 +1039,30 @@
         const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
         function initializeTypingEffects() {
+            // Seleciona APENAS os elementos que DEVEM ter o efeito de digitação
             const textElements = document.querySelectorAll(
-                '#about-and-experience .panel-card p, ' +
-                '#what-i-do .what-i-do-card p, ' +
-                '#education-and-courses .panel-card ul li, ' +
-                '#education-and-courses .panel-card p, ' +
-                '#skills-and-knowledge .panel-card ul li, ' +
-                '#contact .panel-container p, ' +
-                '#contact .panel-container .flex a span'
+                typewriterElementSelectors.join(', ')
             );
 
             textElements.forEach(element => {
-                // Ensure dataset properties exist before accessing them
-                if (!element.dataset.langPt) element.dataset.langPt = element.innerHTML;
-                if (!element.dataset.langEn) element.dataset.langEn = element.innerHTML;
-                if (!element.dataset.langEs) element.dataset.langEs = element.innerHTML;
-
-                element.innerHTML = '';
-                typingElements.push(element);
+                if (!element.hasAttribute('data-lang-pt')) {
+                    element.setAttribute('data-lang-pt', element.innerHTML);
+                }
+                // No carregamento inicial, não limpa o innerHTML para evitar o flicker
+                // O IntersectionObserver cuidará do efeito de digitação quando o elemento for visível
+                // element.innerHTML = '';
                 observer.observe(element);
             });
+        }
+
+        function animateHeaderTerminalText() {
+            const headerTerminalElement = document.getElementById('header-terminal-name');
+            if (headerTerminalElement) {
+                const text = headerTerminalElement.getAttribute(`data-lang-${currentLanguage}`) || '';
+                clearTimeout(headerTerminalElement.typedInterval);
+                headerTerminalElement.innerHTML = '';
+                typeWriter(headerTerminalElement, text, 0, 80, null, true);
+            }
         }
 
         function toggleLanguage() {
@@ -766,78 +1074,162 @@
             const langBtn = document.getElementById('language-toggle-btn');
             langBtn.textContent = currentLanguage.toUpperCase();
 
-            const elementsToTranslate = document.querySelectorAll('[data-lang-pt], [data-lang-en], [data-lang-es]');
+            elementTypingStates.clear(); // Limpa os estados de digitação para forçar re-digitação se necessário
 
-            elementsToTranslate.forEach(element => {
-                clearTimeout(element.typedInterval);
-                clearTimeout(element.erasedInterval);
+            // Seleciona TODOS os elementos que têm atributos de idioma para tradução
+            const allTranslatableElements = document.querySelectorAll(
+                translatableElementSelectors.join(', ')
+            );
+
+            // Atualiza o texto de TODOS os elementos traduzíveis IMEDIATAMENTE
+            allTranslatableElements.forEach(element => {
+                clearTimeout(element.typedInterval); // Para qualquer digitação em andamento
 
                 let targetElement = element;
+                // Determina o elemento alvo para a tradução
                 if (element.tagName === 'A' && element.closest('#contact')) {
                     targetElement = element.querySelector('span');
-                }
-
-                if (targetElement && (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
-                    if (currentLanguage === 'en' && targetElement.dataset.langEnPlaceholder) {
-                        targetElement.placeholder = targetElement.dataset.langEnPlaceholder;
-                    } else if (currentLanguage === 'es' && targetElement.dataset.langEsPlaceholder) {
-                        targetElement.placeholder = targetElement.dataset.langEsPlaceholder;
-                    } else if (currentLanguage === 'pt' && targetElement.dataset.langPtPlaceholder) {
-                        targetElement.placeholder = targetElement.dataset.langPtPlaceholder;
-                    }
-                } else if (targetElement) {
-                    if (typingElements.includes(targetElement)) {
-                        targetElement.innerHTML = '';
-                        if (targetElement.getBoundingClientRect().top < window.innerHeight && targetElement.getBoundingClientRect().bottom > 0) {
-                            typeWriter(targetElement, targetElement.dataset[`lang${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`], 0, 50);
-                        }
+                } else if (element.tagName === 'A' && element.closest('#fullscreen-menu-overlay')) {
+                    targetElement = element;
+                } else if (element.tagName === 'P' && element.closest('footer')) {
+                    targetElement = element;
+                } else if (element.id === 'hero-name' || element.id === 'hero-title' || element.id === 'loading-indicator' || (element.tagName === 'A' && element.classList.contains('btn-primary'))) {
+                    // Para os elementos do hero e o botão principal, o targetElement é o próprio elemento
+                    // Se o elemento tem um span .hero-underline, o texto está dentro dele
+                    if (element.querySelector('.hero-underline')) {
+                        targetElement = element.querySelector('.hero-underline');
                     } else {
-                        if (currentLanguage === 'en' && targetElement.dataset.langEn) {
-                            targetElement.innerHTML = targetElement.dataset.langEn;
-                        } else if (currentLanguage === 'es' && targetElement.dataset.langEs) {
-                            targetElement.innerHTML = element.dataset.langEs;
-                        } else if (currentLanguage === 'pt' && targetElement.dataset.langPt) {
-                            targetElement.innerHTML = element.dataset.langPt;
-                        }
+                        targetElement = element;
                     }
+                }
+                
+                if (targetElement) {
+                    // Obtém o texto traduzido correto do atributo data-lang
+                    const textToDisplay = targetElement.getAttribute(`data-lang-${currentLanguage}`) || '';
+                    targetElement.innerHTML = textToDisplay; // Atualiza o texto imediatamente
                 }
             });
-            const heroNameElement = document.querySelector('#hero h1');
-            const heroTitleElement = document.querySelector('#hero p');
-            heroNameElement.innerHTML = heroNameElement.dataset[`lang${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`];
-            heroTitleElement.innerHTML = heroTitleElement.dataset[`lang${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`];
+
+            // Reativa o efeito de máquina de escrever para os elementos observados que estão visíveis
+            const observedTextElements = document.querySelectorAll(
+                typewriterElementSelectors.join(', ')
+            );
+
+            observedTextElements.forEach(element => {
+                // Se o elemento estiver visível, reativa o efeito de digitação
+                const rect = element.getBoundingClientRect();
+                const isVisible = (rect.top < window.innerHeight && rect.bottom > 0);
+                
+                if (isVisible) {
+                    const textToType = element.getAttribute(`data-lang-${currentLanguage}`) || '';
+                    element.innerHTML = ''; // Limpa para re-digitar
+                    typeWriter(element, textToType, 0, 30, () => {
+                        let state = elementTypingStates.get(element);
+                        if (!state) {
+                            state = { pt: false, en: false, es: false };
+                            elementTypingStates.set(element, state);
+                        }
+                        state[currentLanguage] = true;
+                    });
+                }
+            });
+
+            // Aplica o efeito de máquina de escrever ao texto da seção hero e ao cabeçalho (que estão sempre visíveis)
+            const heroNameElement = document.getElementById('hero-name');
+            const heroTitleElement = document.getElementById('hero-title');
+            const heroNameSpan = heroNameElement ? heroNameElement.querySelector('.hero-underline') : null;
+            const heroTitleSpan = heroTitleElement ? heroTitleElement.querySelector('.hero-underline') : null;
+            
+            if (heroNameSpan) {
+                const heroNameText = heroNameElement.getAttribute(`data-lang-${currentLanguage}`) || '';
+                heroNameSpan.innerHTML = ''; // Limpa para re-digitar
+                typeWriter(heroNameSpan, heroNameText, 0, 80, null, false);
+            }
+            if (heroTitleSpan) {
+                const heroTitleText = heroTitleElement.getAttribute(`data-lang-${currentLanguage}`) || '';
+                heroTitleSpan.innerHTML = ''; // Limpa para re-digitar
+                typeWriter(heroTitleSpan, heroTitleText, 0, 50, null, false);
+            }
+
+            animateHeaderTerminalText();
         }
 
         window.onload = function() {
             setTimeout(initThreeJS, 100);
             const langBtn = document.getElementById('language-toggle-btn');
+            const menuToggle = document.getElementById('menu-toggle');
+            const fullscreenMenuOverlay = document.getElementById('fullscreen-menu-overlay');
+            const navLinksInOverlay = document.querySelectorAll('#fullscreen-menu-overlay .nav-link');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    fullscreenMenuOverlay.classList.toggle('open');
+                });
+            }
+
+            navLinksInOverlay.forEach(link => {
+                link.addEventListener('click', () => {
+                    fullscreenMenuOverlay.classList.remove('open');
+                });
+            });
+
+            if (fullscreenMenuOverlay) {
+                fullscreenMenuOverlay.addEventListener('click', (event) => {
+                    if (event.target === fullscreenMenuOverlay) {
+                        fullscreenMenuOverlay.classList.remove('open');
+                    }
+                });
+            }
+
             if (langBtn) {
                 langBtn.addEventListener('click', toggleLanguage);
-                currentLanguage = 'pt';
-                langBtn.textContent = 'PT';
-                const elementsToTranslate = document.querySelectorAll('[data-lang-pt], [data-lang-en], [data-lang-es]');
-                elementsToTranslate.forEach(element => {
+                currentLanguage = 'pt'; // Define o idioma inicial como português
+                langBtn.textContent = 'PT'; // Garante que o botão mostre "PT" inicialmente
+
+                // No carregamento inicial, atualiza todos os elementos traduzíveis para o idioma padrão (PT)
+                const allTranslatableElements = document.querySelectorAll(translatableElementSelectors.join(', '));
+                allTranslatableElements.forEach(element => {
                     let targetElement = element;
                     if (element.tagName === 'A' && element.closest('#contact')) {
                         targetElement = element.querySelector('span');
+                    } else if (element.tagName === 'A' && element.closest('#fullscreen-menu-overlay')) {
+                        targetElement = element;
+                    } else if (element.tagName === 'P' && element.closest('footer')) {
+                        targetElement = element;
+                    } else if (element.id === 'hero-name' || element.id === 'hero-title' || element.id === 'loading-indicator' || (element.tagName === 'A' && element.classList.contains('btn-primary'))) {
+                        if (element.querySelector('.hero-underline')) {
+                            targetElement = element.querySelector('.hero-underline');
+                        } else {
+                            targetElement = element;
+                        }
                     }
 
-                    if (targetElement && (targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
-                        if (targetElement.dataset.langPtPlaceholder) {
-                            targetElement.placeholder = targetElement.dataset.langPtPlaceholder;
+                    if (targetElement) {
+                        // Garante que o data-lang-pt seja o conteúdo inicial do HTML
+                        if (!targetElement.hasAttribute('data-lang-pt')) {
+                            targetElement.setAttribute('data-lang-pt', targetElement.innerHTML);
                         }
-                    } else if (targetElement) {
-                        if (targetElement.dataset.langPt) {
-                            targetElement.innerHTML = element.dataset.langPt;
-                        }
+                        // Define o conteúdo inicial com base no idioma atual (pt)
+                        targetElement.innerHTML = targetElement.getAttribute(`data-lang-${currentLanguage}`) || '';
                     }
                 });
-                initializeTypingEffects();
 
+                initializeTypingEffects(); // Inicializa os efeitos de digitação para os elementos observados
+
+                // Atualiza o texto da seção Hero diretamente com o idioma inicial
                 const heroNameElement = document.querySelector('#hero h1');
                 const heroTitleElement = document.querySelector('#hero p');
-                heroNameElement.innerHTML = heroNameElement.dataset.langPt;
-                heroTitleElement.innerHTML = heroTitleElement.dataset.langPt;
+                const heroNameSpan = heroNameElement ? heroNameElement.querySelector('.hero-underline') : null;
+                const heroTitleSpan = heroTitleElement ? heroTitleElement.querySelector('.hero-underline') : null;
+
+                if (heroNameSpan) {
+                    heroNameSpan.innerHTML = heroNameElement.getAttribute('data-lang-pt') || '';
+                }
+                if (heroTitleSpan) {
+                    heroTitleSpan.innerHTML = heroTitleElement.getAttribute('data-lang-pt') || '';
+                }
+
+                animateHeaderTerminalText(); // Anima o texto do terminal do cabeçalho
             }
         };
     </script>
