@@ -6,8 +6,9 @@
     <title>Fernando Augusto - Portfólio de Dados e Desenvolvimento</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADhJREFUOE9jZGDQGMjAoAE/I2IKhDGBQggGYxKDAcT/gfgAJo0BmAwiPwxDMBhkYGBgAAAByQA9c3D9wQAAAABJRU5ErkJggg==">
+
     <style>
-        /* Variáveis CSS para cores */
         :root {
             --bg-dark: #0A0A0A;
             --text-light: #E6EDF3;
@@ -25,7 +26,6 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             overflow-x: hidden;
-            /* Adiciona uma textura sutil de fundo */
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a1a1a' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM2 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             background-repeat: repeat;
         }
@@ -179,7 +179,7 @@
         }
         strong {
             color: var(--accent-green);
-            text-shadow: 0 0 3px rgba(0, 240, 96, 0.7); /* Adicionado text-shadow */
+            text-shadow: 0 0 3px rgba(0, 240, 96, 0.7);
         }
         .skill-badge {
             background-color: var(--accent-green);
@@ -192,7 +192,7 @@
         .skill-badge:hover {
             background-color: var(--accent-green-dark);
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 240, 96, 0.6), 0 0 30px rgba(0, 240, 96, 0.8); /* Box-shadow mais intenso */
+            box-shadow: 0 0 20px rgba(0, 240, 96, 0.6), 0 0 30px rgba(0, 240, 96, 0.8);
         }
         a {
             color: var(--accent-green);
@@ -298,7 +298,7 @@
         }
         .what-i-do-card h3 {
             color: var(--text-light);
-            font-family: 'Space Mono', monospace; /* Aplicado Space Mono */
+            font-family: 'Space Mono', monospace;
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
@@ -348,7 +348,7 @@
             box-shadow: inset 0 0 5px rgba(0, 240, 96, 0.1);
         }
         .panel-card h3 {
-            font-family: 'Space Mono', monospace; /* Aplicado Space Mono */
+            font-family: 'Space Mono', monospace;
             color: var(--accent-green);
             font-weight: 700;
             margin-bottom: 0.75rem;
@@ -374,11 +374,11 @@
             width: 32px;
             height: 32px;
             margin-right: 0.5rem;
-            color: var(--text-light); /* Cor padrão dos ícones */
+            color: var(--text-light);
             transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
         .contact-icon:hover {
-            color: var(--accent-green); /* Cor verde no hover */
+            color: var(--accent-green);
             transform: scale(1.1);
         }
 
@@ -395,7 +395,7 @@
             margin: 3rem auto;
             width: 80%;
             box-shadow: 0 0 15px rgba(0, 240, 96, 0.3);
-            animation: pulse-divider 2s infinite alternate ease-in-out; /* Animação adicionada */
+            animation: pulse-divider 2s infinite alternate ease-in-out;
         }
         .panel-divider:hover {
             box-shadow: 0 0 25px rgba(0, 240, 96, 0.6);
@@ -421,13 +421,12 @@
             bottom: 0;
             height: 2px;
             background-color: var(--accent-green);
-            animation: draw-underline 1.5s ease-out forwards; /* Animação de desenho */
+            animation: draw-underline 1.5s ease-out forwards;
         }
         #hero h1, #hero p {
             text-align: center;
         }
 
-        /* Fullscreen menu overlay */
         #fullscreen-menu-overlay {
             position: fixed;
             top: 0;
@@ -488,12 +487,11 @@
             display: none;
         }
 
-        /* Efeito de brilho na imagem de perfil */
         .profile-image-container {
             position: relative;
             display: inline-block;
             border-radius: 50%;
-            padding: 4px; /* Espaçamento para o brilho */
+            padding: 4px;
             background: linear-gradient(45deg, var(--accent-green-light), var(--accent-green-dark));
             animation: profile-glow 3s infinite alternate ease-in-out;
         }
@@ -511,7 +509,6 @@
             100% { box-shadow: 0 0 10px rgba(0, 240, 96, 0.3), 0 0 20px rgba(0, 240, 96, 0.2); }
         }
 
-        /* Cursor do efeito de digitação */
         .typing-cursor {
             display: inline-block;
             width: 8px;
@@ -527,11 +524,10 @@
             50% { background-color: var(--accent-green); }
         }
 
-        /* Nova classe para garantir clicabilidade dos links de contato */
         .contact-section-link {
-            position: relative; /* Necessário para z-index funcionar */
-            z-index: 1000; /* Valor muito alto para garantir que esteja acima */
-            pointer-events: auto; /* Garante que os eventos do mouse não sejam ignorados */
+            position: relative;
+            z-index: 1000;
+            pointer-events: auto;
         }
     </style>
 </head>
@@ -585,7 +581,8 @@
                     <h3 class="text-2xl mb-6 text-white text-center font-['Space_Mono']" data-lang-pt="Experiência Profissional" data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional">Experiência Profissional</h3>
                     <div class="text-gray-300">
                         <p class="font-semibold text-white mb-1" data-lang-pt="Desenvolvedor" data-lang-en="Developer" data-lang-es="Desarrollador">Desenvolvedor</p>
-                        <p class="text-00F060 font-medium mb-1" data-lang-pt="DP Sistemas" data-lang-en="DP Systems" data-lang-es="DP Sistemas">DP Sistemas</p> <p class="text-gray-400 text-sm mb-4" data-lang-pt="2022 – Atualmente" data-lang-en="2022 – Present" data-lang-es="2022 – Actualidad">2022 – Atualmente</p>
+                        <p class="text-00F060 font-medium mb-1" data-lang-pt="DP Sistemas" data-lang-en="DP Systems" data-lang-es="DP Sistemas">DP Sistemas</p>
+                        <p class="text-gray-400 text-sm mb-4" data-lang-pt="2022 – Atualmente" data-lang-en="2022 – Present" data-lang-es="2022 – Actualidad">2022 – Atualmente</p>
                         <ul class="list-disc list-inside text-gray-300 space-y-2">
                             <li data-lang-pt="Na DP Sistemas, sou <strong class='text-00F060'>responsável pelo ciclo completo de desenvolvimento de soluções em Web Service</strong>, desde a concepção até a implementação." data-lang-en="At DP Sistemas, I'm <strong class='text-00F060'>responsible for the complete development cycle of Web Service solutions</strong>, from conception to implementation." data-lang-es="En DP Sistemas, soy <strong class='text-00F060'>responsable del ciclo completo de desarrollo de soluciones en Web Service</strong>, desde la concepción hasta la implementación.">Responsável pelo <strong class="text-00F060">ciclo completo de desenvolvimento de soluções em Web Service</strong>, desde a concepção até a implementação.</li>
                             <li data-lang-pt="Atuo ativamente na <strong class='text-00F060'>manutenção e otimização de rotinas críticas de banco de dados do ERP</strong>." data-lang-en="Actively involved in the <strong class='text-00F060'>maintenance and optimization of critical ERP database routines</strong>." data-lang-es="Participación activa en el <strong class='text-00F060'>mantenimiento y otimización de rutinas críticas de bases de datos del ERP</strong>.">Atuo ativamente na <strong class="text-00F060">manutenção e otimização de rotinas críticas de banco de dados do ERP</strong>.</li>
@@ -609,7 +606,7 @@
                 <div class="what-i-do-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 12V7a9 3 0 0 1 18 0v5"/><path d="M3 12a9 3 0 0 0 18 0"/><path d="M3 19v-5a9 3 0 0 1 18 0v5"/><path d="M3 19a9 3 0 0 0 18 0"/></svg>
                     <h3 class="text-xl mb-2 font-['Space_Mono']" data-lang-pt="Otimização e Administração de Banco de Dados" data-lang-en="Database Optimization & Administration" data-lang-es="Optimización y Administración de Bases de Datos">Otimização e Administração de Banco de Dados</h3>
-                    <p data-lang-pt="Especialista em <strong class='text-00F060'>manutenção, otimização e migração de bancos de dados</strong> (SQL Server, Oracle, MongoDB), com foco em <strong class='text-00F060'>melhorar a performance de queries, garantir a segurança e a consistência</strong> dos dados." data-lang-en="I'm an expert in <strong class='text-00F060'>database maintenance, optimization, and migration</strong> (SQL Server, Oracle, MongoDB). My focus is on <strong class='text-00F060'>improving query performance, ensuring data security and consistency</strong>." data-lang-es="Soy especialista en <strong class='text-00F060'>mantenimiento, otimización y migración de bases de datos</strong> (SQL Server, Oracle, MongoDB). Mi enfoque es <strong class='text-00F060'>mejorar el rendimiento de las consultas, garantizar la seguridad y la consistencia</strong> de los datos.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
+                    <p data-lang-pt="Especialista em <strong class='text-00F060'>manutenção, otimização e migração de bancos de dados</strong> (SQL Server, Oracle, MongoDB), com foco em <strong class='text-00F060'>melhorar a performance de queries, garantir a segurança e a consistência</strong> dos dados." data-lang-en="I'm an expert in <strong class='text-00F060'>database maintenance, optimization, and migration</strong> (SQL Server, Oracle, MongoDB). My focus is on <strong class='text-00F060'>improving query performance, ensuring data security and consistency</strong>." data-lang-es="Soy especialista en <strong class='text-00F060'>manutenção, otimización y migración de bases de datos</strong> (SQL Server, Oracle, MongoDB). Mi enfoque es <strong class='text-00F060'>mejorar el rendimiento de las consultas, garantizar la seguridad y la consistencia</strong> de los datos.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
                 </div>
                 <div class="what-i-do-card">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
@@ -771,20 +768,17 @@
         const particleCount = 600;
         const loadingIndicator = document.getElementById('loading-indicator');
         let currentLanguage = 'pt';
-        let mouseX = 0, mouseY = 0; // Variáveis para a posição do mouse
+        let mouseX = 0, mouseY = 0;
 
-        // Objeto para armazenar o estado de digitação para cada elemento e cada idioma
         const elementTypingStates = new Map();
 
-        // Variável characters movida para o escopo global
         const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-        // Definindo os seletores de elementos traduzíveis
         const translatableElementSelectors = [
-            'h2.section-title', // Títulos das secções
+            'h2.section-title',
             '#about-and-experience .panel-card p',
             '#about-and-experience .panel-card h3',
-            '#about-and-experience .panel-card ul li', // Adicionado: itens da lista de experiência
+            '#about-and-experience .panel-card ul li',
             '#what-i-do .what-i-do-card p',
             '#what-i-do .what-i-do-card h3',
             '#education-and-courses .panel-card ul li',
@@ -793,22 +787,21 @@
             '#skills-and-knowledge .panel-card ul li',
             '#skills-and-knowledge .panel-card h3',
             '#contact .panel-container p',
-            '#contact .panel-container .flex a span', // Textos dentro dos links de contato
-            '#fullscreen-menu-overlay .nav-link', // Links de navegação do menu fullscreen
-            'footer p', // Texto do rodapé
-            '#hero-name', // Título principal do hero
-            '#hero-title', // Subtítulo do hero
-            '#hero .btn-primary', // Botão "Conecte-se" no hero
-            '#loading-indicator', // Indicador de carregamento
-            '#header-terminal-name' // Nome do terminal no cabeçalho
+            '#contact .panel-container .flex a span',
+            '#fullscreen-menu-overlay .nav-link',
+            'footer p',
+            '#hero-name',
+            '#hero-title',
+            '#hero .btn-primary',
+            '#loading-indicator',
+            '#header-terminal-name'
         ];
 
-        // Elementos que devem ter o efeito de digitação (subconjunto dos traduzíveis)
         const typewriterElementSelectors = [
-            'h2.section-title', // Títulos das secções
+            'h2.section-title',
             '#about-and-experience .panel-card p',
             '#about-and-experience .panel-card h3',
-            '#about-and-experience .panel-card ul li', // Adicionado: itens da lista de experiência
+            '#about-and-experience .panel-card ul li',
             '#what-i-do .what-i-do-card p',
             '#what-i-do .what-i-do-card h3',
             '#education-and-courses .panel-card ul li',
@@ -833,7 +826,7 @@
             context.font = 'Bold ' + (size * 0.8) + 'px "Space Mono"';
             context.textAlign = 'center';
             context.textBaseline = 'middle';
-            context.fillStyle = isGlitching ? '#FF0000' : '#00F060'; // Vermelho para glitch, verde normal
+            context.fillStyle = isGlitching ? '#FF0000' : '#00F060';
             context.fillText(character.toString(), size / 2, size / 2);
             return new THREE.CanvasTexture(canvas);
         }
@@ -976,11 +969,15 @@
         function typeWriter(element, text, i, speed, callback, keepCursor = false) {
             if (text === null || text === undefined) {
                 console.warn("typeWriter: 'text' é nulo ou indefinido para o elemento:", element);
-                element.innerHTML = ''; // Limpa o conteúdo se o texto for inválido
+                element.innerHTML = '';
                 if (callback) {
                     callback();
                 }
                 return;
+            }
+
+            if (i === 0) {
+                element.innerHTML = '';
             }
 
             if (i < text.length) {
@@ -997,7 +994,6 @@
         function handleIntersection(entries, observer) {
             entries.forEach(entry => {
                 const element = entry.target;
-                // Apenas armazena o innerHTML inicial como data-lang-pt se não existir
                 if (!element.dataset.langPt) {
                     element.dataset.langPt = element.innerHTML;
                 }
@@ -1039,7 +1035,6 @@
         const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
         function initializeTypingEffects() {
-            // Seleciona APENAS os elementos que DEVEM ter o efeito de digitação
             const textElements = document.querySelectorAll(
                 typewriterElementSelectors.join(', ')
             );
@@ -1048,9 +1043,6 @@
                 if (!element.hasAttribute('data-lang-pt')) {
                     element.setAttribute('data-lang-pt', element.innerHTML);
                 }
-                // No carregamento inicial, não limpa o innerHTML para evitar o flicker
-                // O IntersectionObserver cuidará do efeito de digitação quando o elemento for visível
-                // element.innerHTML = '';
                 observer.observe(element);
             });
         }
@@ -1074,19 +1066,16 @@
             const langBtn = document.getElementById('language-toggle-btn');
             langBtn.textContent = currentLanguage.toUpperCase();
 
-            elementTypingStates.clear(); // Limpa os estados de digitação para forçar re-digitação se necessário
+            elementTypingStates.clear();
 
-            // Seleciona TODOS os elementos que têm atributos de idioma para tradução
             const allTranslatableElements = document.querySelectorAll(
                 translatableElementSelectors.join(', ')
             );
 
-            // Atualiza o texto de TODOS os elementos traduzíveis IMEDIATAMENTE
             allTranslatableElements.forEach(element => {
-                clearTimeout(element.typedInterval); // Para qualquer digitação em andamento
+                clearTimeout(element.typedInterval);
 
                 let targetElement = element;
-                // Determina o elemento alvo para a tradução
                 if (element.tagName === 'A' && element.closest('#contact')) {
                     targetElement = element.querySelector('span');
                 } else if (element.tagName === 'A' && element.closest('#fullscreen-menu-overlay')) {
@@ -1094,8 +1083,6 @@
                 } else if (element.tagName === 'P' && element.closest('footer')) {
                     targetElement = element;
                 } else if (element.id === 'hero-name' || element.id === 'hero-title' || element.id === 'loading-indicator' || (element.tagName === 'A' && element.classList.contains('btn-primary'))) {
-                    // Para os elementos do hero e o botão principal, o targetElement é o próprio elemento
-                    // Se o elemento tem um span .hero-underline, o texto está dentro dele
                     if (element.querySelector('.hero-underline')) {
                         targetElement = element.querySelector('.hero-underline');
                     } else {
@@ -1104,25 +1091,22 @@
                 }
                 
                 if (targetElement) {
-                    // Obtém o texto traduzido correto do atributo data-lang
                     const textToDisplay = targetElement.getAttribute(`data-lang-${currentLanguage}`) || '';
-                    targetElement.innerHTML = textToDisplay; // Atualiza o texto imediatamente
+                    targetElement.innerHTML = textToDisplay;
                 }
             });
 
-            // Reativa o efeito de máquina de escrever para os elementos observados que estão visíveis
             const observedTextElements = document.querySelectorAll(
                 typewriterElementSelectors.join(', ')
             );
 
             observedTextElements.forEach(element => {
-                // Se o elemento estiver visível, reativa o efeito de digitação
                 const rect = element.getBoundingClientRect();
                 const isVisible = (rect.top < window.innerHeight && rect.bottom > 0);
                 
                 if (isVisible) {
                     const textToType = element.getAttribute(`data-lang-${currentLanguage}`) || '';
-                    element.innerHTML = ''; // Limpa para re-digitar
+                    element.innerHTML = '';
                     typeWriter(element, textToType, 0, 30, () => {
                         let state = elementTypingStates.get(element);
                         if (!state) {
@@ -1134,7 +1118,6 @@
                 }
             });
 
-            // Aplica o efeito de máquina de escrever ao texto da seção hero e ao cabeçalho (que estão sempre visíveis)
             const heroNameElement = document.getElementById('hero-name');
             const heroTitleElement = document.getElementById('hero-title');
             const heroNameSpan = heroNameElement ? heroNameElement.querySelector('.hero-underline') : null;
@@ -1142,12 +1125,12 @@
             
             if (heroNameSpan) {
                 const heroNameText = heroNameElement.getAttribute(`data-lang-${currentLanguage}`) || '';
-                heroNameSpan.innerHTML = ''; // Limpa para re-digitar
+                heroNameSpan.innerHTML = '';
                 typeWriter(heroNameSpan, heroNameText, 0, 80, null, false);
             }
             if (heroTitleSpan) {
                 const heroTitleText = heroTitleElement.getAttribute(`data-lang-${currentLanguage}`) || '';
-                heroTitleSpan.innerHTML = ''; // Limpa para re-digitar
+                heroTitleSpan.innerHTML = '';
                 typeWriter(heroTitleSpan, heroTitleText, 0, 50, null, false);
             }
 
@@ -1183,10 +1166,9 @@
 
             if (langBtn) {
                 langBtn.addEventListener('click', toggleLanguage);
-                currentLanguage = 'pt'; // Define o idioma inicial como português
-                langBtn.textContent = 'PT'; // Garante que o botão mostre "PT" inicialmente
+                currentLanguage = 'pt';
+                langBtn.textContent = 'PT';
 
-                // No carregamento inicial, atualiza todos os elementos traduzíveis para o idioma padrão (PT)
                 const allTranslatableElements = document.querySelectorAll(translatableElementSelectors.join(', '));
                 allTranslatableElements.forEach(element => {
                     let targetElement = element;
@@ -1205,18 +1187,15 @@
                     }
 
                     if (targetElement) {
-                        // Garante que o data-lang-pt seja o conteúdo inicial do HTML
                         if (!targetElement.hasAttribute('data-lang-pt')) {
                             targetElement.setAttribute('data-lang-pt', targetElement.innerHTML);
                         }
-                        // Define o conteúdo inicial com base no idioma atual (pt)
                         targetElement.innerHTML = targetElement.getAttribute(`data-lang-${currentLanguage}`) || '';
                     }
                 });
 
-                initializeTypingEffects(); // Inicializa os efeitos de digitação para os elementos observados
+                initializeTypingEffects();
 
-                // Atualiza o texto da seção Hero diretamente com o idioma inicial
                 const heroNameElement = document.querySelector('#hero h1');
                 const heroTitleElement = document.querySelector('#hero p');
                 const heroNameSpan = heroNameElement ? heroNameElement.querySelector('.hero-underline') : null;
@@ -1229,7 +1208,7 @@
                     heroTitleSpan.innerHTML = heroTitleElement.getAttribute('data-lang-pt') || '';
                 }
 
-                animateHeaderTerminalText(); // Anima o texto do terminal do cabeçalho
+                animateHeaderTerminalText();
             }
         };
     </script>
