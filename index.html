@@ -573,7 +573,7 @@
             <div class="panel-container max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="panel-card text-lg leading-relaxed text-gray-300">
                     <h3 class="text-2xl mb-4 text-white text-center font-['Space_Mono']" data-lang-pt="Quem Sou" data-lang-en="Who I Am" data-lang-es="Quién Soy">Quem Sou</h3>
-                    <p class="mb-4" data-lang-pt="Com mais de três anos de experiência, sou um <strong class='text-00F060'>Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes. Minha expertise abrange linguagens, frameworks e tecnologias como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>, permitindo-me atuar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos." data-lang-en="With over three years of experience, I am a <strong class='text-00F060'>Systems Developer with a passion for Data</strong>, specialized in transforming complex challenges into efficient solutions. My expertise spans languages, frameworks, and technologies such as <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C#, and ASP.NET</strong>, allowing me to confidently work on projects of various scales, from web applications to robust enterprise systems." data-lang-es="Con más de tres años de experiencia, soy un <strong='text-00F060'>Desarrollador de Sistemas con pasión por los Datos</strong>, especializado en transformar desafíos complejos en soluciones eficientes. Mi experiencia abarca lenguajes, frameworks y tecnologías como <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# y ASP.NET</strong>, lo que me permite trabalhar com confiança em projetos de diversas escalas, de aplicações web a sistemas corporativos robustos.">Com mais de três anos de experiência, sou um <strong class="text-00F060">Desenvolvedor de Sistemas com paixão por Dados</strong>, especializado em transformar desafios complexos em soluções eficientes.</p>
+                    <p class="mb-4" data-lang-pt="Com mais de 3 anos de experiência, sou um <strong class='text-00F060'>Desenvolvedor de Sistemas com paixão por Dados</strong>. Especializado em transformar desafios complexos em soluções eficientes, minha expertise abrange <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>." data-lang-en="With over 3 years of experience, I am a <strong class='text-00F060'>Systems Developer passionate about Data</strong>. Specialized in transforming complex challenges into efficient solutions, my expertise covers <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C#, and ASP.NET</strong>." data-lang-es="Con más de 3 años de experiencia, soy un <strong class='text-00F060'>Desarrollador de Sistemas apasionado por los Datos</strong>. Especializado en transformar desafíos complejos en soluciones eficientes, mi experiencia abarca <strong class='text-00F060'>Python, SQL Server, Oracle, MongoDB, C# y ASP.NET</strong>.">Com mais de 3 anos de experiência, sou um <strong class="text-00F060">Desenvolvedor de Sistemas com paixão por Dados</strong>. Especializado em transformar desafios complexos em soluções eficientes, minha expertise abrange <strong class="text-00F060">Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>.</p>
                     <p data-lang-pt="Sou impulsionado pela <strong class='text-00F060'>análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong class='text-00F060'>garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>." data-lang-en="I am driven by <strong class='text-00F060'>data analysis, management, and algorithm optimization</strong>, always seeking to <strong class='text-00F060'>ensure data integrity and consistency to generate strategic and actionable insights</strong>." data-lang-es="Me impulsa el <strong class='text-00F060'>análisis de datos, la gestión y la optimización de algoritmos</strong>, siempre buscando <strong class='text-00F060'>garantizar la integridad y consistencia de la información para generar insights estratégicos y accionables</strong>.">Sou impulsionado pela <strong class="text-00F060">análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong class="text-00F060">garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>.</p>
                 </div>
 
@@ -976,10 +976,6 @@
                 return;
             }
 
-            if (i === 0) {
-                element.innerHTML = '';
-            }
-
             if (i < text.length) {
                 element.innerHTML = text.substring(0, i + 1) + (keepCursor ? '<span class="typing-cursor">_</span>' : '');
                 element.typedInterval = setTimeout(() => typeWriter(element, text, i + 1, speed, callback, keepCursor), speed);
@@ -1015,7 +1011,7 @@
                     clearTimeout(element.typedInterval);
                     if (!state[currentLanguage]) {
                         element.innerHTML = '';
-                        typeWriter(element, currentText, 0, 30, () => {
+                        typeWriter(element, currentText, 0, 4, () => { /* Velocidade ajustada para 4ms */
                             state[currentLanguage] = true;
                         });
                     } else {
@@ -1053,7 +1049,7 @@
                 const text = headerTerminalElement.getAttribute(`data-lang-${currentLanguage}`) || '';
                 clearTimeout(headerTerminalElement.typedInterval);
                 headerTerminalElement.innerHTML = '';
-                typeWriter(headerTerminalElement, text, 0, 80, null, true);
+                typeWriter(headerTerminalElement, text, 0, 10, null, true); /* Velocidade ajustada para 10ms */
             }
         }
 
@@ -1107,7 +1103,7 @@
                 if (isVisible) {
                     const textToType = element.getAttribute(`data-lang-${currentLanguage}`) || '';
                     element.innerHTML = '';
-                    typeWriter(element, textToType, 0, 30, () => {
+                    typeWriter(element, textToType, 0, 4, () => { /* Velocidade ajustada para 4ms */
                         let state = elementTypingStates.get(element);
                         if (!state) {
                             state = { pt: false, en: false, es: false };
@@ -1126,12 +1122,12 @@
             if (heroNameSpan) {
                 const heroNameText = heroNameElement.getAttribute(`data-lang-${currentLanguage}`) || '';
                 heroNameSpan.innerHTML = '';
-                typeWriter(heroNameSpan, heroNameText, 0, 80, null, false);
+                typeWriter(heroNameSpan, heroNameText, 0, 10, null, false); /* Velocidade ajustada para 10ms */
             }
             if (heroTitleSpan) {
                 const heroTitleText = heroTitleElement.getAttribute(`data-lang-${currentLanguage}`) || '';
                 heroTitleSpan.innerHTML = '';
-                typeWriter(heroTitleSpan, heroTitleText, 0, 50, null, false);
+                typeWriter(heroTitleSpan, heroTitleText, 0, 7, null, false); /* Velocidade ajustada para 7ms */
             }
 
             animateHeaderTerminalText();
