@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADhJREFUOE9jZGDQGMjAoAE/I2IKhDGBQggGYxKDAcT/gfgAJo0BmAwiPwxDMBhkYGBgAAAByQA9c3D9wQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANgAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADhJREFUOE9jZGDQGMjAoAE/I2IKhDGBQggGYxKDAcT/gfgAJo0BmAwiPwxDMBhkYGBgAAAByQA9c3D9wQAAAABJRU5ErkJggg==">
 
     <style>
         :root {
@@ -45,7 +45,6 @@
             position: relative;
         }
 
-        /* Background Pattern */
         body::before {
             content: '';
             position: fixed;
@@ -62,7 +61,6 @@
             pointer-events: none;
         }
 
-        /* Header Styles */
         header {
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
@@ -117,7 +115,6 @@
             text-shadow: 0 0 10px var(--neural-glow);
         }
 
-        /* Mobile Menu */
         #menu-toggle {
             display: none;
             background: none;
@@ -206,7 +203,6 @@
             transform: scale(1.05);
         }
 
-        /* Hero Section */
         #hero {
             min-height: 100vh;
             position: relative;
@@ -258,10 +254,21 @@
             position: relative;
             display: inline-block;
             border-radius: 50%;
-            padding: 4px;
+            margin-bottom: 2rem;
+            overflow: visible;
+        }
+
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            width: calc(100% + 8px);
+            height: calc(100% + 8px);
+            border-radius: 50%;
             background: linear-gradient(45deg, var(--accent-green), var(--accent-cyan));
             animation: profile-glow 3s infinite alternate ease-in-out;
-            margin-bottom: 2rem;
+            z-index: 0;
         }
 
         .profile-image-container img {
@@ -272,19 +279,21 @@
             object-fit: cover;
             position: relative;
             z-index: 1;
+            border: 4px solid var(--bg-dark); 
+            box-sizing: border-box;
         }
 
         @keyframes profile-glow {
             0% { 
-                box-shadow: 0 0 20px var(--neural-glow), 0 0 40px rgba(0, 240, 96, 0.2);
+                box-shadow: 0 0 10px var(--neural-glow), 0 0 20px rgba(0, 240, 96, 0.1);
                 transform: scale(1);
             }
             50% { 
-                box-shadow: 0 0 30px rgba(0, 240, 96, 0.6), 0 0 60px rgba(0, 240, 96, 0.4);
-                transform: scale(1.02);
+                box-shadow: 0 0 20px rgba(0, 240, 96, 0.4), 0 0 40px rgba(0, 240, 96, 0.3);
+                transform: scale(1.05);
             }
             100% { 
-                box-shadow: 0 0 20px var(--neural-glow), 0 0 40px rgba(0, 240, 96, 0.2);
+                box-shadow: 0 0 10px var(--neural-glow), 0 0 20px rgba(0, 240, 96, 0.1);
                 transform: scale(1);
             }
         }
@@ -314,7 +323,6 @@
             font-weight: 700;
         }
 
-        /* Buttons */
         .btn-primary {
             background: linear-gradient(45deg, var(--accent-green), var(--accent-cyan));
             color: var(--bg-dark);
@@ -350,7 +358,6 @@
             box-shadow: 0 12px 35px rgba(0, 240, 96, 0.5);
         }
 
-        /* Section Styles */
         .section {
             padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 2rem);
             max-width: 1400px;
@@ -379,7 +386,6 @@
             border-radius: 2px;
         }
 
-        /* Cards */
         .card {
             background: rgba(26, 26, 26, 0.8);
             backdrop-filter: blur(10px);
@@ -414,7 +420,6 @@
             border-color: var(--accent-green);
         }
 
-        /* Grid Layouts */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -433,7 +438,6 @@
             gap: 1.5rem;
         }
 
-        /* Skills */
         .skill-badge {
             background: linear-gradient(45deg, var(--accent-green), var(--accent-cyan));
             color: var(--bg-dark);
@@ -452,7 +456,6 @@
             box-shadow: 0 6px 20px rgba(0, 240, 96, 0.5);
         }
 
-        /* Service Icons */
         .service-icon {
             width: 80px;
             height: 80px;
@@ -472,7 +475,6 @@
             box-shadow: 0 12px 35px rgba(0, 240, 96, 0.5);
         }
 
-        /* Contact Icons */
         .contact-icon {
             font-size: 1.5rem;
             margin-right: 1rem;
@@ -499,7 +501,6 @@
             transform: translateX(10px);
         }
 
-        /* Typewriter Effect */
         .typing-cursor {
             display: inline-block;
             width: 2px;
@@ -515,7 +516,6 @@
             50% { opacity: 0; }
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .section {
                 padding: 3rem 1rem;
@@ -548,7 +548,6 @@
             }
         }
 
-        /* Utility Classes */
         .text-center { text-align: center; }
         .text-left { text-align: left; }
         .text-right { text-align: right; }
@@ -562,7 +561,6 @@
         .justify-center { justify-content: center; }
         .gap-4 { gap: 1rem; }
 
-        /* Animation Classes */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -602,7 +600,7 @@
         <div class="header-content">
             <div class="header-left">
                 <button id="language-toggle-btn">PT</button>
-                <span id="header-terminal-name" data-lang-pt="nando@debian:~$" data-lang-en="nando@debian:~$" data-lang-es="nando@debian:~$">nando@debian:~$</span>
+                <span id="header-terminal-name" data-lang-pt="nando@debian:~$" data-lang-en="nando@debian:~$" data-lang-es="nando@debian:~$"></span>
             </div>
             <button id="menu-toggle">&#9776;</button>
         </div>
@@ -626,23 +624,23 @@
             <div class="profile-image-container">
                 <img src="https://i.imgur.com/2Zpyrep.png" alt="Foto de perfil de Fernando Augusto">
             </div>
-            <h1 id="hero-name" class="hero-title typewriter-element" data-lang-pt="FERNANDO AUGUSTO" data-lang-en="FERNANDO AUGUSTO" data-lang-es="FERNANDO AUGUSTO">FERNANDO AUGUSTO</h1>
-            <p id="hero-title" class="hero-subtitle typewriter-element" data-lang-pt="Desenvolvedor de Sistemas com Foco em <strong>DADOS</strong>" data-lang-en="Systems Developer with a Focus on <strong>DATA</strong>" data-lang-es="Desarrollador de Sistemas con Enfoque en <strong>DATOS</strong>">Desenvolvedor de Sistemas com Foco em <strong>DADOS</strong></p>
+            <h1 id="hero-name" class="hero-title typewriter-element" data-lang-pt="FERNANDO AUGUSTO" data-lang-en="FERNANDO AUGUSTO" data-lang-es="FERNANDO AUGUSTO"></h1>
+            <p id="hero-title" class="hero-subtitle typewriter-element" data-lang-pt="Desenvolvedor de Sistemas com Foco em <strong>DADOS</strong>" data-lang-en="Systems Developer with a Focus on <strong>DATA</strong>" data-lang-es="Desarrollador de Sistemas con Enfoque en <strong>DATOS</strong>"></p>
             <a href="https://wa.me/5579999159885" target="_blank" class="btn-primary" data-lang-pt="Conecte-se" data-lang-en="Connect" data-lang-es="Conectar">Conecte-se</a>
         </div>
     </section>
 
     <section id="about-and-experience" class="section">
-        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia">Sobre Mim e Experiência</h2>
+        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Sobre Mim e Experiência" data-lang-en="About Me & Experience" data-lang-es="Sobre Mí y Experiencia"></h2>
         <div class="grid-2">
             <div class="card slide-in-left">
-                <h3 class="text-center mb-4 typewriter-element" style="font-family: 'Space Mono', monospace; font-size: 1.5rem; color: var(--accent-green);" data-lang-pt="Quem Sou" data-lang-en="Who I Am" data-lang-es="Quién Soy">Quem Sou</h3>
+                <h3 class="text-center mb-4 typewriter-element" style="font-family: 'Space Mono', monospace; font-size: 1.5rem; color: var(--accent-green);" data-lang-pt="Quem Sou" data-lang-en="Who I Am" data-lang-es="Quién Soy"></h3>
                 <p class="mb-4" data-lang-pt="Com mais de 3 anos de experiência, sou um <strong style='color: var(--accent-green)'>Desenvolvedor de Sistemas com uma paixão inabalável por Dados</strong>. Especializado em transformar desafios complexos em soluções eficientes, meu trabalho envolve <strong style='color: var(--accent-green)'>Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>." data-lang-en="With over 3 years of experience, I am a <strong style='color: var(--accent-green)'>Systems Developer passionate about Data</strong>. Specialized in transforming complex challenges into efficient solutions, my expertise covers <strong style='color: var(--accent-green)'>Python, SQL Server, Oracle, MongoDB, C#, and ASP.NET</strong>." data-lang-es="Con más de 3 años de experiencia, soy un <strong style='color: var(--accent-green)'>Desarrollador de Sistemas apasionado por los Datos</strong>. Especializado en transformar desafíos complejos en soluciones eficientes, mi experiencia abarca <strong style='color: var(--accent-green)'>Python, SQL Server, Oracle, MongoDB, C# y ASP.NET</strong>.">Com mais de 3 anos de experiência, sou um <strong style="color: var(--accent-green)">Desenvolvedor de Sistemas com paixão por Dados</strong>. Especializado em transformar desafios complexos em soluções eficientes, minha expertise abrange <strong style="color: var(--accent-green)">Python, SQL Server, Oracle, MongoDB, C# e ASP.NET</strong>.</p>
                 <p data-lang-pt="Sou impulsionado pela <strong style='color: var(--accent-green)'>análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong style='color: var(--accent-green)'>garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>." data-lang-en="I am driven by <strong style='color: var(--accent-green)'>data analysis, management, and algorithm optimization</strong>, always seeking to <strong style='color: var(--accent-green)'>ensure data integrity and consistency to generate strategic and actionable insights</strong>." data-lang-es="Me impulsa el <strong style='color: var(--accent-green)'>análisis de datos, la gestión y la optimización de algoritmos</strong>, siempre buscando <strong style='color: var(--accent-green)'>garantizar la integridad y consistencia de la información para generar insights estratégicos y accionables</strong>.">Sou impulsionado pela <strong style="color: var(--accent-green)">análise, gestão de dados e otimização de algoritmos</strong>, sempre buscando <strong style="color: var(--accent-green)">garantir a integridade e consistência das informações para gerar insights estratégicos e acionáveis</strong>.</p>
             </div>
 
             <div class="card slide-in-right">
-                <h3 class="text-center mb-4 typewriter-element" style="font-family: 'Space Mono', monospace; font-size: 1.5rem; color: var(--accent-green);" data-lang-pt="Experiência Profissional" data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional">Experiência Profissional</h3>
+                <h3 class="text-center mb-4 typewriter-element" style="font-family: 'Space Mono', monospace; font-size: 1.5rem; color: var(--accent-green);" data-lang-pt="Experiência Profissional" data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional"></h3>
                 <div>
                     <p style="font-weight: 600; color: var(--text-light); margin-bottom: 0.5rem;" data-lang-pt="Desenvolvedor" data-lang-en="Developer" data-lang-es="Desarrollador">Desenvolvedor</p>
                     <p style="color: var(--accent-green); font-weight: 500; margin-bottom: 0.5rem;" data-lang-pt="DP Sistemas" data-lang-en="DP Systems" data-lang-es="DP Sistemas">DP Sistemas</p>
@@ -667,7 +665,7 @@
     </section>
 
     <section id="what-i-do" class="section">
-        <h2 class="section-title fade-in typewriter-element" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do" data-lang-es="Lo Que Hago">O Que Eu Faço</h2>
+        <h2 class="section-title fade-in typewriter-element" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do" data-lang-es="Lo Que Hago"></h2>
         <div class="grid-4">
             <div class="card fade-in text-center">
                 <div class="service-icon">🔗</div>
@@ -678,7 +676,7 @@
             <div class="card fade-in text-center">
                 <div class="service-icon">🗄️</div>
                 <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-light);" data-lang-pt="Otimização de Banco de Dados" data-lang-en="Database Optimization" data-lang-es="Optimización de Bases de Datos">Otimização de Banco de Dados</h3>
-                <p style="color: var(--gray-text-strong); line-height: 1.6;" data-lang-pt="Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência." data-lang-en="Expert in database maintenance, optimization, and migration (SQL Server, Oracle, MongoDB), ensuring performance and consistency." data-lang-es="Especialista em mantenimiento, otimização e migração de bases de datos (SQL Server, Oracle, MongoDB), asegurando rendimiento y consistencia.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
+                <p style="color: var(--gray-text-strong); line-height: 1.6;" data-lang-pt="Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência." data-lang-en="Expert in database maintenance, optimization, and migration (SQL Server, Oracle, MongoDB), ensuring performance and consistency." data-lang-es="Especialista em mantenimiento, otimização e migração de bases de datos (SQL Server, Oracle, MongoDB), assegurando rendimiento y consistencia.">Especialista em manutenção, otimização e migração de bancos de dados (SQL Server, Oracle, MongoDB), assegurando performance e consistência.</p>
             </div>
 
             <div class="card fade-in text-center">
@@ -690,16 +688,16 @@
             <div class="card fade-in text-center">
                 <div class="service-icon">📊</div>
                 <h3 style="font-family: 'Space Mono', monospace; font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-light);" data-lang-pt="Análise de Dados" data-lang-en="Data Analysis" data-lang-es="Análisis de Datos">Análise de Dados</h3>
-                <p style="color: var(--gray-text-strong); line-height: 1.6;" data-lang-pt="Transformação de dados brutos em insights estratégicos através de análises avançadas e visualizações interativas." data-lang-en="Transforming raw data into strategic insights through advanced analysis and interactive visualizations." data-lang-es="Transformación de datos brutos en insights estratégicos a través de análisis avanzados y visualizaciones interactivas.">Transformação de dados brutos em insights estratégicos através de análises avançadas e visualizações interativas.</p>
+                <p style="color: var(--gray-text-strong); line-height: 1.6;" data-lang-pt="Transformação de dados brutos em insights estratégicos através de análises avançadas e visualizações interativas." data-lang-en="Transforming raw data into strategic insights through advanced analysis and interactive visualizations." data-lang-es="Transformación de datos brutos en insights estratégicos a través de análisis avanzados y visualizaciones interactivas.">Transformação de dados brutos em insights estratégicos através de análises avançadas e visualizações interactivas.</p>
             </div>
         </div>
     </section>
 
     <section id="education-and-courses" class="section">
-        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Educação e Formação" data-lang-en="Education & Training" data-lang-es="Educación y Formación">Educação e Formação</h2>
+        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Educação e Formação" data-lang-en="Education & Training" data-lang-es="Educación y Formación"></h2>
         <div class="grid-2">
             <div class="card slide-in-left">
-                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem;" data-lang-pt="Formação Acadêmica" data-lang-en="Academic Education" data-lang-es="Formación Académica">Formação Acadêmica</h3>
+                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem;" data-lang-pt="Formação Acadêmica" data-lang-en="Academic Education" data-lang-es="Formación Académica"></h3>
                 <div style="margin-bottom: 2rem;">
                     <p style="font-weight: 600; color: var(--text-light); margin-bottom: 0.5rem;" data-lang-pt="Tecnólogo em Análise e Desenvolvimento de Sistemas" data-lang-en="Technology in Systems Analysis and Development" data-lang-es="Tecnólogo en Análisis y Desarrollo de Sistemas">Tecnólogo em Análise e Desenvolvimento de Sistemas</p>
                     <p style="color: var(--accent-green); margin-bottom: 0.5rem;" data-lang-pt="Universidade Tiradentes (UNIT)" data-lang-en="Tiradentes University (UNIT)" data-lang-es="Universidad Tiradentes (UNIT)">Universidade Tiradentes (UNIT)</p>
@@ -708,7 +706,7 @@
             </div>
 
             <div class="card slide-in-right">
-                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem;" data-lang-pt="Certificações e Cursos" data-lang-en="Certifications & Courses" data-lang-es="Certificaciones y Cursos">Certificações e Cursos</h3>
+                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem;" data-lang-pt="Certificações e Cursos" data-lang-en="Certifications & Courses" data-lang-es="Certificaciones y Cursos"></h3>
                 <ul style="list-style: none; padding-left: 0;">
                     <li style="position: relative; padding-left: 1.5rem; margin-bottom: 1rem; color: var(--text-light);" data-lang-pt="Python para Análise de Dados" data-lang-en="Python for Data Analysis" data-lang-es="Python para Análisis de Datos">
                         <span style="position: absolute; left: 0; top: 0; color: var(--accent-green);">✓</span>
@@ -732,10 +730,10 @@
     </section>
 
     <section id="skills-and-knowledge" class="section">
-        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Habilidades e Conhecimentos" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos">Habilidades e Conhecimentos</h2>
+        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Habilidades e Conhecimentos" data-lang-en="Skills & Knowledge" data-lang-es="Habilidades y Conocimientos"></h2>
         <div class="grid-3">
             <div class="card fade-in">
-                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Linguagens de Programação" data-lang-en="Programming Languages" data-lang-es="Lenguajes de Programación">Linguagens de Programação</h3>
+                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Linguagens de Programação" data-lang-en="Programming Languages" data-lang-es="Lenguajes de Programación"></h3>
                 <div class="text-center">
                     <span class="skill-badge">Python</span>
                     <span class="skill-badge">C#</span>
@@ -746,7 +744,7 @@
             </div>
 
             <div class="card fade-in">
-                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Bancos de Dados" data-lang-en="Databases" data-lang-es="Bases de Datos">Bancos de Dados</h3>
+                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Bancos de Dados" data-lang-en="Databases" data-lang-es="Bases de Datos"></h3>
                 <div class="text-center">
                     <span class="skill-badge">SQL Server</span>
                     <span class="skill-badge">Oracle</span>
@@ -757,7 +755,7 @@
             </div>
 
             <div class="card fade-in">
-                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Frameworks e Tecnologias" data-lang-en="Frameworks & Technologies" data-lang-es="Frameworks y Tecnologías">Frameworks e Tecnologias</h3>
+                <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Frameworks e Tecnologias" data-lang-en="Frameworks & Technologies" data-lang-es="Frameworks y Tecnologías"></h3>
                 <div class="text-center">
                     <span class="skill-badge">ASP.NET</span>
                     <span class="skill-badge">Django</span>
@@ -770,9 +768,9 @@
     </section>
 
     <section id="contact" class="section">
-        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</h2>
+        <h2 class="section-title fade-in typewriter-element" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto"></h2>
         <div class="card slide-in-left" style="max-width: 600px; margin: 0 auto;">
-            <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Vamos Conversar!" data-lang-en="Let's Talk!" data-lang-es="¡Hablemos!">Vamos Conversar!</h3>
+            <h3 style="font-family: 'Space Mono', monospace; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center;" data-lang-pt="Vamos Conversar!" data-lang-en="Let's Talk!" data-lang-es="¡Hablemos!"></h3>
             <p style="margin-bottom: 2rem; color: var(--gray-text-strong); text-align: center;" data-lang-pt="Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato!" data-lang-en="I'm always open to new opportunities and interesting projects. Get in touch!" data-lang-es="Siempre estoy abierto a nuevas oportunidades y proyectos interesantes. ¡Ponte en contacto!">Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato!</p>
             
             <div>
@@ -798,18 +796,15 @@
 
 
     <script>
-        // Global Variables
         let scene, camera, renderer, neuralNetwork, particles, dataFlow, matrixRain;
         let currentLanguage = 'pt';
-        let elementTypingStates = new Map();
+        let activeTypeWriters = new Map(); 
         let isThreeJSLoaded = false;
         let animationId;
         let mouseX = 0, mouseY = 0;
 
-        // Matrix Characters for Background
         const matrixChars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
 
-        // Language and Translation System
         const translatableElementSelectors = [
             '[data-lang-pt]'
         ];
@@ -818,7 +813,6 @@
             '.typewriter-element'
         ];
 
-        // Advanced Typewriter Effect
         class TypeWriter {
             constructor(element, text, speed = 50, callback = null) {
                 this.element = element;
@@ -827,6 +821,7 @@
                 this.callback = callback;
                 this.index = 0;
                 this.isTyping = false;
+                this.timeoutId = null;
             }
 
             start() {
@@ -837,10 +832,14 @@
             }
 
             type() {
+                if (!this.isTyping) {
+                    this.stop();
+                    return;
+                }
+
                 if (this.index < this.text.length) {
                     const char = this.text.charAt(this.index);
                     
-                    // Handle HTML tags
                     if (char === '<') {
                         const tagEnd = this.text.indexOf('>', this.index);
                         if (tagEnd !== -1) {
@@ -856,54 +855,52 @@
                         this.index++;
                     }
 
-                    // Variable speed based on character
                     let currentSpeed = this.speed;
                     if (char === '.' || char === '!' || char === '?') {
-                        currentSpeed = this.speed * 3; // Pause at punctuation
+                        currentSpeed = this.speed * 3;
                     } else if (char === ',') {
-                        currentSpeed = this.speed * 2; // Shorter pause at commas
+                        currentSpeed = this.speed * 2;
                     }
 
-                    setTimeout(() => this.type(), currentSpeed);
+                    this.timeoutId = setTimeout(() => this.type(), currentSpeed);
                 } else {
                     this.isTyping = false;
+                    this.timeoutId = null;
                     if (this.callback) this.callback();
                 }
             }
 
             stop() {
+                if (this.timeoutId) {
+                    clearTimeout(this.timeoutId);
+                    this.timeoutId = null;
+                }
                 this.isTyping = false;
             }
         }
 
-        // Enhanced Three.js Neural Network Implementation
         function initThreeJS() {
             const canvas = document.getElementById('three-canvas');
             const loadingIndicator = document.getElementById('loading-indicator');
             
             if (!canvas) return;
 
-            // Scene setup
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-            // Enhanced Neural Network Creation
             createDynamicNeuralNetwork();
             createEnhancedParticleSystem();
             createDataFlowSystem();
             createMatrixRain();
 
-            // Camera positioning
             camera.position.z = 20;
             camera.position.y = 3;
 
-            // Animation loop
             animate();
 
-            // Hide loading indicator
             setTimeout(() => {
                 loadingIndicator.classList.add('hidden');
                 isThreeJSLoaded = true;
@@ -913,52 +910,45 @@
         function createDynamicNeuralNetwork() {
             neuralNetwork = new THREE.Group();
 
-            // Enhanced network parameters
-            const layers = [8, 12, 16, 20, 16, 12, 8]; // More complex architecture
+            const layers = [8, 12, 16, 20, 16, 12, 8];
             const layerSpacing = 4;
             const nodeSpacing = 1.8;
 
             const nodes = [];
             const connections = [];
 
-            // Create nodes for each layer with enhanced properties
             layers.forEach((nodeCount, layerIndex) => {
                 const layerNodes = [];
                 const startY = -(nodeCount - 1) * nodeSpacing / 2;
 
                 for (let i = 0; i < nodeCount; i++) {
-                    // Enhanced node geometry
                     const geometry = new THREE.SphereGeometry(0.12, 16, 16);
                     const material = new THREE.MeshBasicMaterial({
                         color: new THREE.Color().setHSL(0.3 + Math.random() * 0.1, 1, 0.5 + Math.random() * 0.3),
                         transparent: true,
-                        // Opacidade muito reduzida para os nós
-                        opacity: 0.15 
+                        opacity: 0.02 
                     });
 
                     const node = new THREE.Mesh(geometry, material);
                     
-                    // Dynamic positioning with wave motion
                     const baseX = (layerIndex - layers.length / 2) * layerSpacing;
                     const baseY = startY + i * nodeSpacing;
                     const baseZ = (Math.random() - 0.5) * 2;
                     
                     node.position.set(baseX, baseY, baseZ);
 
-                    // Enhanced animation data
                     node.userData = {
                         originalScale: 1,
                         originalPosition: { x: baseX, y: baseY, z: baseZ },
-                        // Reduzir amplitude de pulso e de onda
-                        pulseSpeed: 0.01 + Math.random() * 0.02, 
+                        pulseSpeed: 0.005 + Math.random() * 0.01, 
                         pulseOffset: Math.random() * Math.PI * 2,
-                        waveSpeed: 0.005 + Math.random() * 0.01, 
-                        waveAmplitude: 0.2 + Math.random() * 0.4, 
-                        rotationSpeed: (Math.random() - 0.5) * 0.01, 
+                        waveSpeed: 0.002 + Math.random() * 0.005, 
+                        waveAmplitude: 0.05 + Math.random() * 0.1, 
+                        rotationSpeed: (Math.random() - 0.5) * 0.005, 
                         layerIndex: layerIndex,
                         nodeIndex: i,
-                        floatSpeed: 0.005 + Math.random() * 0.01,
-                        floatAmplitude: 0.1 + Math.random() * 0.2
+                        floatSpeed: 0.002 + Math.random() * 0.005,
+                        floatAmplitude: 0.02 + Math.random() * 0.05
                     };
 
                     neuralNetwork.add(node);
@@ -967,14 +957,13 @@
                 nodes.push(layerNodes);
             });
 
-            // Create enhanced connections between layers
             for (let layerIndex = 0; layerIndex < layers.length - 1; layerIndex++) {
                 const currentLayer = nodes[layerIndex];
                 const nextLayer = nodes[layerIndex + 1];
 
                 currentLayer.forEach((currentNode, currentIndex) => {
                     nextLayer.forEach((nextNode, nextIndex) => {
-                        if (Math.random() > 0.15) { // 85% connection probability
+                        if (Math.random() > 0.15) {
                             const geometry = new THREE.BufferGeometry();
                             const positions = new Float32Array([
                                 currentNode.position.x, currentNode.position.y, currentNode.position.z,
@@ -985,17 +974,16 @@
                             const material = new THREE.LineBasicMaterial({
                                 color: 0x00f060,
                                 transparent: true,
-                                // Opacidade muito reduzida para as linhas
-                                opacity: 0.08
+                                opacity: 0.01 
                             });
 
                             const line = new THREE.Line(geometry, material);
                             line.userData = {
-                                pulseSpeed: 0.01 + Math.random() * 0.02,
+                                pulseSpeed: 0.005 + Math.random() * 0.01, 
                                 pulseOffset: Math.random() * Math.PI * 2,
                                 currentNode: currentNode,
                                 nextNode: nextNode,
-                                dataFlowSpeed: 0.02 + Math.random() * 0.03,
+                                dataFlowSpeed: 0.01 + Math.random() * 0.02, 
                                 dataFlowOffset: Math.random() * Math.PI * 2
                             };
 
@@ -1010,7 +998,7 @@
         }
 
         function createEnhancedParticleSystem() {
-            const particleCount = 50; // Reduzido drasticamente o número de partículas
+            const particleCount = 20; 
             const geometry = new THREE.BufferGeometry();
             const positions = new Float32Array(particleCount * 3);
             const velocities = new Float32Array(particleCount * 3);
@@ -1022,11 +1010,10 @@
                 positions[i3 + 1] = (Math.random() - 0.5) * 80;
                 positions[i3 + 2] = (Math.random() - 0.5) * 80;
 
-                velocities[i3] = (Math.random() - 0.5) * 0.01; // Velocidade reduzida
-                velocities[i3 + 1] = (Math.random() - 0.5) * 0.01; 
-                velocities[i3 + 2] = (Math.random() - 0.5) * 0.01; 
+                velocities[i3] = (Math.random() - 0.5) * 0.005; 
+                velocities[i3 + 1] = (Math.random() - 0.5) * 0.005; 
+                velocities[i3 + 2] = (Math.random() - 0.5) * 0.005; 
 
-                // Color variation
                 const hue = 0.3 + Math.random() * 0.1;
                 const color = new THREE.Color().setHSL(hue, 1, 0.5 + Math.random() * 0.3);
                 colors[i3] = color.r;
@@ -1039,9 +1026,9 @@
             geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
             const material = new THREE.PointsMaterial({
-                size: 0.5, // Tamanho muito reduzido
+                size: 0.2, 
                 transparent: true,
-                opacity: 0.1, // Opacidade muito reduzida
+                opacity: 0.05, 
                 blending: THREE.AdditiveBlending,
                 vertexColors: true
             });
@@ -1051,7 +1038,6 @@
         }
 
         function createDataFlowSystem() {
-            // Este sistema já era relativamente sutil, mas vou reduzir a opacidade dos pontos de dados
             dataFlow = new THREE.Group();
             
             for (let i = 0; i < 30; i++) {
@@ -1059,7 +1045,7 @@
                 const material = new THREE.MeshBasicMaterial({
                     color: new THREE.Color().setHSL(0.3, 1, 0.8),
                     transparent: true,
-                    opacity: 0.3 // Opacidade reduzida
+                    opacity: 0.3
                 });
 
                 const dataPoint = new THREE.Mesh(geometry, material);
@@ -1080,16 +1066,14 @@
         function createMatrixRain() {
             matrixRain = new THREE.Group();
             
-            // Aumentar o número de caracteres e a sua proeminência
-            for (let i = 0; i < 300; i++) { // Mais caracteres
+            for (let i = 0; i < 500; i++) {
                 const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
+                const context = canvas.getContext('2d'); 
                 canvas.width = 32;
                 canvas.height = 32;
                 
-                // Cor mais vibrante e opacidade base maior
                 context.fillStyle = `rgba(0, 255, 100, ${0.6 + Math.random() * 0.4})`; 
-                context.font = 'bold 28px monospace'; // Tamanho da fonte maior
+                context.font = 'bold 28px monospace'; 
                 context.textAlign = 'center';
                 context.textBaseline = 'middle';
                 
@@ -1100,13 +1084,12 @@
                 const material = new THREE.SpriteMaterial({
                     map: texture,
                     transparent: true,
-                    // Opacidade base maior
                     opacity: 0.7 + Math.random() * 0.3, 
                     blending: THREE.AdditiveBlending
                 });
                 
                 const sprite = new THREE.Sprite(material);
-                sprite.scale.set(2.2, 2.2, 1); // Tamanho do sprite maior
+                sprite.scale.set(2.2, 2.2, 1); 
                 
                 sprite.position.set(
                     (Math.random() - 0.5) * 120,
@@ -1115,7 +1098,7 @@
                 );
                 
                 sprite.userData = {
-                    fallSpeed: 0.1 + Math.random() * 0.2, // Velocidade de queda um pouco maior
+                    fallSpeed: 0.1 + Math.random() * 0.2, 
                     rotationSpeed: (Math.random() - 0.5) * 0.015,
                     originalY: sprite.position.y,
                     char: char,
@@ -1137,11 +1120,10 @@
 
             const time = Date.now() * 0.001;
 
-            // Animação da rede neural - agora muito mais sutil
             if (neuralNetwork) {
-                neuralNetwork.rotation.y += 0.002; // Rotação mais lenta
-                neuralNetwork.rotation.x = Math.sin(time * 0.1) * 0.1 + mouseY * 0.1; // Movimento mais suave
-                neuralNetwork.rotation.z = Math.cos(time * 0.08) * 0.05;
+                neuralNetwork.rotation.y += 0.0005; 
+                neuralNetwork.rotation.x = Math.sin(time * 0.02) * 0.02 + mouseY * 0.02; 
+                neuralNetwork.rotation.z = Math.cos(time * 0.015) * 0.01;
 
                 neuralNetwork.children.forEach(child => {
                     if (child.geometry && child.geometry.type === 'SphereGeometry') {
@@ -1151,9 +1133,8 @@
                         const pulse2 = Math.cos(time * userData.pulseSpeed * 1.3 + userData.pulseOffset);
                         const combinedPulse = (pulse1 + pulse2 * 0.5) / 1.5;
                         
-                        // Escala e opacidade ainda mais subtis para a rede neural
-                        child.scale.setScalar(userData.originalScale + combinedPulse * 0.1); 
-                        child.material.opacity = 0.08 + combinedPulse * 0.07; 
+                        child.scale.setScalar(userData.originalScale + combinedPulse * 0.01); 
+                        child.material.opacity = 0.01 + combinedPulse * 0.005; 
 
                         const wave1 = Math.sin(time * userData.waveSpeed + userData.layerIndex + userData.nodeIndex);
                         const wave2 = Math.cos(time * userData.waveSpeed * 0.7 + userData.nodeIndex);
@@ -1191,21 +1172,19 @@
                         const dataFlow = Math.sin(time * userData.dataFlowSpeed + userData.dataFlowOffset);
                         const wave = Math.cos(time * userData.pulseSpeed * 0.5);
                         
-                        // Opacidade ainda mais subtil para as linhas
-                        child.material.opacity = 0.05 + pulse * 0.05 + dataFlow * 0.05 + wave * 0.03;
+                        child.material.opacity = 0.005 + pulse * 0.005 + dataFlow * 0.005 + wave * 0.002;
                     }
                 });
             }
 
-            // Animação das partículas - agora muito mais discreta
             if (particles) {
                 const positions = particles.geometry.attributes.position.array;
                 const velocities = particles.geometry.attributes.velocity.array;
 
                 for (let i = 0; i < positions.length; i += 3) {
                     const distanceToCenter = Math.sqrt(positions[i] ** 2 + positions[i + 1] ** 2 + positions[i + 2] ** 2);
-                    const gravity = 0.0001; // Gravidade reduzida
-                    const turbulence = 0.0005; // Turbulência reduzida
+                    const gravity = 0.00001; 
+                    const turbulence = 0.00005; 
                     
                     velocities[i] += -positions[i] * gravity + (Math.random() - 0.5) * turbulence;
                     velocities[i + 1] += -positions[i + 1] * gravity + (Math.random() - 0.5) * turbulence;
@@ -1215,17 +1194,16 @@
                     positions[i + 1] += velocities[i + 1];
                     positions[i + 2] += velocities[i + 2];
 
-                    if (Math.abs(positions[i]) > 40) velocities[i] *= -0.5; // Reduzir o ricochete
-                    if (Math.abs(positions[i + 1]) > 40) velocities[i + 1] *= -0.5;
-                    if (Math.abs(positions[i + 2]) > 40) velocities[i + 2] *= -0.5;
+                    if (Math.abs(positions[i]) > 40) velocities[i] *= -0.1; 
+                    if (Math.abs(positions[i + 1]) > 40) velocities[i + 1] *= -0.1;
+                    if (Math.abs(positions[i + 2]) > 40) velocities[i + 2] *= -0.1;
                 }
 
                 particles.geometry.attributes.position.needsUpdate = true;
-                particles.rotation.y += 0.001; // Rotação mais lenta
-                particles.rotation.x += 0.0005;
+                particles.rotation.y += 0.0001; 
+                particles.rotation.x += 0.00005;
             }
 
-            // Animação do fluxo de dados - agora mais sutil no geral
             if (dataFlow) {
                 dataFlow.children.forEach((dataPoint, index) => {
                     const userData = dataPoint.userData;
@@ -1233,36 +1211,35 @@
                     
                     dataPoint.position.x = Math.cos(angle) * userData.radius;
                     dataPoint.position.z = Math.sin(angle) * userData.radius;
-                    dataPoint.position.y = userData.height + Math.sin(time * userData.verticalSpeed + index) * 2; // Menor movimento vertical
+                    dataPoint.position.y = userData.height + Math.sin(time * userData.verticalSpeed + index) * 0.5; 
                     
                     const pulse1 = Math.sin(time * 4 + index);
                     const pulse2 = Math.cos(time * 3 + index * 0.5);
                     const combinedPulse = (pulse1 + pulse2) / 2;
                     
-                    dataPoint.scale.setScalar(0.8 + combinedPulse * 0.4); // Menor pulso de escala
-                    dataPoint.material.opacity = 0.2 + combinedPulse * 0.1; // Opacidade ainda mais reduzida
+                    dataPoint.scale.setScalar(0.2 + combinedPulse * 0.1); 
+                    dataPoint.material.opacity = 0.05 + combinedPulse * 0.02; 
                     
-                    dataPoint.rotation.x += 0.01;
-                    dataPoint.rotation.y += 0.015;
+                    dataPoint.rotation.x += 0.002;
+                    dataPoint.rotation.y += 0.003;
                 });
             }
 
-            // Animação da chuva de matrix - agora mais proeminente e clara
             if (matrixRain) {
                 matrixRain.children.forEach((sprite, index) => {
                     const userData = sprite.userData;
                     
                     sprite.position.y -= userData.fallSpeed;
-                    sprite.position.x += Math.sin(time * userData.driftSpeed + index) * 0.2; // Mais drift lateral
+                    sprite.position.x += Math.sin(time * userData.driftSpeed + index) * 0.2;
                     
                     if (sprite.position.y < -60) {
                         sprite.position.y = 60;
                         sprite.position.x = (Math.random() - 0.5) * 120;
                         sprite.position.z = (Math.random() - 0.5) * 60;
                         
-                        if (Math.random() < 0.2) { // Aumentar ligeiramente a chance de mudança de caractere
+                        if (Math.random() < 0.2) { 
                             const canvas = document.createElement('canvas');
-                            const context = canvas.getContext('2d');
+                            const context = canvas.getContext('2d'); 
                             canvas.width = 32;
                             canvas.height = 32;
                             
@@ -1283,14 +1260,13 @@
                     sprite.rotation.z += userData.rotationSpeed;
                     
                     const pulse = Math.sin(time * userData.pulseSpeed + userData.pulseOffset);
-                    sprite.material.opacity = 0.7 + pulse * 0.2; // Opacidade com pulso
+                    sprite.material.opacity = 0.7 + pulse * 0.2; 
                     
                     const scalePulse = Math.cos(time * userData.pulseSpeed * 0.7 + userData.pulseOffset);
-                    sprite.scale.setScalar(2.2 + scalePulse * 0.5); // Escala com pulso mais evidente
+                    sprite.scale.setScalar(2.2 + scalePulse * 0.5); 
                 });
             }
 
-            // Enhanced camera movement
             camera.position.x += (mouseX * 5 - camera.position.x) * 0.03;
             camera.position.y += (mouseY * 5 - camera.position.y) * 0.03;
             camera.lookAt(0, 0, 0);
@@ -1298,7 +1274,6 @@
             renderer.render(scene, camera);
         }
 
-        // Intersection Observer for Animations
         function initScrollAnimations() {
             const observerOptions = {
                 root: null,
@@ -1311,28 +1286,36 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                         
-                        // Start typewriter effect for specific elements
                         if (entry.target.classList.contains('typewriter-element')) {
-                            const text = entry.target.getAttribute(`data-lang-${currentLanguage}`) || entry.target.textContent;
-                            const speed = entry.target.classList.contains('hero-title') ? 80 : 
-                                         entry.target.classList.contains('section-title') ? 60 : 40;
-                            
-                            setTimeout(() => {
-                                const typewriter = new TypeWriter(entry.target, text, speed);
-                                typewriter.start();
-                            }, 500);
+                            const existingTypewriter = activeTypeWriters.get(entry.target);
+                            if (!existingTypewriter || !existingTypewriter.isTyping) {
+                                const text = entry.target.getAttribute(`data-lang-${currentLanguage}`);
+                                const speed = entry.target.classList.contains('hero-title') ? 80 : 
+                                            entry.target.classList.contains('section-title') ? 60 : 40;
+                                
+                                const typewriterInstance = new TypeWriter(entry.target, text, speed, () => {
+                                    activeTypeWriters.delete(entry.target);
+                                });
+                                typewriterInstance.start();
+                                activeTypeWriters.set(entry.target, typewriterInstance);
+                            }
+                        }
+                    } else {
+                        const existingTypewriter = activeTypeWriters.get(entry.target);
+                        if (existingTypewriter && existingTypewriter.isTyping) {
+                            existingTypewriter.stop();
+                            entry.target.innerHTML = ''; 
+                            activeTypeWriters.delete(entry.target);
                         }
                     }
                 });
             }, observerOptions);
 
-            // Observe all animated elements
             document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .typewriter-element').forEach(el => {
                 observer.observe(el);
             });
         }
 
-        // Language Toggle System
         function toggleLanguage() {
             const languages = ['pt', 'en', 'es'];
             let currentIndex = languages.indexOf(currentLanguage);
@@ -1342,33 +1325,65 @@
             const langBtn = document.getElementById('language-toggle-btn');
             langBtn.textContent = currentLanguage.toUpperCase();
 
-            // Update all translatable elements
+            activeTypeWriters.forEach(typewriterInstance => {
+                if (typewriterInstance) {
+                    typewriterInstance.stop();
+                }
+            });
+            activeTypeWriters.clear(); 
+
             document.querySelectorAll('[data-lang-pt]').forEach(element => {
                 const newText = element.getAttribute(`data-lang-${currentLanguage}`);
                 if (newText) {
                     if (element.classList.contains('typewriter-element')) {
-                        const typewriter = new TypeWriter(element, newText, 30);
-                        typewriter.start();
+                        element.innerHTML = ''; 
                     } else {
                         element.innerHTML = newText;
                     }
                 }
             });
 
-            // Update header terminal
             animateHeaderTerminal();
+
+            document.querySelectorAll('.typewriter-element').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+
+                if (isVisible) {
+                    const text = el.getAttribute(`data-lang-${currentLanguage}`);
+                    const speed = el.classList.contains('hero-title') ? 80 : 
+                                  el.classList.contains('section-title') ? 60 : 40;
+                    
+                    const typewriter = new TypeWriter(el, text, speed, () => {
+                        activeTypeWriters.delete(el);
+                    });
+                    typewriter.start();
+                    activeTypeWriters.set(el, typewriter);
+                }
+            });
         }
 
         function animateHeaderTerminal() {
             const headerTerminal = document.getElementById('header-terminal-name');
             if (headerTerminal) {
                 const text = headerTerminal.getAttribute(`data-lang-${currentLanguage}`);
-                const typewriter = new TypeWriter(headerTerminal, text, 100);
+                const existingTypewriter = activeTypeWriters.get(headerTerminal);
+                if (existingTypewriter) {
+                    existingTypewriter.stop();
+                }
+                const typewriter = new TypeWriter(headerTerminal, text, 100, () => {
+                    activeTypeWriters.delete(headerTerminal);
+                });
                 typewriter.start();
+                activeTypeWriters.set(headerTerminal, typewriter);
             }
         }
 
-        // Mobile Menu System
         function initMobileMenu() {
             const menuToggle = document.getElementById('menu-toggle');
             const fullscreenMenu = document.getElementById('fullscreen-menu-overlay');
@@ -1379,14 +1394,12 @@
                     fullscreenMenu.classList.toggle('open');
                 });
 
-                // Close menu when clicking on links
                 navLinks.forEach(link => {
                     link.addEventListener('click', () => {
                         fullscreenMenu.classList.remove('open');
                     });
                 });
 
-                // Close menu when clicking outside
                 fullscreenMenu.addEventListener('click', (e) => {
                     if (e.target === fullscreenMenu) {
                         fullscreenMenu.classList.remove('open');
@@ -1395,14 +1408,12 @@
             }
         }
 
-        // Enhanced Mouse Movement Effect
         function initMouseEffects() {
             document.addEventListener('mousemove', (e) => {
                 mouseX = (e.clientX / window.innerWidth) * 2 - 1;
                 mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
             });
 
-            // Touch support for mobile
             document.addEventListener('touchmove', (e) => {
                 if (e.touches.length > 0) {
                     mouseX = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
@@ -1411,7 +1422,6 @@
             });
         }
 
-        // Resize Handler
         function handleResize() {
             if (camera && renderer) {
                 camera.aspect = window.innerWidth / window.innerHeight;
@@ -1420,16 +1430,13 @@
             }
         }
 
-        // Performance Optimization
         function optimizePerformance() {
-            // Reduce animation quality on mobile
             if (window.innerWidth < 768) {
                 if (renderer) {
                     renderer.setPixelRatio(1);
                 }
             }
 
-            // Pause animations when tab is not visible
             document.addEventListener('visibilitychange', () => {
                 if (document.hidden) {
                     if (animationId) {
@@ -1441,51 +1448,49 @@
             });
         }
 
-        // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Three.js scene
             setTimeout(initThreeJS, 100);
             
-            // Initialize other systems
             initScrollAnimations();
             initMobileMenu();
             initMouseEffects();
             optimizePerformance();
 
-            // Language toggle
             const langBtn = document.getElementById('language-toggle-btn');
             if (langBtn) {
                 langBtn.addEventListener('click', toggleLanguage);
             }
 
-            // Initial header animation
             setTimeout(animateHeaderTerminal, 1000);
 
-            // Window resize handler
             window.addEventListener('resize', handleResize);
 
-            // Initial hero typewriter
             setTimeout(() => {
                 const heroName = document.getElementById('hero-name');
                 const heroTitle = document.getElementById('hero-title');
                 
                 if (heroName) {
                     const nameText = heroName.getAttribute(`data-lang-${currentLanguage}`);
-                    const nameTypewriter = new TypeWriter(heroName, nameText, 100);
+                    const nameTypewriter = new TypeWriter(heroName, nameText, 100, () => {
+                        activeTypeWriters.delete(heroName);
+                    });
                     nameTypewriter.start();
+                    activeTypeWriters.set(heroName, nameTypewriter);
                 }
                 
                 setTimeout(() => {
                     if (heroTitle) {
                         const titleText = heroTitle.getAttribute(`data-lang-${currentLanguage}`);
-                        const titleTypewriter = new TypeWriter(heroTitle, titleText, 60);
+                        const titleTypewriter = new TypeWriter(heroTitle, titleText, 60, () => {
+                            activeTypeWriters.delete(heroTitle);
+                        });
                         titleTypewriter.start();
+                        activeTypeWriters.set(heroTitle, titleTypewriter);
                     }
                 }, 2000);
             }, 3000);
         });
 
-        // Cleanup on page unload
         window.addEventListener('beforeunload', () => {
             if (animationId) {
                 cancelAnimationFrame(animationId);
