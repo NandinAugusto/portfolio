@@ -310,7 +310,7 @@
       </div>
     </section>
 
-    <!-- ������ WHAT I DO ������ -->
+    <!--     WHAT I DO     -->
     <section id="services" class="section" aria-labelledby="services-title">
 
       <h2 class="section-title" id="services-title" data-label-pt="Serviços" data-label-en="Services"
@@ -322,7 +322,13 @@
       <div class="grid-4 stagger-children">
 
         <div class="card" style="text-align:center">
-          <div class="service-icon" aria-hidden="true">⇄</div>
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
           <h3 style="font-size:1rem;margin-bottom:.6rem;color:var(--text-primary)" data-lang-pt="Engenharia de Dados"
             data-lang-en="Data Engineering" data-lang-es="Ingeniería de Datos">
             Engenharia de Dados
@@ -399,73 +405,218 @@
 
         <!-- Project card 1 -->
         <article class="project-card fade-in">
-          <div class="project-header">
-            <h3 class="project-title" data-lang-pt="Pipeline de Migração ERP" data-lang-en="ERP Migration Pipeline"
-              data-lang-es="Pipeline de Migración ERP">
-              Pipeline de Migração ERP
-            </h3>
-            <span class="project-badge">Backend · Data</span>
+          <div class="project-diagram">
+            <svg viewBox="0 0 420 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="45" width="80" height="50" rx="6" stroke="#00F060" stroke-width="1" opacity="0.6"/>
+              <text x="50" y="65" fill="#738095" font-family="monospace" font-size="8" text-anchor="middle">SQL Server</text>
+              <text x="50" y="80" fill="#8b99ae" font-family="monospace" font-size="7" text-anchor="middle">Legacy ERP</text>
+              <line x1="95" y1="70" x2="135" y2="70" stroke="#00F060" stroke-width="1" opacity="0.4"/>
+              <polygon points="135,67 141,70 135,73" fill="#00F060" opacity="0.4"/>
+              <rect x="145" y="35" width="90" height="70" rx="8" stroke="#00F060" stroke-width="1.2" opacity="0.8"/>
+              <text x="190" y="58" fill="#00F060" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">Python ETL</text>
+              <text x="190" y="73" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Validate</text>
+              <text x="190" y="85" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Transform</text>
+              <text x="190" y="97" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Audit</text>
+              <line x1="240" y1="70" x2="280" y2="70" stroke="#00F060" stroke-width="1" opacity="0.4"/>
+              <polygon points="280,67 286,70 280,73" fill="#00F060" opacity="0.4"/>
+              <rect x="290" y="45" width="80" height="50" rx="6" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
+              <text x="330" y="65" fill="#738095" font-family="monospace" font-size="8" text-anchor="middle">Oracle</text>
+              <text x="330" y="80" fill="#8b99ae" font-family="monospace" font-size="7" text-anchor="middle">New ERP</text>
+              <line x1="190" y1="110" x2="190" y2="130" stroke="#00F060" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+              <text x="190" y="138" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Audit Reports</text>
+            </svg>
           </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title" data-lang-pt="Pipeline de Migração ERP" data-lang-en="ERP Migration Pipeline"
+                data-lang-es="Pipeline de Migración ERP">
+                Pipeline de Migração ERP
+              </h3>
+              <span class="project-badge">Backend · Data</span>
+            </div>
 
-          <p class="project-desc"
-            data-lang-pt="Automação do processo de migração de dados entre SQL Server e Oracle para um ERP B2B. Scripts de validação em Python com relatórios de auditoria, garantindo integridade dos registros históricos."
-            data-lang-en="Automated data migration process between SQL Server and Oracle for a B2B ERP. Python validation scripts with audit reports, ensuring integrity of historical records."
-            data-lang-es="Automatización del proceso de migración de datos entre SQL Server y Oracle para un ERP B2B. Scripts de validación en Python con informes de auditoría, garantizando integridad de registros históricos.">
-            Automação do processo de migração de dados entre SQL Server e Oracle para um ERP B2B. Scripts de validação
-            em Python com relatórios de auditoria, garantindo integridade dos registros históricos.
-          </p>
+            <p class="project-desc"
+              data-lang-pt="Automação do processo de migração de dados entre SQL Server e Oracle para um ERP B2B. Scripts de validação em Python com relatórios de auditoria, garantindo integridade dos registros históricos."
+              data-lang-en="Automated data migration process between SQL Server and Oracle for a B2B ERP. Python validation scripts with audit reports, ensuring integrity of historical records."
+              data-lang-es="Automatización del proceso de migración de datos entre SQL Server y Oracle para un ERP B2B. Scripts de validación en Python con informes de auditoría, garantizando integridad de registros históricos.">
+              Automação do processo de migração de dados entre SQL Server e Oracle para um ERP B2B. Scripts de validação
+              em Python com relatórios de auditoria, garantindo integridade dos registros históricos.
+            </p>
 
-          <!-- Stack badges -->
-          <div class="project-stack">
-            <span class="tech-chip">[Python]</span>
-            <span class="tech-chip">[SQL Server]</span>
-            <span class="tech-chip">[Oracle]</span>
-            <span class="tech-chip">[Pandas]</span>
-          </div>
+            <div class="project-details">
+              <p class="project-details-label" data-lang-pt="Desafios Técnicos" data-lang-en="Technical Challenges" data-lang-es="Desafíos Técnicos">Desafios Técnicos</p>
+              <ul>
+                <li data-lang-pt="Mapeamento de schemas incompatíveis entre bases" data-lang-en="Mapping incompatible schemas between databases" data-lang-es="Mapeo de esquemas incompatibles entre bases de datos">Mapeamento de schemas incompatíveis entre bases</li>
+                <li data-lang-pt="Consistência transacional em migração de dados históricos críticos" data-lang-en="Transactional consistency in critical historical data migration" data-lang-es="Consistencia transaccional en migración crítica de datos históricos">Consistência transacional em migração de dados históricos críticos</li>
+              </ul>
+            </div>
+            <div class="project-details project-results">
+              <p class="project-details-label" data-lang-pt="Resultados" data-lang-en="Results" data-lang-es="Resultados">Resultados</p>
+              <ul>
+                <li data-lang-pt="Migração de mais de 500k registros com zero downtime ou perdas" data-lang-en="Migrated 500k+ records with zero downtime or data loss" data-lang-es="Migración de más de 500k registros con cero tiempo de inactividad o pérdidas">Migração de mais de 500k registros com zero downtime ou perdas</li>
+              </ul>
+            </div>
 
-          <!-- Links -->
-          <div class="project-links">
-            <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-project-cta"
-              aria-label="Ver código no GitHub" data-lang-pt="GitHub &rarr;" data-lang-en="GitHub &rarr;"
-              data-lang-es="GitHub &rarr;">
-              GitHub &rarr;
-            </a>
+            <!-- Stack badges -->
+            <div class="project-stack">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">SQL Server</span>
+              <span class="tech-chip">Oracle</span>
+              <span class="tech-chip">Pandas</span>
+            </div>
+
+            <!-- Links -->
+            <div class="project-links">
+              <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-project-cta"
+                aria-label="Ver código no GitHub" data-lang-pt="GitHub &rarr;" data-lang-en="GitHub &rarr;"
+                data-lang-es="GitHub &rarr;">
+                GitHub &rarr;
+              </a>
+            </div>
           </div>
         </article>
 
         <!-- Project card 2 -->
         <article class="project-card fade-in">
-          <div class="project-header">
-            <h3 class="project-title" data-lang-pt="API REST - Módulo Fiscal" data-lang-en="REST API - Tax Module"
-              data-lang-es="API REST - Módulo Fiscal">
-              API REST - Módulo Fiscal
-            </h3>
-            <span class="project-badge">Backend</span>
+          <div class="project-diagram">
+            <svg viewBox="0 0 420 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="50" width="65" height="40" rx="6" stroke="#738095" stroke-width="1" opacity="0.5"/>
+              <text x="42" y="73" fill="#738095" font-family="monospace" font-size="8" text-anchor="middle">ERP Client</text>
+              <line x1="80" y1="70" x2="115" y2="70" stroke="#00F060" stroke-width="1" opacity="0.4"/>
+              <polygon points="115,67 121,70 115,73" fill="#00F060" opacity="0.4"/>
+              <rect x="125" y="30" width="110" height="80" rx="8" stroke="#00F060" stroke-width="1.2" opacity="0.8"/>
+              <text x="180" y="50" fill="#00F060" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">ASP.NET Core</text>
+              <text x="180" y="65" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">REST API</text>
+              <line x1="140" y1="75" x2="220" y2="75" stroke="#738095" stroke-width="0.5" opacity="0.3"/>
+              <text x="180" y="88" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Auth · Validation</text>
+              <text x="180" y="100" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">OpenAPI Docs</text>
+              <line x1="240" y1="55" x2="275" y2="55" stroke="#00F060" stroke-width="1" opacity="0.4"/>
+              <polygon points="275,52 281,55 275,58" fill="#00F060" opacity="0.4"/>
+              <line x1="240" y1="85" x2="275" y2="85" stroke="#00D4FF" stroke-width="1" opacity="0.4"/>
+              <polygon points="275,82 281,85 275,88" fill="#00D4FF" opacity="0.4"/>
+              <rect x="285" y="35" width="75" height="30" rx="5" stroke="#00F060" stroke-width="1" opacity="0.5"/>
+              <text x="322" y="54" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">NF-e SEFAZ</text>
+              <rect x="285" y="75" width="75" height="30" rx="5" stroke="#00D4FF" stroke-width="1" opacity="0.5"/>
+              <text x="322" y="94" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">SQL Server</text>
+            </svg>
           </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title" data-lang-pt="API REST - Módulo Fiscal" data-lang-en="REST API - Tax Module"
+                data-lang-es="API REST - Módulo Fiscal">
+                API REST - Módulo Fiscal
+              </h3>
+              <span class="project-badge">Backend</span>
+            </div>
 
-          <p class="project-desc"
-            data-lang-pt="API RESTful em ASP.NET Core para integração do módulo fiscal do ERP com sistemas de emissão de NF-e. Inclui documentação OpenAPI e suite de testes de integração automatizados."
-            data-lang-en="RESTful API in ASP.NET Core for integrating the ERP tax module with NF-e issuance systems. Includes OpenAPI documentation and automated integration test suite."
-            data-lang-es="API RESTful en ASP.NET Core para integrar el módulo fiscal del ERP con sistemas de emisión de NF-e. Incluye documentación OpenAPI y suite de tests de integración automatizados.">
-            API RESTful em ASP.NET Core para integração do módulo fiscal do ERP com sistemas de emissão de NF-e.
-            Inclui documentação OpenAPI e suite de testes de integração automatizados.
-          </p>
+            <p class="project-desc"
+              data-lang-pt="API RESTful em ASP.NET Core para integração do módulo fiscal do ERP com sistemas de emissão de NF-e. Inclui documentação OpenAPI e suite de testes de integração automatizados."
+              data-lang-en="RESTful API in ASP.NET Core for integrating the ERP tax module with NF-e issuance systems. Includes OpenAPI documentation and automated integration test suite."
+              data-lang-es="API RESTful en ASP.NET Core para integrar el módulo fiscal del ERP con sistemas de emisión de NF-e. Incluye documentación OpenAPI y suite de tests de integración automatizados.">
+              API RESTful em ASP.NET Core para integração do módulo fiscal do ERP com sistemas de emissão de NF-e.
+              Inclui documentação OpenAPI e suite de testes de integração automatizados.
+            </p>
 
-          <!-- Stack badges -->
-          <div class="project-stack">
-            <span class="tech-chip">[C#]</span>
-            <span class="tech-chip">[ASP.NET Core]</span>
-            <span class="tech-chip">[SQL Server]</span>
-            <span class="tech-chip">[Docker]</span>
+            <div class="project-details">
+              <p class="project-details-label" data-lang-pt="Desafios Técnicos" data-lang-en="Technical Challenges" data-lang-es="Desafíos Técnicos">Desafios Técnicos</p>
+              <ul>
+                <li data-lang-pt="Serialização XML e comunicação SOAP síncrona com os servidores da SEFAZ" data-lang-en="XML serialization and synchronous SOAP communication with SEFAZ servers" data-lang-es="Serialización XML y comunicación SOAP síncrona con los servidores de SEFAZ">Serialização XML e comunicação SOAP síncrona com os servidores da SEFAZ</li>
+                <li data-lang-pt="Estratégias de resiliência e failover usando Polly" data-lang-en="Resilience and failover strategies using Polly" data-lang-es="Estrategias de resiliencia y failover usando Polly">Estratégias de resiliência e failover usando Polly</li>
+              </ul>
+            </div>
+            <div class="project-details project-results">
+              <p class="project-details-label" data-lang-pt="Resultados" data-lang-en="Results" data-lang-es="Resultados">Resultados</p>
+              <ul>
+                <li data-lang-pt="Integração fiscal implementada e validada em produção para multi-empresas" data-lang-en="Tax integration implemented and validated in production for multi-companies" data-lang-es="Integración fiscal implementada y validada en producción para multi-empresas">Integração fiscal implementada e validada em produção para multi-empresas</li>
+              </ul>
+            </div>
+
+            <!-- Stack badges -->
+            <div class="project-stack">
+              <span class="tech-chip">C#</span>
+              <span class="tech-chip">ASP.NET Core</span>
+              <span class="tech-chip">SQL Server</span>
+              <span class="tech-chip">Docker</span>
+            </div>
+
+            <!-- Links -->
+            <div class="project-links">
+              <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-project-cta"
+                aria-label="Ver código no GitHub" data-lang-pt="GitHub &rarr;" data-lang-en="GitHub &rarr;"
+                data-lang-es="GitHub &rarr;">
+                GitHub &rarr;
+              </a>
+            </div>
           </div>
+        </article>
 
-          <!-- Links -->
-          <div class="project-links">
-            <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-project-cta"
-              aria-label="Ver código no GitHub" data-lang-pt="GitHub &rarr;" data-lang-en="GitHub &rarr;"
-              data-lang-es="GitHub &rarr;">
-              GitHub &rarr;
-            </a>
+        <!-- Project card 3: UK Police Analytics -->
+        <article class="project-card fade-in">
+          <div class="project-diagram">
+            <svg viewBox="0 0 420 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="50" width="70" height="40" rx="5" stroke="#738095" stroke-width="1" opacity="0.5"/>
+              <text x="45" y="73" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">UK Police API</text>
+              <line x1="80" y1="70" x2="115" y2="70" stroke="#00F060" stroke-width="1" opacity="0.4"/>
+              <polygon points="115,67 121,70 115,73" fill="#00F060" opacity="0.4"/>
+              <rect x="120" y="30" width="120" height="80" rx="8" stroke="#00F060" stroke-width="1.2" opacity="0.8"/>
+              <text x="180" y="50" fill="#00F060" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">FastAPI</text>
+              <text x="180" y="65" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">HTTPX Async</text>
+              <line x1="130" y1="75" x2="230" y2="75" stroke="#738095" stroke-width="0.5" opacity="0.3"/>
+              <text x="180" y="88" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Pandas Engine</text>
+              <text x="180" y="100" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">GeoJSON Processing</text>
+              <line x1="240" y1="70" x2="275" y2="70" stroke="#00D4FF" stroke-width="1" opacity="0.4"/>
+              <polygon points="275,67 281,70 275,73" fill="#00D4FF" opacity="0.4"/>
+              <rect x="285" y="45" width="85" height="50" rx="6" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
+              <text x="327" y="68" fill="#738095" font-family="monospace" font-size="8" text-anchor="middle">Dashboard UI</text>
+              <text x="327" y="80" fill="#8b99ae" font-family="monospace" font-size="7" text-anchor="middle">Leaflet Map</text>
+            </svg>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-title" data-lang-pt="UK Police Analytics Library" data-lang-en="UK Police Analytics Library"
+                data-lang-es="UK Police Analytics Library">
+                UK Police Analytics Library
+              </h3>
+              <span class="project-badge">Backend · Analytics</span>
+            </div>
+
+            <p class="project-desc"
+              data-lang-pt="API REST assíncrona desenvolvida com FastAPI para consumo, processamento e mapeamento estatístico de dados criminais da API oficial do Reino Unido. Utiliza Pandas para agregação e processamento de coordenadas geográficas."
+              data-lang-en="Asynchronous REST API developed with FastAPI to consume, process, and map crime data from the official UK Police API. Employs Pandas for aggregation and geographic coordinate analysis."
+              data-lang-es="API REST asíncrona desarrollada con FastAPI para consumir, procesar y mapear datos criminales de la API oficial del Reino Unido. Utiliza Pandas para agregación y análisis de coordenadas geográficas.">
+              API REST assíncrona desenvolvida com FastAPI para consumo, processamento e mapeamento estatístico de dados criminais da API oficial do Reino Unido. Utiliza Pandas para agregação e processamento de coordenadas geográficas.
+            </p>
+
+            <div class="project-details">
+              <p class="project-details-label" data-lang-pt="Desafios Técnicos" data-lang-en="Technical Challenges" data-lang-es="Desafíos Técnicos">Desafios Técnicos</p>
+              <ul>
+                <li data-lang-pt="Consumo eficiente de múltiplos endpoints geográficos com requisições HTTP assíncronas concorrentes" data-lang-en="Efficient consumption of multiple geographical endpoints with concurrent asynchronous HTTP requests" data-lang-es="Consumo eficiente de múltiples endpoints geográficos con solicitudes HTTP asíncronas concurrentes">Consumo eficiente de múltiplos endpoints geográficos com requisições HTTP assíncronas concorrentes</li>
+                <li data-lang-pt="Normalização e agregação em tempo real de grandes volumes de dados de ocorrências com Pandas" data-lang-en="Real-time normalization and aggregation of large volumes of occurrence data using Pandas" data-lang-es="Normalización y agregación en tiempo real de grandes volúmenes de datos de incidentes con Pandas">Normalização e agregação em tempo real de grandes volumes de dados de ocorrências com Pandas</li>
+              </ul>
+            </div>
+            <div class="project-details project-results">
+              <p class="project-details-label" data-lang-pt="Resultados" data-lang-en="Results" data-lang-es="Resultados">Resultados</p>
+              <ul>
+                <li data-lang-pt="Estrutura de microserviço robusta com Swagger interativo gerado automaticamente" data-lang-en="Robust microservice structure with automatically generated interactive Swagger" data-lang-es="Estructura de microservicio robusta con Swagger interactivo generado automáticamente">Estrutura de microserviço robusta com Swagger interativo gerado automaticamente</li>
+              </ul>
+            </div>
+
+            <!-- Stack badges -->
+            <div class="project-stack">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">FastAPI</span>
+              <span class="tech-chip">HTTPX</span>
+              <span class="tech-chip">Pandas</span>
+            </div>
+
+            <!-- Links -->
+            <div class="project-links">
+              <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-project-cta"
+                aria-label="Ver código no GitHub" data-lang-pt="GitHub &rarr;" data-lang-en="GitHub &rarr;"
+                data-lang-es="GitHub &rarr;">
+                GitHub &rarr;
+              </a>
+            </div>
           </div>
         </article>
 
