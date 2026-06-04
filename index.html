@@ -791,18 +791,7 @@
         </a>
 
         <!-- WhatsApp � number kept out of plain text to reduce scraping -->
-        <a id="whatsapp-link" target="_blank" rel="noopener noreferrer nofollow" class="contact-link"
-          aria-label="Mensagem no WhatsApp">
-          <span class="contact-icon" aria-hidden="true">✆</span>
-          <div>
-            <div style="font-weight:600;font-size:.9rem;color:var(--text-primary)">WhatsApp</div>
-            <div style="font-size:.8rem;color:var(--text-tertiary)" data-lang-pt="Mensagem direta"
-              data-lang-en="Direct message" data-lang-es="Mensaje directo">
-              Mensagem direta
-            </div>
-          </div>
-          <span style="margin-left:auto;color:var(--text-tertiary);font-size:.85rem" aria-hidden="true">↗</span>
-        </a>
+
 
         <!-- CV Download -->
         <a href="assets/cv-fernando-augusto.pdf" download rel="noopener" class="contact-link"
@@ -1059,12 +1048,12 @@
         }
       }
 
-      /* 4 � update section-title overlines (data-label attr used by CSS ::before) */
+      /* 4   update section-title overlines (data-label attr used by CSS ::before) */
       document.querySelectorAll('[data-label-' + lang + ']').forEach(function (el) {
         el.setAttribute('data-label', el.getAttribute('data-label-' + lang));
       });
 
-      /* 5 � update profile image alt text */
+      /* 5   update profile image alt text */
       var img = document.getElementById('profile-img');
       if (img) {
         var alts = {
@@ -1075,7 +1064,7 @@
         img.setAttribute('alt', alts[lang]);
       }
 
-      /* 6 � persist */
+      /* 6   persist */
       try { localStorage.setItem('portfolio-lang', lang); } catch (e) { }
     }
 
