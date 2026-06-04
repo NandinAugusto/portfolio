@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- �"��"��"� SEO �"��"��"� -->
+  <title>Fernando Augusto - Back-End .NET Developer</title>
+  <meta name="description"
+    content="Fernando Augusto - Desenvolvedor Back-End .NET com experiência em APIs REST, microsserviços, Oracle e SQL Server. Aracaju, Brasil. Disponível para oportunidades remotas.">
+  <meta name="author" content="Fernando Augusto">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nandinaugusto.github.io/portfolio/">
+
+  <!-- �"��"��"� OPEN GRAPH �"��"��"� -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fernando Augusto - Back-End .NET Developer">
+  <meta property="og:description"
+    content="3+ anos desenvolvendo APIs REST, microsserviços e soluções corporativas com .NET Core, Oracle e Azure.">
+  <meta property="og:url" content="https://nandinaugusto.github.io/portfolio/">
+  <meta property="og:image" content="https://i.imgur.com/2Zpyrep.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fernando Augusto - Back-End .NET Developer">
+  <meta name="twitter:description"
+    content="3+ anos desenvolvendo APIs REST, microsserviços e soluções corporativas com .NET Core.">
+
+  <!-- FAVICON - replace with your own SVG -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2307070a'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='14' fill='%2300F060'>FA</text></svg>">
+
+  <!-- FONTS - with preconnect to remove render-blocking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- THREE.JS LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- STYLESHEET - external, separated from HTML -->
+  <!-- NOTE: portfolio-v2.css must be in the same folder as index.html,
+       OR update the path to assets/css/portfolio-v2.css if you organise
+       your files into sub-folders. -->
+  <link rel="stylesheet" href="portfolio-v2.css">
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fernando Augusto",
+    "jobTitle": "Back-End .NET Developer",
+    "description": "Back-End Developer specializing in .NET Core, microservices, Oracle and Azure",
+    "url": "https://nandinaugusto.github.io/portfolio/",
+    "sameAs": [
+      "https://github.com/NandinAugusto",
+      "https://nandinaugusto.github.io/portfolio/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aracaju",
+      "addressRegion": "SE",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- SKIP LINK - accessibility -->
+  <a href="#main-content" class="skip-link" data-lang-pt="Pular para o conteúdo" data-lang-en="Skip to content"
+    data-lang-es="Saltar al contenido">
+    Pular para o conteúdo
+  </a>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" role="progressbar" aria-label="Progresso de leitura da página" aria-valuenow="0"
+    aria-valuemin="0" aria-valuemax="100">
+  </div>
+
+  <!-- �"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"�
+     HEADER � fixed, glassmorphism backdrop
+     �"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"� -->
+  <header id="site-header" role="banner">
+    <div class="header-content">
+
+      <!-- Brand -->
+      <span id="header-terminal-name" data-lang-pt="nando@debian:~$" data-lang-en="nando@debian:~$"
+        data-lang-es="nando@debian:~$" aria-label="Fernando Augusto - portfolio">
+        nando@debian:~$
+      </span>
+
+      <!-- Desktop navigation -->
+      <nav id="desktop-nav" aria-label="Navegação principal">
+        <a href="#about" data-lang-pt="Sobre" data-lang-en="About" data-lang-es="Sobre">Sobre</a>
+        <a href="#services" data-lang-pt="Serviços" data-lang-en="Services" data-lang-es="Servicios">Serviços</a>
+        <a href="#projects" data-lang-pt="Projetos" data-lang-en="Projects" data-lang-es="Proyectos">Projetos</a>
+        <a href="#skills" data-lang-pt="Skills" data-lang-en="Skills" data-lang-es="Skills">Skills</a>
+        <a href="#contact" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</a>
+      </nav>
+
+      <!-- Header right actions -->
+      <div class="header-actions" style="display:flex;align-items:center;gap:var(--sp-3)">
+        <!-- CV Download - always visible on desktop -->
+        <a href="assets/cv-fernando-augusto.pdf" download rel="noopener" class="btn-secondary"
+          style="font-size:.8rem;padding:.35rem .9rem" id="header-cv-btn" data-lang-pt="Baixar CV"
+          data-lang-en="Download CV" data-lang-es="Descargar CV" aria-label="Baixar CV em PDF">
+          ↓ Baixar CV
+        </a>
+
+        <!-- Language toggle -->
+        <button id="language-toggle-btn" aria-label="Alterar idioma - idioma atual: Português">
+          PT
+        </button>
+
+        <!-- Hamburger - mobile only -->
+        <button id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false"
+          aria-controls="fullscreen-menu-overlay">
+          &#9776;
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- �"��"��"� MOBILE FULLSCREEN OVERLAY �"��"��"� -->
+  <div id="fullscreen-menu-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+
+    <button id="close-menu" aria-label="Fechar menu de navegação"
+      style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:1px solid var(--border-default);color:var(--text-secondary);width:40px;height:40px;border-radius:var(--radius-sm);cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center">
+      &#215;
+    </button>
+
+    <nav aria-label="Menu mobile">
+      <ul style="list-style:none;padding:0;text-align:center">
+        <li style="margin-bottom:2rem">
+          <a href="#about" data-lang-pt="Sobre" data-lang-en="About" data-lang-es="Sobre">Sobre</a>
+        </li>
+        <li style="margin-bottom:2rem">
+          <a href="#services" data-lang-pt="Serviços" data-lang-en="Services" data-lang-es="Servicios">Serviços</a>
+        </li>
+        <li style="margin-bottom:2rem">
+          <a href="#projects" data-lang-pt="Projetos" data-lang-en="Projects" data-lang-es="Proyectos">Projetos</a>
+        </li>
+        <li style="margin-bottom:2rem">
+          <a href="#skills" data-lang-pt="Skills" data-lang-en="Skills" data-lang-es="Skills">Skills</a>
+        </li>
+        <li style="margin-bottom:2rem">
+          <a href="#contact" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</a>
+        </li>
+        <li>
+          <a href="assets/cv-fernando-augusto.pdf" download class="btn-primary" style="display:inline-flex"
+            data-lang-pt="↓ Baixar CV" data-lang-en="↓ Download CV" data-lang-es="↓ Descargar CV">
+            ↓ Baixar CV
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- �"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"�
+     MAIN CONTENT
+     �"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"� -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="hero" aria-labelledby="hero-name">
+      <canvas id="three-canvas"></canvas>
+
+      <div class="hero-content">
+
+        <!-- Availability badge -->
+        <div class="hero-tag" aria-label="Status: disponível para novas oportunidades">
+          <span class="hero-dot" aria-hidden="true"></span>
+          <span data-lang-pt="Disponível para oportunidades" data-lang-en="Available for opportunities"
+            data-lang-es="Disponible para oportunidades">
+            Disponível para oportunidades
+          </span>
+        </div>
+
+        <!-- Profile image restored from the previously working external source -->
+        <div class="profile-image-container">
+          <img src="https://i.imgur.com/2Zpyrep.png" alt="Foto de perfil de Fernando Augusto" id="profile-img"
+            width="144" height="144" loading="eager" decoding="async">
+        </div>
+
+        <!-- Name - typewriter applied via JS, only here -->
+        <h1 class="hero-title" id="hero-name">
+          <span id="hero-name-text" class="typewriter-element" data-lang-pt="Fernando Augusto"
+            data-lang-en="Fernando Augusto" data-lang-es="Fernando Augusto">Fernando Augusto</span>
+        </h1>
+
+        <!-- Subtitle - data-html flag allows <strong> tags -->
+        <p class="hero-subtitle typewriter-element" id="hero-subtitle" data-html
+          data-lang-pt="Desenvolvedor Back-End especializado em <strong>.NET Core</strong>, microsserviços e integração de sistemas corporativos de missão crítica."
+          data-lang-en="Back-End Developer specialized in <strong>.NET Core</strong>, microservices and mission-critical enterprise system integration."
+          data-lang-es="Desarrollador Back-End especializado en <strong>.NET Core</strong>, microservicios e integración de sistemas corporativos de misión crítica.">
+          Desenvolvedor Back-End especializado em <strong>.NET Core</strong>, microsserviços e integração de sistemas
+          corporativos de missão crítica.
+        </p>
+
+        <!-- CTAs -->
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem">
+          <a href="assets/cv-fernando-augusto.pdf" download rel="noopener" class="btn-primary"
+            data-lang-pt="↓ Baixar CV" data-lang-en="↓ Download CV" data-lang-es="↓ Descargar CV">
+            ↓ Baixar CV
+          </a>
+          <a href="#contact" class="btn-secondary" data-lang-pt="Fale Comigo" data-lang-en="Get in Touch"
+            data-lang-es="Contáctame">
+            Fale Comigo
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT & EXPERIENCE -->
+    <section id="about" class="section" aria-labelledby="about-title">
+
+      <h2 class="section-title" id="about-title" data-label-pt="Sobre Mim" data-label-en="About Me"
+        data-label-es="Sobre Mí" data-label="Sobre Mim" data-lang-pt="Experiência Profissional"
+        data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional">
+        Experiência Profissional
+      </h2>
+
+      <div class="grid-2" style="align-items:start">
+
+        <!-- Bio card -->
+        <div class="card fade-in">
+          <h3 style="font-family:'Space Mono',monospace;font-size:1rem;margin-bottom:1rem;color:var(--text-primary)"
+            data-lang-pt="Sobre Mim" data-lang-en="About Me" data-lang-es="Sobre Mí">
+            Sobre Mim
+          </h3>
+          <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:1rem"
+            data-lang-pt="Software & Data Engineer em constante evolução. Nos últimos anos, atuei no coração de sistemas ERP, resolvendo problemas complexos de otimização de banco de dados (Oracle/SQL Server), arquitetura de microsserviços e mensageria (RabbitMQ). Minha paixão está no fluxo da informação: desde a API REST que ingere o dado de forma segura, até os scripts em Python que garantem a qualidade (Data Quality) de migrações históricas. Com pós-graduação em andamento em Big Data e Inteligência Artificial, busco desafios onde eu possa aplicar padrões de código limpo, testes e CI/CD em plataformas de dados robustas."
+            data-lang-en="Software & Data Engineer in constant evolution. In recent years, I have worked at the core of ERP systems, solving complex problems in database optimization (Oracle/SQL Server), microservices architecture, and messaging (RabbitMQ). My passion lies in the flow of information: from the REST API that securely ingests data, to the Python scripts that ensure Data Quality in historical migrations. Currently pursuing a post-graduate degree in Big Data and AI, I seek challenges where I can apply clean code patterns, testing, and CI/CD in robust data platforms."
+            data-lang-es="Software & Data Engineer en constante evolución. En los últimos años, he trabajado en el núcleo de sistemas ERP, resolviendo problemas complejos de optimización de bases de datos (Oracle/SQL Server), arquitectura de microservicios y mensajería (RabbitMQ). Mi pasión reside en el flujo de la información: desde la API REST que ingiere datos de forma segura, hasta los scripts en Python que garantizan la calidad (Data Quality) de las migraciones históricas. Con un posgrado en curso en Big Data e Inteligencia Artificial, busco desafíos donde pueda aplicar patrones de código limpio, pruebas y CI/CD en plataformas de datos robustas.">
+            Software & Data Engineer em constante evolução. Nos últimos anos, atuei no coração de sistemas ERP,
+            resolvendo problemas complexos de otimização de banco de dados (Oracle/SQL Server), arquitetura de
+            microsserviços e mensageria (RabbitMQ). Minha paixão está no fluxo da informação: desde a API REST que
+            ingere o dado de forma segura, até os scripts em Python que garantem a qualidade (Data Quality) de migrações
+            históricas. Com pós-graduação em andamento em Big Data e Inteligência Artificial, busco desafios onde eu
+            possa aplicar padrões de código limpo, testes e CI/CD em plataformas de dados robustas.
+          </p>
+          <p style="color:var(--text-tertiary);font-size:.875rem"
+            data-lang-pt="• Aracaju, SE · Brasil &nbsp;·&nbsp; Disponível remotamente"
+            data-lang-en="• Aracaju, SE · Brazil &nbsp;·&nbsp; Available remotely"
+            data-lang-es="• Aracaju, SE · Brasil &nbsp;·&nbsp; Disponible remotamente">
+            • Aracaju, SE · Brasil &nbsp;·&nbsp; Disponível remotamente
+          </p>
+        </div>
+
+        <!-- Experience card -->
+        <div class="card fade-in">
+
+          <!-- Role header -->
+          <div
+            style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem">
+            <div>
+              <h3
+                style="font-family:'Space Mono',monospace;font-size:1rem;color:var(--text-primary);margin-bottom:.25rem"
+                data-lang-pt="Desenvolvedor de Sistemas" data-lang-en="Systems Developer"
+                data-lang-es="Desarrollador de Sistemas">
+                Desenvolvedor de Sistemas
+              </h3>
+              <p style="color:var(--accent);font-size:.9rem;font-weight:600;margin-bottom:.15rem">
+                DP Sistemas
+              </p>
+              <p style="color:var(--text-tertiary);font-size:.8rem" data-lang-pt="Software ERP B2B · Aracaju, SE"
+                data-lang-en="B2B ERP Software · Aracaju, SE" data-lang-es="Software ERP B2B · Aracaju, SE">
+                Software ERP B2B · Aracaju, SE
+              </p>
+            </div>
+            <span
+              style="background:var(--accent-8);border:1px solid var(--border-accent);color:var(--accent);font-size:.75rem;font-weight:700;padding:.2rem .65rem;border-radius:9999px;white-space:nowrap;letter-spacing:.02em">
+              2022 - <span data-lang-pt="Presente" data-lang-en="Present" data-lang-es="Presente">Presente</span>
+            </span>
+          </div>
+
+          <!-- Bullet points -->
+          <ul class="bullet-list">
+            <!-- REPLACE with real metrics. Examples below are placeholders. -->
+            <li data-html
+              data-lang-pt="<strong>Desenvolvimento full-cycle</strong> de módulos ERP para gestão financeira, fiscal e de estoque, cobrindo o ciclo de vida completo desde levantamento de requisitos até deploy em produção."
+              data-lang-en="<strong>Full-cycle development</strong> of ERP modules for financial, tax and inventory management, covering the full lifecycle from requirements to production deploy."
+              data-lang-es="<strong>Desarrollo full-cycle</strong> de módulos ERP para gestión financiera, fiscal y de inventario, cubriendo el ciclo completo desde requisitos hasta deploy en producción.">
+              <strong>Desenvolvimento full-cycle</strong> de módulos ERP para gestão financeira, fiscal e de estoque,
+              cobrindo o ciclo de vida completo desde levantamento de requisitos até deploy em produção.
+            </li>
+            <li data-html
+              data-lang-pt="<strong>Migração de dados críticos</strong> entre sistemas legados com scripts de validação em Python para garantir integridade e rastreabilidade de registros históricos."
+              data-lang-en="<strong>Critical data migration</strong> between legacy systems with Python validation scripts to ensure integrity and traceability of historical records."
+              data-lang-es="<strong>Migración de datos críticos</strong> entre sistemas legados con scripts de validación en Python para garantizar integridad y trazabilidad de registros históricos.">
+              <strong>Migração de dados críticos</strong> entre sistemas legados com scripts de validação em Python para
+              garantir integridade e rastreabilidade de registros históricos.
+            </li>
+            <li data-html
+              data-lang-pt="<strong>Otimização de queries SQL</strong> complexas, stored procedures e jobs de banco de dados em ambientes SQL Server de produção de alta disponibilidade."
+              data-lang-en="<strong>Optimization of complex SQL queries</strong>, stored procedures and database jobs in high-availability SQL Server production environments."
+              data-lang-es="<strong>Optimización de queries SQL</strong> complejas, stored procedures y jobs de base de datos en entornos SQL Server de producción de alta disponibilidad.">
+              <strong>Otimização de queries SQL</strong> complexas, stored procedures e jobs de banco de dados em
+              ambientes SQL Server de produção de alta disponibilidade.
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ������ WHAT I DO ������ -->
+    <section id="services" class="section" aria-labelledby="services-title">
+
+      <h2 class="section-title" id="services-title" data-label-pt="Serviços" data-label-en="Services"
+        data-label-es="Servicios" data-label="Serviços" data-lang-pt="O Que Eu Faço" data-lang-en="What I Do"
+        data-lang-es="Lo Que Hago">
+        O Que Eu Faço
+      </h2>
+
+      <div class="grid-4 stagger-children">
+
+        <div class="card" style="text-align:center">
+          <div class="service-icon" aria-hidden="true">⇄</div>
+          <h3 style="font-size:1rem;margin-bottom:.6rem;color:var(--text-primary)" data-lang-pt="Engenharia de Dados"
+            data-lang-en="Data Engineering" data-lang-es="Ingeniería de Datos">
+            Engenharia de Dados
+          </h3>
+          <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.65"
+            data-lang-pt="Pipelines ETL, integração de fontes heterogêneas e automação de fluxos de ingestão de dados."
+            data-lang-en="ETL pipelines, heterogeneous source integration and automated data ingestion flows."
+            data-lang-es="Pipelines ETL, integración de fuentes heterogéneas y automatización de flujos de ingestión de datos.">
+            Pipelines ETL, integração de fontes heterogêneas e automação de fluxos de ingestão de dados.
+          </p>
+        </div>
+
+        <div class="card" style="text-align:center">
+          <div class="service-icon" aria-hidden="true">◫</div>
+          <h3 style="font-size:1rem;margin-bottom:.6rem;color:var(--text-primary)" data-lang-pt="Banco de Dados"
+            data-lang-en="Database Optimization" data-lang-es="Base de Datos">
+            Banco de Dados
+          </h3>
+          <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.65"
+            data-lang-pt="Tuning de queries SQL, modelagem relacional e otimização de índices para alta performance."
+            data-lang-en="SQL query tuning, relational modeling and index optimization for high performance."
+            data-lang-es="Tuning de queries SQL, modelado relacional y optimización de índices para alto rendimiento.">
+            Tuning de queries SQL, modelagem relacional e otimização de índices para alta performance.
+          </p>
+        </div>
+
+        <div class="card" style="text-align:center">
+          <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+          <h3 style="font-size:1rem;margin-bottom:.6rem;color:var(--text-primary)" data-lang-pt="APIs Backend"
+            data-lang-en="Backend APIs" data-lang-es="APIs Backend">
+            APIs Backend
+          </h3>
+          <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.65"
+            data-lang-pt="APIs RESTful com ASP.NET Core, documentação OpenAPI e integração com sistemas legados."
+            data-lang-en="RESTful APIs with ASP.NET Core, OpenAPI documentation and legacy system integration."
+            data-lang-es="APIs RESTful con ASP.NET Core, documentación OpenAPI e integración con sistemas legados.">
+            APIs RESTful com ASP.NET Core, documentação OpenAPI e integração com sistemas legados.
+          </p>
+        </div>
+
+        <div class="card" style="text-align:center">
+          <div class="service-icon" aria-hidden="true">∑</div>
+          <h3 style="font-size:1rem;margin-bottom:.6rem;color:var(--text-primary)" data-lang-pt="Análise de Dados"
+            data-lang-en="Data Analysis" data-lang-es="Análisis de Datos">
+            Análise de Dados
+          </h3>
+          <p style="color:var(--text-secondary);font-size:.875rem;line-height:1.65"
+            data-lang-pt="Análise exploratória, relatórios e automação de rotinas analíticas com Python e Pandas."
+            data-lang-en="Exploratory analysis, reporting and automation of analytical routines with Python and Pandas."
+            data-lang-es="Análisis exploratorio, reportes y automatización de rutinas analíticas con Python y Pandas.">
+            Análise exploratória, relatórios e automação de rotinas analíticas com Python e Pandas.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ������ PROJECTS ������ -->
+    <!--
+    �a�️  THIS SECTION MUST BE FILLED WITH REAL PROJECTS.
+    The two cards below are realistic placeholders based on your
+    stated experience. Replace descriptions, stack, links and
+    metrics with your actual work.
+  -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+
+      <h2 class="section-title" id="projects-title" data-label-pt="Portfólio" data-label-en="Portfolio"
+        data-label-es="Portafolio" data-label="Portfólio" data-lang-pt="Projetos" data-lang-en="Projects"
+        data-lang-es="Proyectos">
+        Projetos
+      </h2>
+
+      <div class="grid-2 stagger-children">
+
+        <!-- Project card 1 -->
+        <article class="project-card fade-in">
+          <div class="project-header">
+            <h3 class="project-title" data-lang-pt="Pipeline de Migração ERP" data-lang-en="ERP Migration Pipeline"
+              data-lang-es="Pipeline de Migración ERP">
+              Pipeline de Migração ERP
+            </h3>
+            <span class="project-badge">Backend · Data</span>
+          </div>
+
+          <p class="project-desc"
+            data-lang-pt="Automação do processo de migração de dados entre SQL Server e Oracle para um ERP B2B. Scripts de validação em Python com relatórios de auditoria, garantindo integridade dos registros históricos."
+            data-lang-en="Automated data migration process between SQL Server and Oracle for a B2B ERP. Python validation scripts with audit reports, ensuring integrity of historical records."
+            data-lang-es="Automatización del proceso de migración de datos entre SQL Server y Oracle para un ERP B2B. Scripts de validación en Python con informes de auditoría, garantizando integridad de registros históricos.">
+            Automação do processo de migração de dados entre SQL Server e Oracle para um ERP B2B. Scripts de validação
+            em Python com relatórios de auditoria, garantindo integridade dos registros históricos.
+          </p>
+
+          <!-- Stack badges -->
+          <div class="project-stack">
+            <span class="tech-chip">[Python]</span>
+            <span class="tech-chip">[SQL Server]</span>
+            <span class="tech-chip">[Oracle]</span>
+            <span class="tech-chip">[Pandas]</span>
+          </div>
+
+          <!-- Links -->
+          <div class="project-links">
+            <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-project-cta"
+              aria-label="Ver código no GitHub" data-lang-pt="GitHub &rarr;" data-lang-en="GitHub &rarr;"
+              data-lang-es="GitHub &rarr;">
+              GitHub &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project card 2 -->
+        <article class="project-card fade-in">
+          <div class="project-header">
+            <h3 class="project-title" data-lang-pt="API REST - Módulo Fiscal" data-lang-en="REST API - Tax Module"
+              data-lang-es="API REST - Módulo Fiscal">
+              API REST - Módulo Fiscal
+            </h3>
+            <span class="project-badge">Backend</span>
+          </div>
+
+          <p class="project-desc"
+            data-lang-pt="API RESTful em ASP.NET Core para integração do módulo fiscal do ERP com sistemas de emissão de NF-e. Inclui documentação OpenAPI e suite de testes de integração automatizados."
+            data-lang-en="RESTful API in ASP.NET Core for integrating the ERP tax module with NF-e issuance systems. Includes OpenAPI documentation and automated integration test suite."
+            data-lang-es="API RESTful en ASP.NET Core para integrar el módulo fiscal del ERP con sistemas de emisión de NF-e. Incluye documentación OpenAPI y suite de tests de integración automatizados.">
+            API RESTful em ASP.NET Core para integração do módulo fiscal do ERP com sistemas de emissão de NF-e.
+            Inclui documentação OpenAPI e suite de testes de integração automatizados.
+          </p>
+
+          <!-- Stack badges -->
+          <div class="project-stack">
+            <span class="tech-chip">[C#]</span>
+            <span class="tech-chip">[ASP.NET Core]</span>
+            <span class="tech-chip">[SQL Server]</span>
+            <span class="tech-chip">[Docker]</span>
+          </div>
+
+          <!-- Links -->
+          <div class="project-links">
+            <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-project-cta"
+              aria-label="Ver código no GitHub" data-lang-pt="GitHub &rarr;" data-lang-en="GitHub &rarr;"
+              data-lang-es="GitHub &rarr;">
+              GitHub &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- See all on GitHub -->
+      <div style="text-align:center;margin-top:3rem">
+        <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="btn-secondary"
+          style="padding:.6rem 1.5rem;font-size:.95rem" data-lang-pt="Ver todos no GitHub ↗"
+          data-lang-en="See all on GitHub ↗" data-lang-es="Ver todos en GitHub ↗">
+          Ver todos no GitHub ↗
+        </a>
+      </div>
+
+    </section>
+
+    <!--     SKILLS     -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+
+      <h2 class="section-title" id="skills-title" data-label-pt="Tecnologias" data-label-en="Technologies"
+        data-label-es="Tecnologías" data-label="Tecnologias" data-lang-pt="Skills & Conhecimentos"
+        data-lang-en="Skills & Knowledge" data-lang-es="Skills & Conocimientos">
+        Skills & Conhecimentos
+      </h2>
+
+      <!-- LEGEND -->
+      <div
+        style="display:flex;gap:1.5rem;font-size:0.75rem;color:var(--text-secondary);margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border-default);flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block"></span>
+          <span data-lang-pt="Forte domínio" data-lang-en="Strong mastery" data-lang-es="Fuerte dominio">Forte
+            domínio</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span style="width:8px;height:8px;border-radius:50%;background:#4a8b60;display:inline-block"></span>
+          <span data-lang-pt="Experiência prática" data-lang-en="Practical experience"
+            data-lang-es="Experiencia práctica">Experiência prática</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span
+            style="width:8px;height:8px;border-radius:50%;background:var(--text-tertiary);display:inline-block"></span>
+          <span data-lang-pt="Em evolução" data-lang-en="Evolving" data-lang-es="En evolución">Em evolução</span>
+        </div>
+      </div>
+
+      <!-- CLUSTER 1: Engenharia & Bancos de Dados -->
+      <div class="fade-in" style="margin-bottom:2rem">
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem"
+          data-lang-pt="Engenharia & Bancos de Dados" data-lang-en="Engineering & Databases"
+          data-lang-es="Ingeniería & Bases de Datos">
+          Engenharia & Bancos de Dados
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2)">
+          <span class="skill-badge skill-badge--core">SQL Server</span>
+          <span class="skill-badge skill-badge--core">T-SQL</span>
+          <span class="skill-badge skill-badge--proficient">PostgreSQL</span>
+          <span class="skill-badge skill-badge--proficient">MongoDB</span>
+          <span class="skill-badge skill-badge--core">Python</span>
+          <span class="skill-badge skill-badge--proficient">Pandas</span>
+          <span class="skill-badge skill-badge--proficient">NumPy</span>
+          <span class="skill-badge skill-badge--familiar">Apache Spark</span>
+        </div>
+      </div>
+
+      <!-- CLUSTER 2: Backend & Arquitetura -->
+      <div class="fade-in" style="margin-bottom:2rem">
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem"
+          data-lang-pt="Backend & Arquitetura" data-lang-en="Backend & Architecture"
+          data-lang-es="Backend & Arquitectura">
+          Backend & Arquitetura
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2)">
+          <span class="skill-badge skill-badge--core">C#</span>
+          <span class="skill-badge skill-badge--core">ASP.NET Core</span>
+          <span class="skill-badge skill-badge--proficient">REST APIs</span>
+          <span class="skill-badge skill-badge--proficient">JavaScript</span>
+        </div>
+      </div>
+
+      <!-- CLUSTER 3: Streaming & Mensageria -->
+      <div class="fade-in" style="margin-bottom:2rem">
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem"
+          data-lang-pt="Streaming & Mensageria" data-lang-en="Streaming & Messaging"
+          data-lang-es="Streaming & Mensajería">
+          Streaming & Mensageria
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2)">
+          <span class="skill-badge skill-badge--familiar">Apache Kafka</span>
+          <span class="skill-badge skill-badge--proficient">Redis</span>
+          <span class="skill-badge skill-badge--proficient">RabbitMQ</span>
+        </div>
+      </div>
+
+      <!-- CLUSTER 4: Cloud & DevOps -->
+      <div class="fade-in" style="margin-bottom:2rem">
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem"
+          data-lang-pt="Cloud & DevOps" data-lang-en="Cloud & DevOps" data-lang-es="Cloud & DevOps">
+          Cloud & DevOps
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2)">
+          <span class="skill-badge skill-badge--proficient">Docker</span>
+          <span class="skill-badge skill-badge--familiar">Kubernetes</span>
+          <span class="skill-badge skill-badge--familiar">AWS</span>
+          <span class="skill-badge skill-badge--proficient">Linux</span>
+          <span class="skill-badge skill-badge--core">Git</span>
+        </div>
+      </div>
+
+      <!-- CLUSTER 5: Especializações Acadêmicas -->
+      <div class="fade-in">
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:.75rem"
+          data-lang-pt="Especializações Acadêmicas" data-lang-en="Academic Specializations"
+          data-lang-es="Especializaciones Académicas">
+          Especializações Acadêmicas
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2)">
+          <span class="skill-badge skill-badge--familiar">Business Intelligence</span>
+          <span class="skill-badge skill-badge--familiar">Big Data</span>
+          <span class="skill-badge skill-badge--familiar">Inteligência Artificial</span>
+          <span class="skill-badge skill-badge--familiar">Algoritmos</span>
+          <span class="skill-badge skill-badge--familiar">Estruturas de Dados</span>
+        </div>
+      </div>
+    </section>
+    <!--     CONTACT     -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+
+      <h2 class="section-title" id="contact-title" data-label-pt="Contato" data-label-en="Contact"
+        data-label-es="Contacto" data-label="Contato" data-lang-pt="Vamos Conversar" data-lang-en="Let's Talk"
+        data-lang-es="Hablemos">
+        Vamos Conversar
+      </h2>
+
+      <div style="max-width:520px;margin:0 auto">
+
+        <p style="color:var(--text-secondary);text-align:center;margin-bottom:2.25rem;line-height:1.75"
+          data-lang-pt="Aberto a oportunidades remotas, freelas e colaboração em projetos. Respondo em até 24 horas."
+          data-lang-en="Open to remote opportunities, freelance and project collaboration. I respond within 24 hours."
+          data-lang-es="Abierto a oportunidades remotas, freelance y colaboración en proyectos. Respondo en menos de 24 horas.">
+          Aberto a oportunidades remotas, freelas e colaboração em projetos. Respondo em até 24 horas.
+        </p>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/fernando-brito-8aa4271a7/" target="_blank" rel="noopener noreferrer"
+          class="contact-link" aria-label="Perfil no LinkedIn">
+          <span class="contact-icon" aria-hidden="true">in</span>
+          <div>
+            <div style="font-weight:600;font-size:.9rem;color:var(--text-primary)">LinkedIn</div>
+            <div style="font-size:.8rem;color:var(--text-tertiary)">/in/fernando-brito-8aa4271a7</div>
+          </div>
+          <span style="margin-left:auto;color:var(--text-tertiary);font-size:.85rem" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/NandinAugusto" target="_blank" rel="noopener noreferrer" class="contact-link"
+          aria-label="Perfil no GitHub">
+          <span class="contact-icon" aria-hidden="true">&lt;&gt;</span>
+          <div>
+            <div style="font-weight:600;font-size:.9rem;color:var(--text-primary)">GitHub</div>
+            <div style="font-size:.8rem;color:var(--text-tertiary)">github.com/NandinAugusto</div>
+          </div>
+          <span style="margin-left:auto;color:var(--text-tertiary);font-size:.85rem" aria-hidden="true">↗</span>
+        </a>
+        <!-- Email -->
+        <a href="mailto:fernando.dev.brito@gmail.com" class="contact-link" aria-label="Enviar E-mail">
+          <span class="contact-icon" aria-hidden="true">@</span>
+          <div>
+            <div style="font-weight:600;font-size:.9rem;color:var(--text-primary)">Email</div>
+            <div style="font-size:.8rem;color:var(--text-tertiary)">fernando.dev.brito@gmail.com</div>
+          </div>
+          <span style="margin-left:auto;color:var(--text-tertiary);font-size:.85rem" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- WhatsApp � number kept out of plain text to reduce scraping -->
+        <a id="whatsapp-link" target="_blank" rel="noopener noreferrer nofollow" class="contact-link"
+          aria-label="Mensagem no WhatsApp">
+          <span class="contact-icon" aria-hidden="true">✆</span>
+          <div>
+            <div style="font-weight:600;font-size:.9rem;color:var(--text-primary)">WhatsApp</div>
+            <div style="font-size:.8rem;color:var(--text-tertiary)" data-lang-pt="Mensagem direta"
+              data-lang-en="Direct message" data-lang-es="Mensaje directo">
+              Mensagem direta
+            </div>
+          </div>
+          <span style="margin-left:auto;color:var(--text-tertiary);font-size:.85rem" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- CV Download -->
+        <a href="assets/cv-fernando-augusto.pdf" download rel="noopener" class="contact-link"
+          style="border-color:var(--border-accent);background:var(--accent-4)" aria-label="Baixar CV em PDF">
+          <span class="contact-icon" style="color:var(--accent)" aria-hidden="true">↓</span>
+          <div>
+            <div style="font-weight:700;font-size:.9rem;color:var(--accent)" data-lang-pt="Baixar CV"
+              data-lang-en="Download CV" data-lang-es="Descargar CV">
+              Baixar CV
+            </div>
+            <div style="font-size:.8rem;color:var(--text-tertiary)" data-lang-pt="PDF · Atualizado 2026"
+              data-lang-en="PDF · Updated 2026" data-lang-es="PDF · Actualizado 2026">
+              PDF · Atualizado 2026
+            </div>
+          </div>
+          <span style="margin-left:auto;color:var(--accent);font-size:.85rem" aria-hidden="true">↓</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- �"��"��"� FOOTER �"��"��"� -->
+  <footer role="contentinfo">
+    <p>
+      &copy; <span id="copyright-year"></span> Fernando Augusto
+      &nbsp;·&nbsp;
+      <span data-lang-pt="Desenvolvido com" data-lang-en="Built with" data-lang-es="Desarrollado con">Desenvolvido
+        com</span>
+      <span aria-hidden="true"> ♥ </span><span class="sr-only">amor</span>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/NandinAugusto/portfolio" target="_blank" rel="noopener noreferrer"
+        data-lang-pt="Ver código-fonte ↗" data-lang-en="View source ↗" data-lang-es="Ver código fuente ↗">
+        Ver código-fonte ↗
+      </a>
+    </p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    /* TypeWriter effect */
+    class TypeWriter {
+      constructor(element, text, speed = 50, callback = null) {
+        this.element = element;
+        this.text = text;
+        this.speed = speed;
+        this.callback = callback;
+        this.index = 0;
+        this.isTyping = false;
+        this.timeoutId = null;
+      }
+
+      start() {
+        if (this.isTyping) return;
+        this.isTyping = true;
+        this.element.innerHTML = '<span class="tw-text"></span><span class="typing-cursor" aria-hidden="true"></span>';
+        this.textContainer = this.element.querySelector('.tw-text');
+        this.cursor = this.element.querySelector('.typing-cursor');
+        this.type();
+      }
+
+      type() {
+        if (!this.isTyping) {
+          this.stop();
+          return;
+        }
+
+        if (this.index < this.text.length) {
+          const char = this.text.charAt(this.index);
+
+          if (char === '<') {
+            const tagEnd = this.text.indexOf('>', this.index);
+            if (tagEnd !== -1) {
+              const tag = this.text.substring(this.index, tagEnd + 1);
+              this.textContainer.innerHTML += tag;
+              this.index = tagEnd + 1;
+            } else {
+              this.textContainer.innerHTML += char;
+              this.index++;
+            }
+          } else {
+            this.textContainer.innerHTML += char;
+            this.index++;
+          }
+
+          let currentSpeed = this.speed;
+          if (char === '.' || char === '!' || char === '?') {
+            currentSpeed = this.speed * 3;
+          } else if (char === ',') {
+            currentSpeed = this.speed * 2;
+          }
+
+          this.timeoutId = setTimeout(() => this.type(), currentSpeed);
+        } else {
+          this.isTyping = false;
+          this.timeoutId = null;
+          if (this.element.id !== 'hero-name-text' && this.element.id !== 'header-terminal-name') {
+            if (this.cursor) {
+              this.cursor.style.display = 'none';
+            }
+          }
+          if (this.callback) this.callback();
+        }
+      }
+
+      stop() {
+        if (this.timeoutId) {
+          clearTimeout(this.timeoutId);
+          this.timeoutId = null;
+        }
+        this.isTyping = false;
+        if (this.cursor && this.element.id !== 'hero-name-text' && this.element.id !== 'header-terminal-name') {
+          this.cursor.style.display = 'none';
+        }
+      }
+    }
+
+    var activeTypeWriters = new Map();
+    var isInitialLangApply = true;
+
+    function startInitialTypewriterFlow() {
+      activeTypeWriters.forEach(function (tw) { tw.stop(); });
+      activeTypeWriters.clear();
+
+      var terminalEl = document.getElementById('header-terminal-name');
+      var nameEl = document.getElementById('hero-name-text');
+      var subtitleEl = document.getElementById('hero-subtitle');
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (terminalEl) terminalEl.innerHTML = terminalEl.getAttribute('data-lang-' + currentLang) || 'nando@debian:~$';
+        if (nameEl) nameEl.innerHTML = nameEl.getAttribute('data-lang-' + currentLang) || 'Fernando Augusto';
+        if (subtitleEl) subtitleEl.innerHTML = subtitleEl.getAttribute('data-lang-' + currentLang) || '';
+        return;
+      }
+
+      if (terminalEl) {
+        var terminalText = terminalEl.getAttribute('data-lang-' + currentLang) || 'nando@debian:~$';
+        terminalEl.innerHTML = '';
+        if (nameEl) nameEl.innerHTML = '';
+        if (subtitleEl) subtitleEl.innerHTML = '';
+        setTimeout(function () {
+          var terminalTW = new TypeWriter(terminalEl, terminalText, 80, function () {
+            activeTypeWriters.delete(terminalEl);
+            if (nameEl) {
+              var nameText = nameEl.getAttribute('data-lang-' + currentLang) || 'Fernando Augusto';
+              nameEl.innerHTML = '';
+              var nameTW = new TypeWriter(nameEl, nameText, 80, function () {
+                activeTypeWriters.delete(nameEl);
+                if (subtitleEl) {
+                  var subtitleText = subtitleEl.getAttribute('data-lang-' + currentLang) || '';
+                  subtitleEl.innerHTML = '';
+                  var subtitleTW = new TypeWriter(subtitleEl, subtitleText, 40, function () {
+                    activeTypeWriters.delete(subtitleEl);
+                  });
+                  subtitleTW.start();
+                  activeTypeWriters.set(subtitleEl, subtitleTW);
+                }
+              });
+              nameTW.start();
+              activeTypeWriters.set(nameEl, nameTW);
+            }
+          });
+          terminalTW.start();
+          activeTypeWriters.set(terminalEl, terminalTW);
+        }, 400);
+      }
+    }
+
+    const LANGS = ['pt', 'en', 'es'];
+    const LANG_CODES = { pt: 'pt-BR', en: 'en', es: 'es' };
+    const LANG_ARIA = {
+      pt: 'Alterar idioma — idioma atual: Português',
+      en: 'Change language — current: English',
+      es: 'Cambiar idioma — actual: Español'
+    };
+
+    let currentLang = 'pt';
+
+    function detectBrowserLang() {
+      const nav = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+      if (nav.startsWith('en')) return 'en';
+      if (nav.startsWith('es')) return 'es';
+      return 'pt';
+    }
+
+    function applyLang(lang) {
+      if (!LANGS.includes(lang)) lang = 'pt';
+      currentLang = lang;
+
+      /* 1 — update <html lang> for screen readers */
+      document.documentElement.lang = LANG_CODES[lang];
+
+      /* 2 — update toggle button label */
+      const btn = document.getElementById('language-toggle-btn');
+      if (btn) {
+        btn.textContent = lang.toUpperCase();
+        btn.setAttribute('aria-label', LANG_ARIA[lang]);
+      }
+
+      /* 3 — stop any active typewriters */
+      activeTypeWriters.forEach(function (tw) { tw.stop(); });
+      activeTypeWriters.clear();
+
+      /* 4 — update translations */
+      const elements = document.querySelectorAll('[data-lang-' + lang + ']');
+
+      if (isInitialLangApply) {
+        // Initial load: translate non-typewriter elements statically, run sequential typewriter on hero elements
+        elements.forEach(function (el) {
+          if (el.id === 'header-terminal-name' || el.id === 'hero-name-text' || el.id === 'hero-subtitle') {
+            return;
+          }
+          var value = el.getAttribute('data-lang-' + lang);
+          if (el.hasAttribute('data-html')) {
+            el.innerHTML = value;
+          } else {
+            el.textContent = value;
+          }
+        });
+
+        // Run sequential typewriter on start
+        startInitialTypewriterFlow();
+        isInitialLangApply = false;
+      } else {
+        // Language change: apply typewriter to everything (all elements with data-lang-[lang])
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          elements.forEach(function (el) {
+            var value = el.getAttribute('data-lang-' + lang);
+            if (el.hasAttribute('data-html')) {
+              el.innerHTML = value;
+            } else {
+              el.textContent = value;
+            }
+          });
+        } else {
+          elements.forEach(function (el) {
+            var value = el.getAttribute('data-lang-' + lang);
+
+            // Set speed snappier for body text to avoid huge lag, slightly slower for hero elements
+            var speed = 2;
+            if (el.id === 'header-terminal-name' || el.id === 'hero-name-text') {
+              speed = 50;
+            } else if (el.id === 'hero-subtitle') {
+              speed = 30;
+            }
+
+            var tw = new TypeWriter(el, value, speed, function () {
+              activeTypeWriters.delete(el);
+            });
+            activeTypeWriters.set(el, tw);
+            tw.start();
+          });
+        }
+      }
+
+      /* 4 � update section-title overlines (data-label attr used by CSS ::before) */
+      document.querySelectorAll('[data-label-' + lang + ']').forEach(function (el) {
+        el.setAttribute('data-label', el.getAttribute('data-label-' + lang));
+      });
+
+      /* 5 � update profile image alt text */
+      var img = document.getElementById('profile-img');
+      if (img) {
+        var alts = {
+          pt: 'Foto de perfil de Fernando Augusto',
+          en: 'Profile photo of Fernando Augusto',
+          es: 'Foto de perfil de Fernando Augusto'
+        };
+        img.setAttribute('alt', alts[lang]);
+      }
+
+      /* 6 � persist */
+      try { localStorage.setItem('portfolio-lang', lang); } catch (e) { }
+    }
+
+    function cycleLang() {
+      var idx = LANGS.indexOf(currentLang);
+      var next = LANGS[(idx + 1) % LANGS.length];
+      applyLang(next);
+    }
+
+    /* Init on load */
+    (function () {
+      var saved;
+      try { saved = localStorage.getItem('portfolio-lang'); } catch (e) { }
+      applyLang(saved || detectBrowserLang());
+    })();
+
+    document.getElementById('language-toggle-btn').addEventListener('click', cycleLang);
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       WHATSAPP LINK � assembled at runtime to avoid
+       plain-text scraping by bots.
+       �a�️  Replace the digits below with your actual number.
+       ���������������������������������������������������������������������������������������������������������� */
+    (function () {
+      /* Format: country code + area code + number, digits only */
+      var parts = ['55', '79', '99999999'];          /* � � CHANGE THIS */
+      var link = document.getElementById('whatsapp-link');
+      if (link) link.href = 'https://wa.me/' + parts.join('');
+    })();
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       MOBILE MENU
+       ���������������������������������������������������������������������������������������������������������� */
+    var menuToggle = document.getElementById('menu-toggle');
+    var overlay = document.getElementById('fullscreen-menu-overlay');
+    var closeBtn = document.getElementById('close-menu');
+    var lastFocusedBeforeMenu = null;
+
+    function getMenuFocusableElements() {
+      return overlay.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+    }
+
+    function openMenu() {
+      lastFocusedBeforeMenu = document.activeElement;
+      overlay.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeMenu() {
+      overlay.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (lastFocusedBeforeMenu && typeof lastFocusedBeforeMenu.focus === 'function') {
+        lastFocusedBeforeMenu.focus();
+      } else {
+        menuToggle.focus();
+      }
+    }
+
+    menuToggle.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+
+    /* Close on any nav link click inside overlay */
+    overlay.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    /* Close on Escape and trap focus while open */
+    document.addEventListener('keydown', function (e) {
+      if (!overlay.classList.contains('open')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeMenu();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        var focusable = getMenuFocusableElements();
+        if (!focusable.length) return;
+
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       SCROLL PROGRESS BAR
+       ���������������������������������������������������������������������������������������������������������� */
+    var progressBar = document.querySelector('.scroll-progress');
+
+    function updateProgress() {
+      var scrolled = window.scrollY;
+      var total = document.body.scrollHeight - window.innerHeight;
+      var pct = total > 0 ? Math.min(scrolled / total, 1) : 0;
+      progressBar.style.transform = 'scaleX(' + pct + ')';
+      progressBar.setAttribute('aria-valuenow', Math.round(pct * 100));
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       HEADER SCROLL STATE � adds .scrolled class after 40px
+       ���������������������������������������������������������������������������������������������������������� */
+    var siteHeader = document.getElementById('site-header');
+
+    function updateHeader() {
+      var scrolled = window.scrollY > 40;
+      siteHeader.classList.toggle('scrolled', scrolled);
+    }
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader(); /* run once on load */
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       ACTIVE NAV LINK � highlights current section in nav
+       ���������������������������������������������������������������������������������������������������������� */
+    var navLinks = document.querySelectorAll('#desktop-nav a');
+
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (link) {
+            link.classList.toggle(
+              'active',
+              link.getAttribute('href') === '#' + entry.target.id
+            );
+          });
+        }
+      });
+    }, { threshold: 0.45 });
+
+    document.querySelectorAll('section[id]').forEach(function (s) {
+      sectionObserver.observe(s);
+    });
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       SCROLL ANIMATIONS � fade-in + stagger-children
+       ���������������������������������������������������������������������������������������������������������� */
+
+    /* Assign --i CSS custom property to stagger-children items */
+    document.querySelectorAll('.stagger-children').forEach(function (container) {
+      Array.from(container.children).forEach(function (child, i) {
+        child.style.setProperty('--i', i);
+        child.classList.add('fade-in');
+      });
+    });
+
+    var animObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          animObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(function (el) {
+      animObserver.observe(el);
+    });
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       TYPEWRITER � hero name only
+       Respects prefers-reduced-motion.
+       ���������������������������������������������������������������������������������������������������������� */
+    /* Typewriter animation initialized via startHeroTypewriter in applyLang */
+
+    /* Three.js Neural Network & Matrix Rain Background Effect */
+    let scene, camera, renderer, neuralNetwork, particles, dataFlow, matrixRain;
+    let isThreeJSLoaded = false;
+    let animationId;
+    let mouseX = 0, mouseY = 0;
+
+    const matrixChars = '0123456789アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+
+    function initThreeJS() {
+      const canvas = document.getElementById('three-canvas');
+
+
+      if (!canvas) return;
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      createDynamicNeuralNetwork();
+      createEnhancedParticleSystem();
+      createDataFlowSystem();
+      createMatrixRain();
+
+      camera.position.z = 20;
+      camera.position.y = 3;
+
+      animate();
+
+      setTimeout(() => {
+
+        isThreeJSLoaded = true;
+      }, 2000);
+    }
+
+    function createDynamicNeuralNetwork() {
+      neuralNetwork = new THREE.Group();
+
+      const layers = [8, 12, 16, 20, 16, 12, 8];
+      const layerSpacing = 4;
+      const nodeSpacing = 1.8;
+
+      const nodes = [];
+      const connections = [];
+
+      layers.forEach((nodeCount, layerIndex) => {
+        const layerNodes = [];
+        const startY = -(nodeCount - 1) * nodeSpacing / 2;
+
+        for (let i = 0; i < nodeCount; i++) {
+          const geometry = new THREE.SphereGeometry(0.12, 16, 16);
+          const material = new THREE.MeshBasicMaterial({
+            color: new THREE.Color().setHSL(0.3 + Math.random() * 0.1, 1, 0.5 + Math.random() * 0.3),
+            transparent: true,
+            opacity: 0.02
+          });
+
+          const node = new THREE.Mesh(geometry, material);
+
+          const baseX = (layerIndex - layers.length / 2) * layerSpacing;
+          const baseY = startY + i * nodeSpacing;
+          const baseZ = (Math.random() - 0.5) * 2;
+
+          node.position.set(baseX, baseY, baseZ);
+
+          node.userData = {
+            originalScale: 1,
+            originalPosition: { x: baseX, y: baseY, z: baseZ },
+            pulseSpeed: 0.005 + Math.random() * 0.01,
+            pulseOffset: Math.random() * Math.PI * 2,
+            waveSpeed: 0.002 + Math.random() * 0.005,
+            waveAmplitude: 0.05 + Math.random() * 0.1,
+            rotationSpeed: (Math.random() - 0.5) * 0.005,
+            layerIndex: layerIndex,
+            nodeIndex: i,
+            floatSpeed: 0.002 + Math.random() * 0.005,
+            floatAmplitude: 0.02 + Math.random() * 0.05
+          };
+
+          neuralNetwork.add(node);
+          layerNodes.push(node);
+        }
+        nodes.push(layerNodes);
+      });
+
+      for (let layerIndex = 0; layerIndex < layers.length - 1; layerIndex++) {
+        const currentLayer = nodes[layerIndex];
+        const nextLayer = nodes[layerIndex + 1];
+
+        currentLayer.forEach((currentNode, currentIndex) => {
+          nextLayer.forEach((nextNode, nextIndex) => {
+            if (Math.random() > 0.15) {
+              const geometry = new THREE.BufferGeometry();
+              const positions = new Float32Array([
+                currentNode.position.x, currentNode.position.y, currentNode.position.z,
+                nextNode.position.x, nextNode.position.y, nextNode.position.z
+              ]);
+              geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+              const material = new THREE.LineBasicMaterial({
+                color: 0x00f060,
+                transparent: true,
+                opacity: 0.01
+              });
+
+              const line = new THREE.Line(geometry, material);
+              line.userData = {
+                pulseSpeed: 0.005 + Math.random() * 0.01,
+                pulseOffset: Math.random() * Math.PI * 2,
+                currentNode: currentNode,
+                nextNode: nextNode,
+                dataFlowSpeed: 0.01 + Math.random() * 0.02,
+                dataFlowOffset: Math.random() * Math.PI * 2
+              };
+
+              connections.push(line);
+              neuralNetwork.add(line);
+            }
+          });
+        });
+      }
+
+      scene.add(neuralNetwork);
+    }
+
+    function createEnhancedParticleSystem() {
+      const particleCount = 20;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      const velocities = new Float32Array(particleCount * 3);
+      const colors = new Float32Array(particleCount * 3);
+
+      for (let i = 0; i < particleCount; i++) {
+        const i3 = i * 3;
+        positions[i3] = (Math.random() - 0.5) * 80;
+        positions[i3 + 1] = (Math.random() - 0.5) * 80;
+        positions[i3 + 2] = (Math.random() - 0.5) * 80;
+
+        velocities[i3] = (Math.random() - 0.5) * 0.005;
+        velocities[i3 + 1] = (Math.random() - 0.5) * 0.005;
+        velocities[i3 + 2] = (Math.random() - 0.5) * 0.005;
+
+        const hue = 0.3 + Math.random() * 0.1;
+        const color = new THREE.Color().setHSL(hue, 1, 0.5 + Math.random() * 0.3);
+        colors[i3] = color.r;
+        colors[i3 + 1] = color.g;
+        colors[i3 + 2] = color.b;
+      }
+
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('velocity', new THREE.BufferAttribute(velocities, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+      const material = new THREE.PointsMaterial({
+        size: 0.2,
+        transparent: true,
+        opacity: 0.05,
+        blending: THREE.AdditiveBlending,
+        vertexColors: true
+      });
+
+      particles = new THREE.Points(geometry, material);
+      scene.add(particles);
+    }
+
+    function createDataFlowSystem() {
+      dataFlow = new THREE.Group();
+
+      for (let i = 0; i < 30; i++) {
+        const geometry = new THREE.SphereGeometry(0.04, 8, 8);
+        const material = new THREE.MeshBasicMaterial({
+          color: new THREE.Color().setHSL(0.3, 1, 0.8),
+          transparent: true,
+          opacity: 0.3
+        });
+
+        const dataPoint = new THREE.Mesh(geometry, material);
+        dataPoint.userData = {
+          speed: 0.08 + Math.random() * 0.12,
+          path: Math.random() * Math.PI * 2,
+          radius: 12 + Math.random() * 8,
+          height: (Math.random() - 0.5) * 15,
+          verticalSpeed: 0.02 + Math.random() * 0.03
+        };
+
+        dataFlow.add(dataPoint);
+      }
+
+      scene.add(dataFlow);
+    }
+
+    function createMatrixRain() {
+      matrixRain = new THREE.Group();
+
+      for (let i = 0; i < 500; i++) {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = 32;
+        canvas.height = 32;
+
+        context.fillStyle = `rgba(0, 255, 100, ${0.6 + Math.random() * 0.4})`;
+        context.font = 'bold 28px monospace';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+
+        const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+        context.fillText(char, 16, 16);
+
+        const texture = new THREE.CanvasTexture(canvas);
+        const material = new THREE.SpriteMaterial({
+          map: texture,
+          transparent: true,
+          opacity: 0.7 + Math.random() * 0.3,
+          blending: THREE.AdditiveBlending
+        });
+
+        const sprite = new THREE.Sprite(material);
+        sprite.scale.set(2.2, 2.2, 1);
+
+        sprite.position.set(
+          (Math.random() - 0.5) * 120,
+          (Math.random() - 0.5) * 120,
+          (Math.random() - 0.5) * 60
+        );
+
+        sprite.userData = {
+          fallSpeed: 0.1 + Math.random() * 0.2,
+          rotationSpeed: (Math.random() - 0.5) * 0.015,
+          originalY: sprite.position.y,
+          char: char,
+          driftSpeed: (Math.random() - 0.5) * 0.03,
+          pulseSpeed: 0.03 + Math.random() * 0.05,
+          pulseOffset: Math.random() * Math.PI * 2
+        };
+
+        matrixRain.add(sprite);
+      }
+
+      scene.add(matrixRain);
+    }
+
+    function animate() {
+      animationId = requestAnimationFrame(animate);
+
+      if (!isThreeJSLoaded) return;
+
+      const time = Date.now() * 0.001;
+
+      if (neuralNetwork) {
+        neuralNetwork.rotation.y += 0.0005;
+        neuralNetwork.rotation.x = Math.sin(time * 0.02) * 0.02 + mouseY * 0.02;
+        neuralNetwork.rotation.z = Math.cos(time * 0.015) * 0.01;
+
+        neuralNetwork.children.forEach(child => {
+          if (child.geometry && child.geometry.type === 'SphereGeometry') {
+            const userData = child.userData;
+
+            const pulse1 = Math.sin(time * userData.pulseSpeed + userData.pulseOffset);
+            const pulse2 = Math.cos(time * userData.pulseSpeed * 1.3 + userData.pulseOffset);
+            const combinedPulse = (pulse1 + pulse2 * 0.5) / 1.5;
+
+            child.scale.setScalar(userData.originalScale + combinedPulse * 0.01);
+            child.material.opacity = 0.01 + combinedPulse * 0.005;
+
+            const wave1 = Math.sin(time * userData.waveSpeed + userData.layerIndex + userData.nodeIndex);
+            const wave2 = Math.cos(time * userData.waveSpeed * 0.7 + userData.nodeIndex);
+            const wave3 = Math.sin(time * userData.waveSpeed * 1.3 + userData.layerIndex);
+
+            child.position.x = userData.originalPosition.x + wave1 * userData.waveAmplitude;
+            child.position.y = userData.originalPosition.y + wave2 * userData.waveAmplitude * 0.6;
+            child.position.z = userData.originalPosition.z + wave3 * userData.waveAmplitude * 0.4;
+
+            const float = Math.sin(time * userData.floatSpeed + userData.nodeIndex);
+            child.position.y += float * userData.floatAmplitude;
+
+            child.rotation.x += userData.rotationSpeed;
+            child.rotation.y += userData.rotationSpeed * 0.7;
+            child.rotation.z += userData.rotationSpeed * 0.5;
+          }
+        });
+
+        neuralNetwork.children.forEach(child => {
+          if (child.type === 'Line') {
+            const userData = child.userData;
+
+            if (userData.currentNode && userData.nextNode) {
+              const positions = child.geometry.attributes.position.array;
+              positions[0] = userData.currentNode.position.x;
+              positions[1] = userData.currentNode.position.y;
+              positions[2] = userData.currentNode.position.z;
+              positions[3] = userData.nextNode.position.x;
+              positions[4] = userData.nextNode.position.y;
+              positions[5] = userData.nextNode.position.z;
+              child.geometry.attributes.position.needsUpdate = true;
+            }
+
+            const pulse = Math.sin(time * userData.pulseSpeed + userData.pulseOffset);
+            const dataFlow = Math.sin(time * userData.dataFlowSpeed + userData.dataFlowOffset);
+            const wave = Math.cos(time * userData.pulseSpeed * 0.5);
+
+            child.material.opacity = 0.005 + pulse * 0.005 + dataFlow * 0.005 + wave * 0.002;
+          }
+        });
+      }
+
+      if (particles) {
+        const positions = particles.geometry.attributes.position.array;
+        const velocities = particles.geometry.attributes.velocity.array;
+
+        for (let i = 0; i < positions.length; i += 3) {
+          const distanceToCenter = Math.sqrt(positions[i] ** 2 + positions[i + 1] ** 2 + positions[i + 2] ** 2);
+          const gravity = 0.00001;
+          const turbulence = 0.00005;
+
+          velocities[i] += -positions[i] * gravity + (Math.random() - 0.5) * turbulence;
+          velocities[i + 1] += -positions[i + 1] * gravity + (Math.random() - 0.5) * turbulence;
+          velocities[i + 2] += -positions[i + 2] * gravity + (Math.random() - 0.5) * turbulence;
+
+          positions[i] += velocities[i];
+          positions[i + 1] += velocities[i + 1];
+          positions[i + 2] += velocities[i + 2];
+
+          if (Math.abs(positions[i]) > 40) velocities[i] *= -0.1;
+          if (Math.abs(positions[i + 1]) > 40) velocities[i + 1] *= -0.1;
+          if (Math.abs(positions[i + 2]) > 40) velocities[i + 2] *= -0.1;
+        }
+
+        particles.geometry.attributes.position.needsUpdate = true;
+        particles.rotation.y += 0.0001;
+        particles.rotation.x += 0.00005;
+      }
+
+      if (dataFlow) {
+        dataFlow.children.forEach((dataPoint, index) => {
+          const userData = dataPoint.userData;
+          const angle = time * userData.speed + userData.path;
+
+          dataPoint.position.x = Math.cos(angle) * userData.radius;
+          dataPoint.position.z = Math.sin(angle) * userData.radius;
+          dataPoint.position.y = userData.height + Math.sin(time * userData.verticalSpeed + index) * 0.5;
+
+          const pulse1 = Math.sin(time * 4 + index);
+          const pulse2 = Math.cos(time * 3 + index * 0.5);
+          const combinedPulse = (pulse1 + pulse2) / 2;
+
+          dataPoint.scale.setScalar(0.2 + combinedPulse * 0.1);
+          dataPoint.material.opacity = 0.05 + combinedPulse * 0.02;
+
+          dataPoint.rotation.x += 0.002;
+          dataPoint.rotation.y += 0.003;
+        });
+      }
+
+      if (matrixRain) {
+        matrixRain.children.forEach((sprite, index) => {
+          const userData = sprite.userData;
+
+          sprite.position.y -= userData.fallSpeed;
+          sprite.position.x += Math.sin(time * userData.driftSpeed + index) * 0.2;
+
+          if (sprite.position.y < -60) {
+            sprite.position.y = 60;
+            sprite.position.x = (Math.random() - 0.5) * 120;
+            sprite.position.z = (Math.random() - 0.5) * 60;
+
+            if (Math.random() < 0.2) {
+              const canvas = document.createElement('canvas');
+              const context = canvas.getContext('2d');
+              canvas.width = 32;
+              canvas.height = 32;
+
+              context.fillStyle = `rgba(0, 255, 100, ${0.6 + Math.random() * 0.4})`;
+              context.font = 'bold 28px monospace';
+              context.textAlign = 'center';
+              context.textBaseline = 'middle';
+
+              const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+              context.fillText(char, 16, 16);
+
+              sprite.material.map = new THREE.CanvasTexture(canvas);
+              sprite.material.needsUpdate = true;
+              userData.char = char;
+            }
+          }
+
+          sprite.rotation.z += userData.rotationSpeed;
+
+          const pulse = Math.sin(time * userData.pulseSpeed + userData.pulseOffset);
+          sprite.material.opacity = 0.7 + pulse * 0.2;
+
+          const scalePulse = Math.cos(time * userData.pulseSpeed * 0.7 + userData.pulseOffset);
+          sprite.scale.setScalar(2.2 + scalePulse * 0.5);
+        });
+      }
+
+      camera.position.x += (mouseX * 5 - camera.position.x) * 0.03;
+      camera.position.y += (mouseY * 5 - camera.position.y) * 0.03;
+      camera.lookAt(0, 0, 0);
+
+      renderer.render(scene, camera);
+    }
+
+    function handleResize() {
+      if (camera && renderer) {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+    }
+
+    function initMouseEffects() {
+      document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+      });
+
+      document.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          mouseX = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
+          mouseY = -(e.touches[0].clientY / window.innerHeight) * 2 + 1;
+        }
+      });
+    }
+
+    function optimizePerformance() {
+      if (window.innerWidth < 768) {
+        if (renderer) {
+          renderer.setPixelRatio(1);
+        }
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+          }
+        } else {
+          animate();
+        }
+      });
+    }
+
+    // Initialize ThreeJS
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setTimeout(initThreeJS, 100);
+      initMouseEffects();
+      optimizePerformance();
+      window.addEventListener('resize', handleResize);
+      window.addEventListener('beforeunload', () => {
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+        }
+        if (renderer) {
+          renderer.dispose();
+        }
+      });
+    }
+
+
+    /* ����������������������������������������������������������������������������������������������������������
+       DYNAMIC COPYRIGHT YEAR
+       ���������������������������������������������������������������������������������������������������������� */
+    var yearEl = document.getElementById('copyright-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
