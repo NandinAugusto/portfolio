@@ -48,7 +48,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="portfolio-v2.css">
+  <link rel="stylesheet" href="portfolio-v2.css?v=2.1">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -576,20 +576,32 @@
               <rect x="10" y="45" width="80" height="50" rx="6" stroke="#00F060" stroke-width="1" opacity="0.6"/>
               <text x="50" y="65" fill="#738095" font-family="monospace" font-size="8" text-anchor="middle">SQL Server</text>
               <text x="50" y="80" fill="#8b99ae" font-family="monospace" font-size="7" text-anchor="middle">Legacy ERP</text>
-              <line x1="95" y1="70" x2="135" y2="70" stroke="#00F060" stroke-width="1" opacity="0.4"/>
-              <polygon points="135,67 141,70 135,73" fill="#00F060" opacity="0.4"/>
-              <rect x="145" y="35" width="90" height="70" rx="8" stroke="#00F060" stroke-width="1.2" opacity="0.8"/>
+              <circle cx="82" cy="53" r="2.5" fill="#00F060" class="diagram-beacon"/>
+
+              <line x1="90" y1="70" x2="140" y2="70" class="diagram-flow-base"/>
+              <line x1="90" y1="70" x2="140" y2="70" class="diagram-flow-stream diagram-flow-stream--accent"/>
+              <polygon points="139,66 145,70 139,74" fill="#00F060"/>
+
+              <rect x="145" y="35" width="90" height="70" rx="8" stroke="#00F060" stroke-width="1.4" class="diagram-engine-node"/>
               <text x="190" y="58" fill="#00F060" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">Python ETL</text>
               <text x="190" y="73" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Validate</text>
               <text x="190" y="85" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Transform</text>
               <text x="190" y="97" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Audit</text>
-              <line x1="240" y1="70" x2="280" y2="70" stroke="#00F060" stroke-width="1" opacity="0.4"/>
-              <polygon points="280,67 286,70 280,73" fill="#00F060" opacity="0.4"/>
+              <circle cx="227" cy="43" r="2.5" fill="#00F060" class="diagram-beacon"/>
+
+              <line x1="235" y1="70" x2="285" y2="70" class="diagram-flow-base"/>
+              <line x1="235" y1="70" x2="285" y2="70" class="diagram-flow-stream diagram-flow-stream--cyan"/>
+              <polygon points="284,66 290,70 284,74" fill="#00D4FF"/>
+
               <rect x="290" y="45" width="80" height="50" rx="6" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
               <text x="330" y="65" fill="#738095" font-family="monospace" font-size="8" text-anchor="middle">Oracle</text>
               <text x="330" y="80" fill="#8b99ae" font-family="monospace" font-size="7" text-anchor="middle">New ERP</text>
-              <line x1="190" y1="110" x2="190" y2="130" stroke="#00F060" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
-              <text x="190" y="138" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Audit Reports</text>
+              <circle cx="362" cy="53" r="2.5" fill="#00D4FF" class="diagram-beacon diagram-beacon--cyan"/>
+
+              <line x1="190" y1="105" x2="190" y2="126" class="diagram-flow-base"/>
+              <line x1="190" y1="105" x2="190" y2="126" class="diagram-flow-stream diagram-flow-stream--accent diagram-flow-stream--down"/>
+              <polygon points="186,125 190,131 194,125" fill="#00F060"/>
+              <text x="190" y="139" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Audit Reports</text>
             </svg>
           </div>
           <div class="project-body">
@@ -646,22 +658,35 @@
               <rect x="10" y="45" width="75" height="50" rx="6" stroke="#00F060" stroke-width="1.2" opacity="0.8"/>
               <text x="47" y="68" fill="#00F060" font-family="monospace" font-size="8" text-anchor="middle" font-weight="bold">Angular SPA</text>
               <text x="47" y="82" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Dashboard UI</text>
-              <line x1="85" y1="70" x2="120" y2="70" stroke="#00F060" stroke-width="1" opacity="0.5"/>
-              <polygon points="120,67 126,70 120,73" fill="#00F060" opacity="0.5"/>
-              <rect x="128" y="30" width="112" height="80" rx="8" stroke="#00F060" stroke-width="1.2" opacity="0.8"/>
+              <circle cx="78" cy="52" r="2.5" fill="#00F060" class="diagram-beacon"/>
+
+              <line x1="85" y1="70" x2="123" y2="70" class="diagram-flow-base"/>
+              <line x1="85" y1="70" x2="123" y2="70" class="diagram-flow-stream diagram-flow-stream--accent"/>
+              <polygon points="122,66 128,70 122,74" fill="#00F060"/>
+
+              <rect x="128" y="30" width="112" height="80" rx="8" stroke="#00F060" stroke-width="1.4" class="diagram-engine-node"/>
               <text x="184" y="50" fill="#00F060" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">ASP.NET Core</text>
               <text x="184" y="65" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">XML & REST Engine</text>
               <line x1="140" y1="75" x2="225" y2="75" stroke="#738095" stroke-width="0.5" opacity="0.3"/>
               <text x="184" y="88" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Auth · Validation</text>
               <text x="184" y="100" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">10k+ NF-e / month</text>
-              <line x1="240" y1="55" x2="275" y2="55" stroke="#00F060" stroke-width="1" opacity="0.4"/>
-              <polygon points="275,52 281,55 275,58" fill="#00F060" opacity="0.4"/>
-              <line x1="240" y1="85" x2="275" y2="85" stroke="#00D4FF" stroke-width="1" opacity="0.4"/>
-              <polygon points="275,82 281,85 275,88" fill="#00D4FF" opacity="0.4"/>
-              <rect x="285" y="35" width="80" height="32" rx="5" stroke="#00F060" stroke-width="1" opacity="0.6"/>
-              <text x="325" y="55" fill="#738095" font-family="monospace" font-size="7.5" text-anchor="middle">SEFAZ WebService</text>
-              <rect x="285" y="75" width="80" height="32" rx="5" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
-              <text x="325" y="95" fill="#738095" font-family="monospace" font-size="7.5" text-anchor="middle">SQL Server</text>
+              <circle cx="232" cy="38" r="2.5" fill="#00F060" class="diagram-beacon"/>
+
+              <line x1="240" y1="51" x2="280" y2="51" class="diagram-flow-base"/>
+              <line x1="240" y1="51" x2="280" y2="51" class="diagram-flow-stream diagram-flow-stream--accent"/>
+              <polygon points="279,47 285,51 279,55" fill="#00F060"/>
+
+              <line x1="240" y1="91" x2="280" y2="91" class="diagram-flow-base"/>
+              <line x1="240" y1="91" x2="280" y2="91" class="diagram-flow-stream diagram-flow-stream--cyan"/>
+              <polygon points="279,87 285,91 279,95" fill="#00D4FF"/>
+
+              <rect x="285" y="35" width="85" height="32" rx="5" stroke="#00F060" stroke-width="1" opacity="0.6"/>
+              <text x="327" y="55" fill="#738095" font-family="monospace" font-size="7.5" text-anchor="middle">SEFAZ WebService</text>
+              <circle cx="363" cy="42" r="2.5" fill="#00F060" class="diagram-beacon"/>
+
+              <rect x="285" y="75" width="85" height="32" rx="5" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
+              <text x="327" y="95" fill="#738095" font-family="monospace" font-size="7.5" text-anchor="middle">SQL Server</text>
+              <circle cx="363" cy="82" r="2.5" fill="#00D4FF" class="diagram-beacon diagram-beacon--cyan"/>
             </svg>
           </div>
           <div class="project-body">
@@ -717,21 +742,30 @@
         <article class="project-card fade-in">
           <div class="project-diagram">
             <svg viewBox="0 0 420 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="50" width="70" height="40" rx="5" stroke="#738095" stroke-width="1" opacity="0.5"/>
+              <rect x="10" y="50" width="70" height="40" rx="5" stroke="#738095" stroke-width="1" opacity="0.6"/>
               <text x="45" y="73" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">UK Police API</text>
-              <line x1="80" y1="70" x2="115" y2="70" stroke="#00F060" stroke-width="1" opacity="0.4"/>
-              <polygon points="115,67 121,70 115,73" fill="#00F060" opacity="0.4"/>
-              <rect x="120" y="30" width="120" height="80" rx="8" stroke="#00F060" stroke-width="1.2" opacity="0.8"/>
+              <circle cx="73" cy="57" r="2.5" fill="#00F060" class="diagram-beacon"/>
+
+              <line x1="80" y1="70" x2="115" y2="70" class="diagram-flow-base"/>
+              <line x1="80" y1="70" x2="115" y2="70" class="diagram-flow-stream diagram-flow-stream--accent"/>
+              <polygon points="114,66 120,70 114,74" fill="#00F060"/>
+
+              <rect x="120" y="30" width="120" height="80" rx="8" stroke="#00F060" stroke-width="1.4" class="diagram-engine-node"/>
               <text x="180" y="50" fill="#00F060" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">FastAPI</text>
               <text x="180" y="65" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">HTTPX Async</text>
               <line x1="130" y1="75" x2="230" y2="75" stroke="#738095" stroke-width="0.5" opacity="0.3"/>
               <text x="180" y="88" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">Pandas Engine</text>
               <text x="180" y="100" fill="#738095" font-family="monospace" font-size="7" text-anchor="middle">GeoJSON Processing</text>
-              <line x1="240" y1="70" x2="275" y2="70" stroke="#00D4FF" stroke-width="1" opacity="0.4"/>
-              <polygon points="275,67 281,70 275,73" fill="#00D4FF" opacity="0.4"/>
+              <circle cx="232" cy="38" r="2.5" fill="#00F060" class="diagram-beacon"/>
+
+              <line x1="240" y1="70" x2="280" y2="70" class="diagram-flow-base"/>
+              <line x1="240" y1="70" x2="280" y2="70" class="diagram-flow-stream diagram-flow-stream--cyan"/>
+              <polygon points="279,66 285,70 279,74" fill="#00D4FF"/>
+
               <rect x="285" y="45" width="85" height="50" rx="6" stroke="#00D4FF" stroke-width="1" opacity="0.6"/>
               <text x="327" y="68" fill="#738095" font-family="monospace" font-size="8" text-anchor="middle">Dashboard UI</text>
               <text x="327" y="80" fill="#8b99ae" font-family="monospace" font-size="7" text-anchor="middle">Leaflet Map</text>
+              <circle cx="363" cy="53" r="2.5" fill="#00D4FF" class="diagram-beacon diagram-beacon--cyan"/>
             </svg>
           </div>
           <div class="project-body">
@@ -1517,411 +1551,705 @@
     /* Hero typewriter */
     /* Typewriter animation initialized via startHeroTypewriter in applyLang */
 
-    /* Three.js Neural Network & Matrix Rain Background Effect */
-    let scene, camera, renderer, neuralNetwork, particles, dataFlow, matrixRain;
+    /* ==========================================================================
+       THREE.JS: CONTINUOUS SILICON DIE & HARDWARE BUS MICROARCHITECTURE
+       Modular Silicon Pitch (Constant Grid Rhythm), 45° Chamfered Data Buses,
+       Interconnect Micro-Vias, Clock Beacons & Atmospheric Background Matrix Rain.
+       ========================================================================== */
+    let scene, camera, renderer, pcbGroup;
+    let circuitPaths = [];
+    let pcbGreenMesh, pcbCyanMesh, pcbDimMesh;
+    let pcbViasMesh;
+    let electronPulses = [];
+    let pulseHeadsGreen, pulseTrailsGreen;
+    let pulseHeadsCyan, pulseTrailsCyan;
+    let pulseHeadsAmber, pulseTrailsAmber;
+    let viaClockPulses = [];
     let isThreeJSLoaded = false;
-    let animationId;
-    let mouseX = 0, mouseY = 0;
+    let isHeroVisible = true;
+    let animationId = null;
 
     const matrixChars = '0123456789アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-
-    function initThreeJS() {
-      const canvas = document.getElementById('three-canvas');
-
-
-      if (!canvas) return;
-
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      createDynamicNeuralNetwork();
-      createEnhancedParticleSystem();
-      createDataFlowSystem();
-      createMatrixRain();
-
-      camera.position.z = 20;
-      camera.position.y = 3;
-
-      animate();
-
-      setTimeout(() => {
-
-        isThreeJSLoaded = true;
-      }, 2000);
-    }
-
-    function createDynamicNeuralNetwork() {
-      neuralNetwork = new THREE.Group();
-
-      const layers = [8, 12, 16, 20, 16, 12, 8];
-      const layerSpacing = 4;
-      const nodeSpacing = 1.8;
-
-      const nodes = [];
-      const connections = [];
-
-      layers.forEach((nodeCount, layerIndex) => {
-        const layerNodes = [];
-        const startY = -(nodeCount - 1) * nodeSpacing / 2;
-
-        for (let i = 0; i < nodeCount; i++) {
-          const geometry = new THREE.SphereGeometry(0.12, 16, 16);
-          const material = new THREE.MeshBasicMaterial({
-            color: new THREE.Color().setHSL(0.3 + Math.random() * 0.1, 1, 0.5 + Math.random() * 0.3),
-            transparent: true,
-            opacity: 0.02
-          });
-
-          const node = new THREE.Mesh(geometry, material);
-
-          const baseX = (layerIndex - layers.length / 2) * layerSpacing;
-          const baseY = startY + i * nodeSpacing;
-          const baseZ = (Math.random() - 0.5) * 2;
-
-          node.position.set(baseX, baseY, baseZ);
-
-          node.userData = {
-            originalScale: 1,
-            originalPosition: { x: baseX, y: baseY, z: baseZ },
-            pulseSpeed: 0.005 + Math.random() * 0.01,
-            pulseOffset: Math.random() * Math.PI * 2,
-            waveSpeed: 0.002 + Math.random() * 0.005,
-            waveAmplitude: 0.05 + Math.random() * 0.1,
-            rotationSpeed: (Math.random() - 0.5) * 0.005,
-            layerIndex: layerIndex,
-            nodeIndex: i,
-            floatSpeed: 0.002 + Math.random() * 0.005,
-            floatAmplitude: 0.02 + Math.random() * 0.05
-          };
-
-          neuralNetwork.add(node);
-          layerNodes.push(node);
-        }
-        nodes.push(layerNodes);
-      });
-
-      for (let layerIndex = 0; layerIndex < layers.length - 1; layerIndex++) {
-        const currentLayer = nodes[layerIndex];
-        const nextLayer = nodes[layerIndex + 1];
-
-        currentLayer.forEach((currentNode, currentIndex) => {
-          nextLayer.forEach((nextNode, nextIndex) => {
-            if (Math.random() > 0.15) {
-              const geometry = new THREE.BufferGeometry();
-              const positions = new Float32Array([
-                currentNode.position.x, currentNode.position.y, currentNode.position.z,
-                nextNode.position.x, nextNode.position.y, nextNode.position.z
-              ]);
-              geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-              const material = new THREE.LineBasicMaterial({
-                color: 0x00f060,
-                transparent: true,
-                opacity: 0.01
-              });
-
-              const line = new THREE.Line(geometry, material);
-              line.userData = {
-                pulseSpeed: 0.005 + Math.random() * 0.01,
-                pulseOffset: Math.random() * Math.PI * 2,
-                currentNode: currentNode,
-                nextNode: nextNode,
-                dataFlowSpeed: 0.01 + Math.random() * 0.02,
-                dataFlowOffset: Math.random() * Math.PI * 2
-              };
-
-              connections.push(line);
-              neuralNetwork.add(line);
-            }
-          });
-        });
-      }
-
-      scene.add(neuralNetwork);
-    }
-
-    function createEnhancedParticleSystem() {
-      const particleCount = 20;
-      const geometry = new THREE.BufferGeometry();
-      const positions = new Float32Array(particleCount * 3);
-      const velocities = new Float32Array(particleCount * 3);
-      const colors = new Float32Array(particleCount * 3);
-
-      for (let i = 0; i < particleCount; i++) {
-        const i3 = i * 3;
-        positions[i3] = (Math.random() - 0.5) * 80;
-        positions[i3 + 1] = (Math.random() - 0.5) * 80;
-        positions[i3 + 2] = (Math.random() - 0.5) * 80;
-
-        velocities[i3] = (Math.random() - 0.5) * 0.005;
-        velocities[i3 + 1] = (Math.random() - 0.5) * 0.005;
-        velocities[i3 + 2] = (Math.random() - 0.5) * 0.005;
-
-        const hue = 0.3 + Math.random() * 0.1;
-        const color = new THREE.Color().setHSL(hue, 1, 0.5 + Math.random() * 0.3);
-        colors[i3] = color.r;
-        colors[i3 + 1] = color.g;
-        colors[i3 + 2] = color.b;
-      }
-
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      geometry.setAttribute('velocity', new THREE.BufferAttribute(velocities, 3));
-      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-      const material = new THREE.PointsMaterial({
-        size: 0.2,
-        transparent: true,
-        opacity: 0.05,
-        blending: THREE.AdditiveBlending,
-        vertexColors: true
-      });
-
-      particles = new THREE.Points(geometry, material);
-      scene.add(particles);
-    }
-
-    function createDataFlowSystem() {
-      dataFlow = new THREE.Group();
-
-      for (let i = 0; i < 30; i++) {
-        const geometry = new THREE.SphereGeometry(0.04, 8, 8);
-        const material = new THREE.MeshBasicMaterial({
-          color: new THREE.Color().setHSL(0.3, 1, 0.8),
-          transparent: true,
-          opacity: 0.3
-        });
-
-        const dataPoint = new THREE.Mesh(geometry, material);
-        dataPoint.userData = {
-          speed: 0.08 + Math.random() * 0.12,
-          path: Math.random() * Math.PI * 2,
-          radius: 12 + Math.random() * 8,
-          height: (Math.random() - 0.5) * 15,
-          verticalSpeed: 0.02 + Math.random() * 0.03
-        };
-
-        dataFlow.add(dataPoint);
-      }
-
-      scene.add(dataFlow);
-    }
-
     const matrixTextures = [];
+    let floatingCharsGroup;
+    const floatingSprites = [];
+
     function initMatrixTextures() {
       if (matrixTextures.length > 0) return;
       for (let i = 0; i < matrixChars.length; i++) {
         const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-        canvas.width = 32;
-        canvas.height = 32;
-        context.fillStyle = 'rgba(0, 240, 96, 0.45)';
-        context.font = 'bold 22px monospace';
-        context.textAlign = 'center';
-        context.textBaseline = 'middle';
-        context.fillText(matrixChars[i], 16, 16);
-        const texture = new THREE.CanvasTexture(canvas);
-        matrixTextures.push(texture);
+        canvas.width = 128;
+        canvas.height = 128;
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, 128, 128);
+        ctx.shadowColor = 'rgba(0, 240, 96, 0.75)';
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = 'rgba(0, 240, 96, 0.92)';
+        ctx.font = 'bold 74px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(matrixChars[i], 64, 64);
+
+        const tex = new THREE.CanvasTexture(canvas);
+        tex.generateMipmaps = false;
+        tex.minFilter = THREE.LinearFilter;
+        matrixTextures.push(tex);
       }
     }
 
-    function createMatrixRain() {
+    function buildFloatingCharacters() {
       initMatrixTextures();
-      matrixRain = new THREE.Group();
+      floatingCharsGroup = new THREE.Group();
+      scene.add(floatingCharsGroup);
 
-      for (let i = 0; i < 280; i++) {
-        const texIndex = Math.floor(Math.random() * matrixTextures.length);
-        const texture = matrixTextures[texIndex] || new THREE.CanvasTexture(document.createElement('canvas'));
+      const CHAR_COUNT = 90;
+      for (let i = 0; i < CHAR_COUNT; i++) {
+        const texIdx = Math.floor(Math.random() * matrixTextures.length);
         const material = new THREE.SpriteMaterial({
-          map: texture,
+          map: matrixTextures[texIdx],
           transparent: true,
-          opacity: 0.2 + Math.random() * 0.25,
-          blending: THREE.AdditiveBlending
+          opacity: 0.12 + Math.random() * 0.24,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false, // Prevents Z-buffer transparency clipping
+          depthTest: true
         });
 
         const sprite = new THREE.Sprite(material);
-        sprite.scale.set(1.4, 1.4, 1);
+        const scale = 2.8 + Math.random() * 1.8;
+        sprite.scale.set(scale, scale, 1);
 
-        sprite.position.set(
-          (Math.random() - 0.5) * 110,
-          (Math.random() - 0.5) * 110,
-          -35 + Math.random() * 40
-        );
+        let px = (Math.random() - 0.5) * 64;
+        let py = (Math.random() - 0.5) * 44;
+        // Keep center core (±9.5 x ±7.5) pristine for hero content readability
+        if (Math.abs(px) < 9.5 && Math.abs(py) < 7.5) {
+          px += px >= 0 ? 10.2 : -10.2;
+        }
+
+        // Deep background layer (Z between -8 and -18) to keep PCB traces in crisp foreground
+        const pz = -8.0 - Math.random() * 10.0;
+        sprite.position.set(px, py, pz);
 
         sprite.userData = {
-          fallSpeed: 0.1 + Math.random() * 0.2,
-          rotationSpeed: (Math.random() - 0.5) * 0.015,
-          originalY: sprite.position.y,
-          driftSpeed: (Math.random() - 0.5) * 0.03,
-          pulseSpeed: 0.03 + Math.random() * 0.05,
-          pulseOffset: Math.random() * Math.PI * 2
+          fallSpeed: 0.014 + Math.random() * 0.022,
+          driftSpeed: (Math.random() - 0.5) * 0.006,
+          pulseOffset: Math.random() * Math.PI * 2,
+          changeTimer: Math.floor(Math.random() * 120)
         };
 
-        matrixRain.add(sprite);
+        floatingSprites.push(sprite);
+        floatingCharsGroup.add(sprite);
+      }
+    }
+
+    function createGlowDotTexture(colorHex, haloHex, innerWhite) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 64;
+      canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, 64, 64);
+      const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      if (innerWhite) {
+        grad.addColorStop(0, '#ffffff');
+        grad.addColorStop(0.18, colorHex);
+      } else {
+        grad.addColorStop(0, colorHex);
+      }
+      grad.addColorStop(0.60, haloHex);
+      grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 64, 64);
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.generateMipmaps = false;
+      tex.minFilter = THREE.LinearFilter;
+      return tex;
+    }
+
+    function createViaPadTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 32;
+      canvas.height = 32;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, 32, 32);
+      ctx.strokeStyle = '#00f060';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(16, 16, 10, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = '#00f060';
+      ctx.beginPath();
+      ctx.arc(16, 16, 4, 0, Math.PI * 2);
+      ctx.fill();
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.generateMipmaps = false;
+      tex.minFilter = THREE.LinearFilter;
+      return tex;
+    }
+
+    function initThreeJS() {
+      const canvas = document.getElementById('three-canvas');
+      if (!canvas || typeof THREE === 'undefined') return;
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 0, 26);
+      camera.lookAt(0, 0, 0);
+
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // 1. Floating Matrix Characters (Flat in scene, zero 3D rotation, background depth)
+      buildFloatingCharacters();
+
+      // 2. High-Performance Modular Silicon Die Architecture
+      pcbGroup = new THREE.Group();
+      scene.add(pcbGroup);
+      buildCpuMotherboard();
+
+      initHeroIntersectionObserver();
+
+      isThreeJSLoaded = true;
+      animate();
+    }
+
+    function buildCpuMotherboard() {
+      circuitPaths = [];
+      electronPulses = [];
+      viaClockPulses = [];
+
+      const greenLines = [];
+      const cyanLines = [];
+      const dimLines = [];
+      const viaPositions = [];
+
+      function addPath(points, type) {
+        const segments = [];
+        let totalLen = 0;
+        for (let i = 0; i < points.length - 1; i++) {
+          const p0 = points[i];
+          const p1 = points[i + 1];
+          const dx = p1.x - p0.x;
+          const dy = p1.y - p0.y;
+          const dz = p1.z - p0.z;
+          const len = Math.sqrt(dx * dx + dy * dy + dz * dz);
+          segments.push({ p0, p1, dx, dy, dz, len });
+          totalLen += len;
+
+          const targetArr = (type === 'cyan') ? cyanLines : (type === 'dim' ? dimLines : greenLines);
+          targetArr.push(p0.x, p0.y, p0.z, p1.x, p1.y, p1.z);
+        }
+
+        // Add micro-vias at route vertices
+        for (let i = 0; i < points.length; i++) {
+          viaPositions.push(points[i].x, points[i].y, points[i].z);
+        }
+
+        const pathObj = { points, segments, totalLen, type };
+        circuitPaths.push(pathObj);
+        return pathObj;
       }
 
-      scene.add(matrixRain);
+      function addDimSegment(x0, y0, z0, x1, y1, z1) {
+        dimLines.push(x0, y0, z0, x1, y1, z1);
+      }
+
+      // =========================================================================
+      // 1. CONTINUOUS MODULAR SILICON DIE GRID (Harmonic Pitch = 1.8 units)
+      // Eliminates erratic voids; generates an authentic hardware microarchitecture.
+      // =========================================================================
+      const PITCH = 1.8;
+      const X_MAX = 30.6; // 17 steps of 1.8
+      const Y_MAX = 18.0; // 10 steps of 1.8
+
+      // Horizontal Silicon Bus Tracks
+      for (let y = -Y_MAX; y <= Y_MAX; y += PITCH) {
+        const roundedY = Math.round(y * 10) / 10;
+        // Central region passes in deeper Z (-4.5) with soft presence
+        if (Math.abs(roundedY) < 7.5) {
+          // Left flank track
+          addDimSegment(-X_MAX, roundedY, -3.2, -9.5, roundedY, -3.2);
+          // Central muted bridging track
+          addDimSegment(-9.5, roundedY, -4.8, 9.5, roundedY, -4.8);
+          // Right flank track
+          addDimSegment(9.5, roundedY, -3.2, X_MAX, roundedY, -3.2);
+        } else {
+          // Continuous outer tracks
+          addDimSegment(-X_MAX, roundedY, -3.2, X_MAX, roundedY, -3.2);
+        }
+      }
+
+      // Vertical Silicon Power & Clock Columns
+      for (let x = -X_MAX; x <= X_MAX; x += PITCH * 2) {
+        const roundedX = Math.round(x * 10) / 10;
+        if (Math.abs(roundedX) < 10.0) {
+          // Top & bottom crown segments
+          addDimSegment(roundedX, 8.0, -3.2, roundedX, Y_MAX, -3.2);
+          addDimSegment(roundedX, -Y_MAX, -3.2, roundedX, -8.0, -3.2);
+          // Central muted column
+          addDimSegment(roundedX, -8.0, -4.8, roundedX, 8.0, -4.8);
+        } else {
+          addDimSegment(roundedX, -Y_MAX, -3.2, roundedX, Y_MAX, -3.2);
+        }
+      }
+
+      // 45° Corner Silicon Interconnect Traces (Lithographic chamfers)
+      for (let k = 0; k < 6; k++) {
+        const off = k * PITCH;
+        // Top-Left corner chamfer
+        addDimSegment(-X_MAX + off, Y_MAX, -3.5, -X_MAX, Y_MAX - off, -3.5);
+        // Top-Right corner chamfer
+        addDimSegment(X_MAX - off, Y_MAX, -3.5, X_MAX, Y_MAX - off, -3.5);
+        // Bottom-Left corner chamfer
+        addDimSegment(-X_MAX + off, -Y_MAX, -3.5, -X_MAX, -Y_MAX + off, -3.5);
+        // Bottom-Right corner chamfer
+        addDimSegment(X_MAX - off, -Y_MAX, -3.5, X_MAX, -Y_MAX + off, -3.5);
+      }
+
+      // =========================================================================
+      // 2. ACTIVE HIGH-SPEED BUSES (Manhattan & 45° Chamfered - Green & Cyan)
+      // High-throughput data highways mapped strictly to the modular silicon pitch.
+      // =========================================================================
+      
+      // QUADRANT A: Upper-Left Data Ingest Bus (4 Parallel 45° Lanes)
+      for (let k = 0; k < 4; k++) {
+        const pY = 7.2 + k * 0.9;
+        const pX = -18.0 + k * 0.9;
+        const targetY = 3.2 + k * 0.45;
+        const leadX = -14.0 + (pY - targetY) * 0.8 + k * 0.45;
+        addPath([
+          { x: -30.0, y: pY, z: -2.5 },
+          { x: pX, y: pY, z: -2.5 },
+          { x: leadX, y: targetY, z: -2.5 },
+          { x: -10.5, y: targetY, z: -2.5 }
+        ], k % 2 === 0 ? 'green' : 'cyan');
+      }
+
+      // QUADRANT B: Lower-Left I/O Bus (4 Parallel 45° Lanes)
+      for (let k = 0; k < 4; k++) {
+        const pY = -7.2 - k * 0.9;
+        const pX = -18.0 + k * 0.9;
+        const targetY = -3.2 - k * 0.45;
+        const leadX = -14.0 + (targetY - pY) * 0.8 + k * 0.45;
+        addPath([
+          { x: -30.0, y: pY, z: -2.5 },
+          { x: pX, y: pY, z: -2.5 },
+          { x: leadX, y: targetY, z: -2.5 },
+          { x: -10.5, y: targetY, z: -2.5 }
+        ], k % 2 === 0 ? 'green' : 'cyan');
+      }
+
+      // QUADRANT C: Upper-Right Memory Bus (4 Parallel 45° Lanes)
+      for (let k = 0; k < 4; k++) {
+        const pY = 7.2 + k * 0.9;
+        const pX = 18.0 - k * 0.9;
+        const targetY = 3.2 + k * 0.45;
+        const leadX = 14.0 - (pY - targetY) * 0.8 - k * 0.45;
+        addPath([
+          { x: 10.5, y: targetY, z: -2.5 },
+          { x: leadX, y: targetY, z: -2.5 },
+          { x: pX, y: pY, z: -2.5 },
+          { x: 30.0, y: pY, z: -2.5 }
+        ], k % 2 === 0 ? 'green' : 'cyan');
+      }
+
+      // QUADRANT D: Lower-Right Storage & PCIe Bus (4 Parallel 45° Lanes)
+      for (let k = 0; k < 4; k++) {
+        const pY = -7.2 - k * 0.9;
+        const pX = 18.0 - k * 0.9;
+        const targetY = -3.2 - k * 0.45;
+        const leadX = 14.0 - (targetY - pY) * 0.8 - k * 0.45;
+        addPath([
+          { x: 10.5, y: targetY, z: -2.5 },
+          { x: leadX, y: targetY, z: -2.5 },
+          { x: pX, y: pY, z: -2.5 },
+          { x: 30.0, y: pY, z: -2.5 }
+        ], k % 2 === 0 ? 'green' : 'cyan');
+      }
+
+      // TRANSVERSAL HIGHWAY 1: Northbridge Perimeter Interconnect (Upper Crown)
+      for (let k = 0; k < 3; k++) {
+        const yBase = 11.2 + k * 0.9;
+        addPath([
+          { x: -28.0, y: yBase, z: -2.8 },
+          { x: -10.8, y: yBase, z: -2.8 },
+          { x: -7.2,  y: yBase + 1.2, z: -2.8 },
+          { x:  7.2,  y: yBase + 1.2, z: -2.8 },
+          { x:  10.8, y: yBase, z: -2.8 },
+          { x:  28.0, y: yBase, z: -2.8 }
+        ], 'green');
+      }
+
+      // TRANSVERSAL HIGHWAY 2: Southbridge Power & Bus Rails (Lower Base)
+      for (let k = 0; k < 3; k++) {
+        const yBase = -11.2 - k * 0.9;
+        addPath([
+          { x: -28.0, y: yBase, z: -2.8 },
+          { x: -10.8, y: yBase, z: -2.8 },
+          { x: -7.2,  y: yBase - 1.2, z: -2.8 },
+          { x:  7.2,  y: yBase - 1.2, z: -2.8 },
+          { x:  10.8, y: yBase, z: -2.8 },
+          { x:  28.0, y: yBase, z: -2.8 }
+        ], 'cyan');
+      }
+
+      // MID-TIER FLANK FEEDERS (Connecting East/West Peripherals)
+      addPath([
+        { x: -26.0, y:  0.0, z: -2.8 },
+        { x: -18.0, y:  0.0, z: -2.8 },
+        { x: -14.4, y:  1.6, z: -2.8 },
+        { x: -10.8, y:  1.6, z: -2.8 }
+      ], 'green');
+
+      addPath([
+        { x: -26.0, y: -1.6, z: -2.8 },
+        { x: -18.0, y: -1.6, z: -2.8 },
+        { x: -14.4, y: -1.6, z: -2.8 },
+        { x: -10.8, y: -1.6, z: -2.8 }
+      ], 'cyan');
+
+      addPath([
+        { x:  10.8, y:  1.6, z: -2.8 },
+        { x:  14.4, y:  1.6, z: -2.8 },
+        { x:  18.0, y:  0.0, z: -2.8 },
+        { x:  26.0, y:  0.0, z: -2.8 }
+      ], 'green');
+
+      addPath([
+        { x:  10.8, y: -1.6, z: -2.8 },
+        { x:  14.4, y: -1.6, z: -2.8 },
+        { x:  18.0, y: -1.6, z: -2.8 },
+        { x:  26.0, y: -1.6, z: -2.8 }
+      ], 'cyan');
+
+      // DEEP SILICON HIGHWAYS (Traversing behind the text at Z: -4.8)
+      addPath([
+        { x: -28.0, y:  0.8, z: -4.8 },
+        { x: -12.6, y:  0.8, z: -4.8 },
+        { x:  -7.2, y: -1.0, z: -4.8 },
+        { x:   7.2, y: -1.0, z: -4.8 },
+        { x:  12.6, y:  0.8, z: -4.8 },
+        { x:  28.0, y:  0.8, z: -4.8 }
+      ], 'green');
+
+      addPath([
+        { x: -28.0, y: -0.8, z: -4.8 },
+        { x: -12.6, y: -0.8, z: -4.8 },
+        { x:  -7.2, y:  1.0, z: -4.8 },
+        { x:   7.2, y:  1.0, z: -4.8 },
+        { x:  12.6, y: -0.8, z: -4.8 },
+        { x:  28.0, y: -0.8, z: -4.8 }
+      ], 'cyan');
+
+      // =========================================================================
+      // 3. BUILD LINE MESHES (Buffer Geometry with depthWrite: false)
+      // =========================================================================
+      function createTraceMesh(coords, color, opacity, isDim) {
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute('position', new THREE.Float32BufferAttribute(coords, 3));
+        const mat = new THREE.LineBasicMaterial({
+          color: color,
+          transparent: true,
+          opacity: opacity,
+          blending: isDim ? THREE.NormalBlending : THREE.AdditiveBlending,
+          depthWrite: false
+        });
+        const mesh = new THREE.LineSegments(geo, mat);
+        pcbGroup.add(mesh);
+        return mesh;
+      }
+
+      pcbGreenMesh = createTraceMesh(greenLines, 0x00f060, 0.24, false);
+      pcbCyanMesh  = createTraceMesh(cyanLines,  0x00d4ff, 0.18, false);
+      pcbDimMesh   = createTraceMesh(dimLines,   0x1f3647, 0.16, true);
+
+      // =========================================================================
+      // 4. MICRO-VIAS & SOLDER PADS (Contact Points)
+      // =========================================================================
+      const viaTex = createViaPadTexture();
+      const viaGeo = new THREE.BufferGeometry();
+      viaGeo.setAttribute('position', new THREE.Float32BufferAttribute(viaPositions, 3));
+      const viaMat = new THREE.PointsMaterial({
+        size: 0.52,
+        map: viaTex,
+        transparent: true,
+        opacity: 0.55,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      });
+      pcbViasMesh = new THREE.Points(viaGeo, viaMat);
+      pcbGroup.add(pcbViasMesh);
+
+      // =========================================================================
+      // 5. VIA CLOCK HEARTBEAT RADAR RINGS (Motherboard Clocks at Key Grid Nodes)
+      // =========================================================================
+      const clockViaNodes = [
+        { x: -10.8, y:  3.2 },
+        { x: -10.8, y: -3.2 },
+        { x:  10.8, y:  3.2 },
+        { x:  10.8, y: -3.2 },
+        { x: -18.0, y:  7.2 },
+        { x:  18.0, y:  7.2 },
+        { x: -18.0, y: -7.2 },
+        { x:  18.0, y: -7.2 }
+      ];
+
+      for (let i = 0; i < clockViaNodes.length; i++) {
+        const ringGeo = new THREE.RingGeometry(0.18, 0.24, 32);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: (i % 2 === 0) ? 0x00f060 : 0x00d4ff,
+          transparent: true,
+          opacity: 0,
+          side: THREE.DoubleSide,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false
+        });
+        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+        pcbGroup.add(ringMesh);
+
+        viaClockPulses.push({
+          mesh: ringMesh,
+          pos: new THREE.Vector3(clockViaNodes[i].x, clockViaNodes[i].y, -2.5),
+          progress: Math.random(),
+          speed: 0.0028 + Math.random() * 0.002
+        });
+      }
+
+      // =========================================================================
+      // 6. CONTINUOUS ELECTRON DATA PULSES (Smooth & Non-flickering Impulse Flow)
+      // =========================================================================
+      const PULSE_COUNT = 48;
+      electronPulses = [];
+
+      const greenHeadPos = [], greenTrailPos = [];
+      const cyanHeadPos = [], cyanTrailPos = [];
+      const amberHeadPos = [], amberTrailPos = [];
+
+      for (let i = 0; i < PULSE_COUNT; i++) {
+        const pathIdx = Math.floor(Math.random() * circuitPaths.length);
+        const path = circuitPaths[pathIdx];
+
+        let type = 'green';
+        if (i % 8 === 0) type = 'amber';
+        else if (path.type === 'cyan' || i % 3 === 0) type = 'cyan';
+
+        let posHeadIdx, posTrailIdx;
+        if (type === 'green') {
+          posHeadIdx = greenHeadPos.length / 3;
+          posTrailIdx = greenTrailPos.length / 3;
+          greenHeadPos.push(0, 0, 0);
+          greenTrailPos.push(0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (type === 'cyan') {
+          posHeadIdx = cyanHeadPos.length / 3;
+          posTrailIdx = cyanTrailPos.length / 3;
+          cyanHeadPos.push(0, 0, 0);
+          cyanTrailPos.push(0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else {
+          posHeadIdx = amberHeadPos.length / 3;
+          posTrailIdx = amberTrailPos.length / 3;
+          amberHeadPos.push(0, 0, 0);
+          amberTrailPos.push(0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+        electronPulses.push({
+          pathIdx: pathIdx,
+          distance: Math.random() * path.totalLen,
+          speed: 0.038 + Math.random() * 0.024,
+          type: type,
+          headIdx: posHeadIdx,
+          trailIdx: posTrailIdx
+        });
+      }
+
+      function buildPulseSystems(headPos, trailPos, headHex, trailHex) {
+        const headTex = createGlowDotTexture(headHex, 'rgba(255,255,255,0.4)', true);
+        const trailTex = createGlowDotTexture(trailHex, 'rgba(0,0,0,0)', false);
+
+        const headGeo = new THREE.BufferGeometry();
+        headGeo.setAttribute('position', new THREE.Float32BufferAttribute(headPos, 3));
+        const headMat = new THREE.PointsMaterial({
+          size: 0.80,
+          map: headTex,
+          transparent: true,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false
+        });
+        const headMesh = new THREE.Points(headGeo, headMat);
+        pcbGroup.add(headMesh);
+
+        const trailGeo = new THREE.BufferGeometry();
+        trailGeo.setAttribute('position', new THREE.Float32BufferAttribute(trailPos, 3));
+        const trailMat = new THREE.PointsMaterial({
+          size: 0.48,
+          map: trailTex,
+          transparent: true,
+          opacity: 0.65,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false
+        });
+        const trailMesh = new THREE.Points(trailGeo, trailMat);
+        pcbGroup.add(trailMesh);
+
+        return { heads: headMesh, trails: trailMesh };
+      }
+
+      const greenSys = buildPulseSystems(greenHeadPos, greenTrailPos, '#00f060', 'rgba(0, 240, 96, 0.6)');
+      pulseHeadsGreen = greenSys.heads;
+      pulseTrailsGreen = greenSys.trails;
+
+      const cyanSys = buildPulseSystems(cyanHeadPos, cyanTrailPos, '#00d4ff', 'rgba(0, 212, 255, 0.6)');
+      pulseHeadsCyan = cyanSys.heads;
+      pulseTrailsCyan = cyanSys.trails;
+
+      const amberSys = buildPulseSystems(amberHeadPos, amberTrailPos, '#ffaa00', 'rgba(255, 170, 0, 0.6)');
+      pulseHeadsAmber = amberSys.heads;
+      pulseTrailsAmber = amberSys.trails;
+    }
+
+    function getPointOnCircuitPath(path, dist) {
+      if (dist <= 0) return path.segments[0].p0;
+      if (dist >= path.totalLen) return path.segments[path.segments.length - 1].p1;
+
+      let remaining = dist;
+      for (let i = 0; i < path.segments.length; i++) {
+        const seg = path.segments[i];
+        if (remaining <= seg.len) {
+          const t = seg.len > 0 ? remaining / seg.len : 0;
+          return {
+            x: seg.p0.x + seg.dx * t,
+            y: seg.p0.y + seg.dy * t,
+            z: seg.p0.z + seg.dz * t
+          };
+        }
+        remaining -= seg.len;
+      }
+      return path.segments[path.segments.length - 1].p1;
+    }
+
+    function initHeroIntersectionObserver() {
+      const hero = document.getElementById('hero');
+      if (window.IntersectionObserver && hero) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            isHeroVisible = entry.isIntersecting;
+          });
+        }, { threshold: 0.05 });
+        observer.observe(hero);
+      }
     }
 
     function animate() {
       animationId = requestAnimationFrame(animate);
 
-      if (!isThreeJSLoaded || isThreeJSPaused) return;
-
-      const time = Date.now() * 0.001;
-
-      if (neuralNetwork) {
-        neuralNetwork.rotation.y += 0.0005;
-        neuralNetwork.rotation.x = Math.sin(time * 0.02) * 0.02 + mouseY * 0.02;
-        neuralNetwork.rotation.z = Math.cos(time * 0.015) * 0.01;
-
-        neuralNetwork.children.forEach(child => {
-          if (child.geometry && child.geometry.type === 'SphereGeometry') {
-            const userData = child.userData;
-
-            const pulse1 = Math.sin(time * userData.pulseSpeed + userData.pulseOffset);
-            const pulse2 = Math.cos(time * userData.pulseSpeed * 1.3 + userData.pulseOffset);
-            const combinedPulse = (pulse1 + pulse2 * 0.5) / 1.5;
-
-            child.scale.setScalar(userData.originalScale + combinedPulse * 0.01);
-            child.material.opacity = 0.01 + combinedPulse * 0.005;
-
-            const wave1 = Math.sin(time * userData.waveSpeed + userData.layerIndex + userData.nodeIndex);
-            const wave2 = Math.cos(time * userData.waveSpeed * 0.7 + userData.nodeIndex);
-            const wave3 = Math.sin(time * userData.waveSpeed * 1.3 + userData.layerIndex);
-
-            child.position.x = userData.originalPosition.x + wave1 * userData.waveAmplitude;
-            child.position.y = userData.originalPosition.y + wave2 * userData.waveAmplitude * 0.6;
-            child.position.z = userData.originalPosition.z + wave3 * userData.waveAmplitude * 0.4;
-
-            const float = Math.sin(time * userData.floatSpeed + userData.nodeIndex);
-            child.position.y += float * userData.floatAmplitude;
-
-            child.rotation.x += userData.rotationSpeed;
-            child.rotation.y += userData.rotationSpeed * 0.7;
-            child.rotation.z += userData.rotationSpeed * 0.5;
-          }
-        });
-
-        neuralNetwork.children.forEach(child => {
-          if (child.type === 'Line') {
-            const userData = child.userData;
-
-            if (userData.currentNode && userData.nextNode) {
-              const positions = child.geometry.attributes.position.array;
-              positions[0] = userData.currentNode.position.x;
-              positions[1] = userData.currentNode.position.y;
-              positions[2] = userData.currentNode.position.z;
-              positions[3] = userData.nextNode.position.x;
-              positions[4] = userData.nextNode.position.y;
-              positions[5] = userData.nextNode.position.z;
-              child.geometry.attributes.position.needsUpdate = true;
-            }
-
-            const pulse = Math.sin(time * userData.pulseSpeed + userData.pulseOffset);
-            const dataFlow = Math.sin(time * userData.dataFlowSpeed + userData.dataFlowOffset);
-            const wave = Math.cos(time * userData.pulseSpeed * 0.5);
-
-            child.material.opacity = 0.005 + pulse * 0.005 + dataFlow * 0.005 + wave * 0.002;
-          }
-        });
+      if (!isThreeJSLoaded || isThreeJSPaused || !isHeroVisible || document.hidden) {
+        return;
       }
 
-      if (particles) {
-        const positions = particles.geometry.attributes.position.array;
-        const velocities = particles.geometry.attributes.velocity.array;
+      const time = performance.now();
 
-        for (let i = 0; i < positions.length; i += 3) {
-          const distanceToCenter = Math.sqrt(positions[i] ** 2 + positions[i + 1] ** 2 + positions[i + 2] ** 2);
-          const gravity = 0.00001;
-          const turbulence = 0.00005;
+      // 1. Update Via Clock Telemetry Rings
+      for (let i = 0; i < viaClockPulses.length; i++) {
+        const cp = viaClockPulses[i];
+        cp.progress += cp.speed;
+        if (cp.progress >= 1) {
+          cp.progress = 0;
+        }
+        cp.mesh.position.copy(cp.pos);
+        const s = 1.0 + cp.progress * 2.8;
+        cp.mesh.scale.set(s, s, 1);
+        cp.mesh.material.opacity = Math.sin(cp.progress * Math.PI) * 0.35;
+      }
 
-          velocities[i] += -positions[i] * gravity + (Math.random() - 0.5) * turbulence;
-          velocities[i + 1] += -positions[i + 1] * gravity + (Math.random() - 0.5) * turbulence;
-          velocities[i + 2] += -positions[i + 2] * gravity + (Math.random() - 0.5) * turbulence;
+      // 2. Update Electron Data Pulses along 45° PCB Traces
+      const gHeadArr = pulseHeadsGreen ? pulseHeadsGreen.geometry.attributes.position.array : null;
+      const gTrailArr = pulseTrailsGreen ? pulseTrailsGreen.geometry.attributes.position.array : null;
+      const cHeadArr = pulseHeadsCyan ? pulseHeadsCyan.geometry.attributes.position.array : null;
+      const cTrailArr = pulseTrailsCyan ? pulseTrailsCyan.geometry.attributes.position.array : null;
+      const aHeadArr = pulseHeadsAmber ? pulseHeadsAmber.geometry.attributes.position.array : null;
+      const aTrailArr = pulseTrailsAmber ? pulseTrailsAmber.geometry.attributes.position.array : null;
 
-          positions[i] += velocities[i];
-          positions[i + 1] += velocities[i + 1];
-          positions[i + 2] += velocities[i + 2];
+      const trailDists = [0.35, 0.75, 1.25]; // Distance lags along circuit trace
 
-          if (Math.abs(positions[i]) > 40) velocities[i] *= -0.1;
-          if (Math.abs(positions[i + 1]) > 40) velocities[i + 1] *= -0.1;
-          if (Math.abs(positions[i + 2]) > 40) velocities[i + 2] *= -0.1;
+      for (let i = 0; i < electronPulses.length; i++) {
+        const p = electronPulses[i];
+        const path = circuitPaths[p.pathIdx];
+        if (!path) continue;
+
+        p.distance += p.speed;
+        if (p.distance >= path.totalLen) {
+          p.distance = 0;
+          if (Math.random() < 0.10) {
+            p.pathIdx = Math.floor(Math.random() * circuitPaths.length);
+          }
         }
 
-        particles.geometry.attributes.position.needsUpdate = true;
-        particles.rotation.y += 0.0001;
-        particles.rotation.x += 0.00005;
-      }
+        const headPt = getPointOnCircuitPath(path, p.distance);
 
-      if (dataFlow) {
-        dataFlow.children.forEach((dataPoint, index) => {
-          const userData = dataPoint.userData;
-          const angle = time * userData.speed + userData.path;
+        let headArr, trailArr;
+        if (p.type === 'cyan') {
+          headArr = cHeadArr; trailArr = cTrailArr;
+        } else if (p.type === 'amber') {
+          headArr = aHeadArr; trailArr = aTrailArr;
+        } else {
+          headArr = gHeadArr; trailArr = gTrailArr;
+        }
 
-          dataPoint.position.x = Math.cos(angle) * userData.radius;
-          dataPoint.position.z = Math.sin(angle) * userData.radius;
-          dataPoint.position.y = userData.height + Math.sin(time * userData.verticalSpeed + index) * 0.5;
+        if (headArr) {
+          const hIdx = p.headIdx * 3;
+          headArr[hIdx]     = headPt.x;
+          headArr[hIdx + 1] = headPt.y;
+          headArr[hIdx + 2] = headPt.z;
+        }
 
-          const pulse1 = Math.sin(time * 4 + index);
-          const pulse2 = Math.cos(time * 3 + index * 0.5);
-          const combinedPulse = (pulse1 + pulse2) / 2;
-
-          dataPoint.scale.setScalar(0.2 + combinedPulse * 0.1);
-          dataPoint.material.opacity = 0.05 + combinedPulse * 0.02;
-
-          dataPoint.rotation.x += 0.002;
-          dataPoint.rotation.y += 0.003;
-        });
-      }
-
-      if (matrixRain) {
-        matrixRain.children.forEach((sprite, index) => {
-          const userData = sprite.userData;
-
-          sprite.position.y -= userData.fallSpeed;
-          sprite.position.x += Math.sin(time * userData.driftSpeed + index) * 0.2;
-
-          if (sprite.position.y < -60) {
-            sprite.position.y = 60;
-            sprite.position.x = (Math.random() - 0.5) * 120;
-            sprite.position.z = (Math.random() - 0.5) * 60;
-
-            if (Math.random() < 0.2) {
-              const canvas = document.createElement('canvas');
-              const context = canvas.getContext('2d');
-              canvas.width = 32;
-              canvas.height = 32;
-
-              context.fillStyle = `rgba(0, 255, 100, ${0.6 + Math.random() * 0.4})`;
-              context.font = 'bold 28px monospace';
-              context.textAlign = 'center';
-              context.textBaseline = 'middle';
-
-              const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-              context.fillText(char, 16, 16);
-
-              sprite.material.map = new THREE.CanvasTexture(canvas);
-              sprite.material.needsUpdate = true;
-              userData.char = char;
-            }
+        if (trailArr) {
+          const tIdx = p.trailIdx * 9;
+          for (let k = 0; k < 3; k++) {
+            const trailPt = getPointOnCircuitPath(path, p.distance - trailDists[k]);
+            trailArr[tIdx + k * 3]     = trailPt.x;
+            trailArr[tIdx + k * 3 + 1] = trailPt.y;
+            trailArr[tIdx + k * 3 + 2] = trailPt.z;
           }
-
-          sprite.rotation.z += userData.rotationSpeed;
-
-          const pulse = Math.sin(time * userData.pulseSpeed + userData.pulseOffset);
-          sprite.material.opacity = 0.7 + pulse * 0.2;
-
-          const scalePulse = Math.cos(time * userData.pulseSpeed * 0.7 + userData.pulseOffset);
-          sprite.scale.setScalar(2.2 + scalePulse * 0.5);
-        });
+        }
       }
 
-      camera.position.x += (mouseX * 5 - camera.position.x) * 0.03;
-      camera.position.y += (mouseY * 5 - camera.position.y) * 0.03;
-      camera.lookAt(0, 0, 0);
+      if (pulseHeadsGreen) pulseHeadsGreen.geometry.attributes.position.needsUpdate = true;
+      if (pulseTrailsGreen) pulseTrailsGreen.geometry.attributes.position.needsUpdate = true;
+      if (pulseHeadsCyan) pulseHeadsCyan.geometry.attributes.position.needsUpdate = true;
+      if (pulseTrailsCyan) pulseTrailsCyan.geometry.attributes.position.needsUpdate = true;
+      if (pulseHeadsAmber) pulseHeadsAmber.geometry.attributes.position.needsUpdate = true;
+      if (pulseTrailsAmber) pulseTrailsAmber.geometry.attributes.position.needsUpdate = true;
+
+      // 3. Update Floating Matrix Data Stream (Flat vertical rain - Zero 3D rotation, background depth)
+      for (let i = 0; i < floatingSprites.length; i++) {
+        const s = floatingSprites[i];
+        const ud = s.userData;
+
+        s.position.y -= ud.fallSpeed;
+        s.position.x += Math.sin(time * 0.0006 + ud.pulseOffset) * 0.012;
+
+        if (s.position.y < -26) {
+          s.position.y = 26;
+          let newPx = (Math.random() - 0.5) * 64;
+          if (Math.abs(newPx) < 9.5) {
+            newPx += newPx >= 0 ? 10.2 : -10.2;
+          }
+          s.position.x = newPx;
+          s.position.z = -8.0 - Math.random() * 10.0;
+        }
+
+        ud.changeTimer--;
+        if (ud.changeTimer <= 0) {
+          s.material.map = matrixTextures[Math.floor(Math.random() * matrixTextures.length)];
+          ud.changeTimer = 120 + Math.floor(Math.random() * 180);
+        }
+
+        const pulse = Math.sin(time * 0.0008 + ud.pulseOffset);
+        s.material.opacity = 0.12 + pulse * 0.05;
+      }
+
+      // 4. Subtle Motherboard Silicon Micro-Breathing (Fixed camera - zero mouse movement)
+      if (pcbGroup) {
+        pcbGroup.position.z = Math.sin(time * 0.0005) * 0.10;
+      }
 
       renderer.render(scene, camera);
     }
@@ -1934,53 +2262,31 @@
       }
     }
 
-    function initMouseEffects() {
-      document.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-        mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
-      });
+    function startThreeJSWhenReady() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
 
-      document.addEventListener('touchmove', (e) => {
-        if (e.touches.length > 0) {
-          mouseX = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
-          mouseY = -(e.touches[0].clientY / window.innerHeight) * 2 + 1;
-        }
-      });
-    }
-
-    function optimizePerformance() {
-      if (window.innerWidth < 768) {
-        if (renderer) {
-          renderer.setPixelRatio(1);
+      function boot() {
+        if (typeof THREE !== 'undefined') {
+          initThreeJS();
+          window.addEventListener('resize', handleResize);
+          window.addEventListener('beforeunload', () => {
+            if (animationId) cancelAnimationFrame(animationId);
+            if (renderer) renderer.dispose();
+          });
         }
       }
 
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          if (animationId) {
-            cancelAnimationFrame(animationId);
-          }
-        } else {
-          animate();
-        }
-      });
+      if (typeof THREE !== 'undefined') {
+        boot();
+      } else {
+        window.addEventListener('DOMContentLoaded', boot);
+        window.addEventListener('load', boot);
+      }
     }
 
-    // Initialize ThreeJS
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setTimeout(initThreeJS, 100);
-      initMouseEffects();
-      optimizePerformance();
-      window.addEventListener('resize', handleResize);
-      window.addEventListener('beforeunload', () => {
-        if (animationId) {
-          cancelAnimationFrame(animationId);
-        }
-        if (renderer) {
-          renderer.dispose();
-        }
-      });
-    }
+    startThreeJSWhenReady();
 
 
     /* Dynamic copyright year */
